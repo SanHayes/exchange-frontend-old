@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: SelectingValueDefault.vue
-    Description: Default way to selecting values
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Default" code-toggler no-shadow card-border>
 

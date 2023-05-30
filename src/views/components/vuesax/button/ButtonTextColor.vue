@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: ButtonTextColor.vue
-    Description: Change color of text displayed on button
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Text Color" code-toggler>
 

@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: CarouselResponsiveBreakpoints.vue
-    Description: Carousel with responsive breakpoints
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Responsive Breakpoints" class="carousel-example" code-toggler>
           <!-- swiper -->

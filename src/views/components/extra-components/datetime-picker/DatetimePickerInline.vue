@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatetimePickerInline.vue
-    Description: inline datetime picker
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-    Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Inline Picker" code-toggler>
         <p>Creating inline datetime picker by setting <code>inline</code> to <code>true</code></p>

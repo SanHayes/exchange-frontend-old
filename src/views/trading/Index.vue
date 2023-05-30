@@ -1,11 +1,3 @@
-<!-- =========================================================================================
-  Description: Data List - List View
-  ----------------------------------------------------------------------------------------
-  Item Name: Admin
-  Author: Ares
-  Author Telegram: @skydnz
-========================================================================================== -->
-
 <template>
   <div
     id="tradePage"
@@ -1304,18 +1296,18 @@
 </template>
 
 <script>
-import { Chart } from "highcharts-vue";
-import Highcharts, { color } from "highcharts";
+import {Chart} from "highcharts-vue";
+import Highcharts, {color} from "highcharts";
 import More from "highcharts/highcharts-more";
 import stockInit from "highcharts/modules/stock";
 import loadIndicatorsAll from "highcharts/indicators/indicators";
-import { isMobile, isTablet } from "mobile-device-detect";
+import {isMobile, isTablet} from "mobile-device-detect";
 import getData from "@/pages/trade/navbar/components/data.json";
 import config from "@/config";
 import Vue from "vue";
 import AuthenticationService from "@/services/AuthenticationService";
-
 import VScrollLock from "v-scroll-lock";
+import ReconnectingWebSocket from 'reconnecting-websocket';
 Vue.use(VScrollLock);
 
 More(Highcharts);
@@ -1326,21 +1318,21 @@ let timer = null;
 
 function convertTextValueMeter(t) {
   return t >= -90 && t <= -54
-    ? { cl: "rank-1", text: "Strong sell", index: 1 }
-    : t > -54 && t <= -18
-    ? { cl: "rank-2", text: "Sell", index: 2 }
-    : t > -18 && t <= 17
-    ? { cl: "rank-3", text: "Neutral", index: 3 }
-    : t > 17 && t <= 53
-    ? { cl: "rank-4", text: "Buy", index: 4 }
-    : t > 53
-    ? { cl: "rank-5", text: "Strong Buy", index: 5 }
-    : void 0;
+      ? {cl: "rank-1", text: "Strong sell", index: 1}
+      : t > -54 && t <= -18
+          ? {cl: "rank-2", text: "Sell", index: 2}
+          : t > -18 && t <= 17
+              ? {cl: "rank-3", text: "Neutral", index: 3}
+              : t > 17 && t <= 53
+                  ? {cl: "rank-4", text: "Buy", index: 4}
+                  : t > 53
+                      ? {cl: "rank-5", text: "Strong Buy", index: 5}
+                      : void 0;
 }
 
 var UP_COLOR = "#2BB196",
-  DOWN_COLOR = "#FC5454",
-  deviceVersion = "pc";
+    DOWN_COLOR = "#FC5454",
+    deviceVersion = "pc";
 
 var progressBar = $(".e-c-progress");
 var lengthp = Math.PI * 2 * 100;
@@ -1356,8 +1348,8 @@ if (isMobile) {
 }
 
 var listData = [],
-  ohlcStock = [],
-  volumeStock = [];
+    ohlcStock = [],
+    volumeStock = [];
 
 var chartGet = "";
 
@@ -1431,7 +1423,8 @@ const stockChart = {
       allowPointSelect: false,
       point: {
         events: {
-          click() {},
+          click() {
+          },
         },
       },
     },
@@ -1454,24 +1447,24 @@ const stockChart = {
     },
     formatter() {
       return "BTC/USDT" === this.series.name
-        ? '\n<span style="margin-right: 10px;"><b>O</b>: ' +
-            this.point.open +
-            '</span>\n<span style="margin-right: 10px;"><b>C</b>: ' +
-            this.point.close +
-            '</span>\n<span>&nbsp;</span>\n<br/>\n<span style="margin-right: 10px;"><b>H</b>: ' +
-            this.point.high +
-            '</span>\n<span style="margin-right: 10px;"><b>L</b>: ' +
-            this.point.low +
-            "</span>\n<span><b>Vol</b>: " +
-            this.point.vol +
-            "</span>"
-        : "Volume" === this.series.name
-        ? "<b>Vol</b>: " + this.y
-        : "";
+          ? '\n<span style="margin-right: 10px;"><b>O</b>: ' +
+          this.point.open +
+          '</span>\n<span style="margin-right: 10px;"><b>C</b>: ' +
+          this.point.close +
+          '</span>\n<span>&nbsp;</span>\n<br/>\n<span style="margin-right: 10px;"><b>H</b>: ' +
+          this.point.high +
+          '</span>\n<span style="margin-right: 10px;"><b>L</b>: ' +
+          this.point.low +
+          "</span>\n<span><b>Vol</b>: " +
+          this.point.vol +
+          "</span>"
+          : "Volume" === this.series.name
+              ? "<b>Vol</b>: " + this.y
+              : "";
     },
     positioner() {
       var t = 20,
-        e = "pc" !== deviceVersion ? 50 : 60;
+          e = "pc" !== deviceVersion ? 50 : 60;
       return {
         x: t,
         y: e,
@@ -1653,11 +1646,11 @@ const gaugeMeterOs = {
         let td = t.target.series[0].points[0].y;
         let n = convertTextValueMeter(td);
         $(".gauge-meter--os .gauge-meter-background")
-          .removeClass("rank-1 rank-2 rank-3 rank-4 rank-5")
-          .addClass(n.cl);
+            .removeClass("rank-1 rank-2 rank-3 rank-4 rank-5")
+            .addClass(n.cl);
         $(".gauge-meter--os .gauge-meter-label-item").removeClass("active");
         $(
-          ".gauge-meter--os .gauge-meter-label-item:nth-child(" + n.index + ")"
+            ".gauge-meter--os .gauge-meter-label-item:nth-child(" + n.index + ")"
         ).addClass("active");
       },
     },
@@ -1786,11 +1779,11 @@ const gaugeMeterSu = {
         let td = t.target.series[0].points[0].y;
         let n = convertTextValueMeter(td);
         $(".gauge-meter--su .gauge-meter-background")
-          .removeClass("rank-1 rank-2 rank-3 rank-4 rank-5")
-          .addClass(n.cl);
+            .removeClass("rank-1 rank-2 rank-3 rank-4 rank-5")
+            .addClass(n.cl);
         $(".gauge-meter--su .gauge-meter-label-item").removeClass("active");
         $(
-          ".gauge-meter--su .gauge-meter-label-item:nth-child(" + n.index + ")"
+            ".gauge-meter--su .gauge-meter-label-item:nth-child(" + n.index + ")"
         ).addClass("active");
       },
     },
@@ -1919,11 +1912,11 @@ const gaugeMeterMa = {
         let td = t.target.series[0].points[0].y;
         let n = convertTextValueMeter(td);
         $(".gauge-meter--ma .gauge-meter-background")
-          .removeClass("rank-1 rank-2 rank-3 rank-4 rank-5")
-          .addClass(n.cl);
+            .removeClass("rank-1 rank-2 rank-3 rank-4 rank-5")
+            .addClass(n.cl);
         $(".gauge-meter--ma .gauge-meter-label-item").removeClass("active");
         $(
-          ".gauge-meter--ma .gauge-meter-label-item:nth-child(" + n.index + ")"
+            ".gauge-meter--ma .gauge-meter-label-item:nth-child(" + n.index + ")"
         ).addClass("active");
       },
     },
@@ -2114,13 +2107,13 @@ export default {
   },
   watch: {
 
-    session(ss){
-        let streak = JSON.parse(localStorage.getItem('streak') || '{}');
-        if(streak.session != ss - 1){
-          localStorage.removeItem('streak');
-          this.streak = 0;
-        }
-       
+    session(ss) {
+      let streak = JSON.parse(localStorage.getItem('streak') || '{}');
+      if (streak.session != ss - 1) {
+        localStorage.removeItem('streak');
+        this.streak = 0;
+      }
+
     },
     showMobileMenu: function (newVal) {
       if (!newVal) {
@@ -2151,7 +2144,7 @@ export default {
         if (historyBox) {
           // historyBox.style.transform = `translateX(-230px)`;
           historyBox.style.width = "calc(100% - 230px)";
-          historyBox.style.setProperty('--width',  (analysis.clientWidth - 230) / analysis.clientWidth);
+          historyBox.style.setProperty('--width', (analysis.clientWidth - 230) / analysis.clientWidth);
         }
         if (gaugeMeter) {
           gaugeMeter.style.transform = `translateX(-128px)`;
@@ -2182,18 +2175,17 @@ export default {
     }
   },
   methods: {
-    setStreak(result){
-      if((result.kq == "lose" && result.money < 10) || result.kq == "win" && result.money < 19.5) {
+    setStreak(result) {
+      if ((result.kq == "lose" && result.money < 10) || result.kq == "win" && result.money < 19.5) {
         localStorage.setItem('streak', JSON.stringify(streak));
         return;
       }
       let streak = JSON.parse(localStorage.getItem('streak') || '{}');
-      if(streak.last == result.kq){
-        if(this.streak < 9){
+      if (streak.last == result.kq) {
+        if (this.streak < 9) {
           this.streak += 1;
         }
-      }
-      else{
+      } else {
         this.streak = 1;
       }
       streak.count = this.streak;
@@ -2301,7 +2293,7 @@ export default {
         //idPlayer: this.thisIDPlayer
       };
 
-      this.sendMessage({ type: "bet", data: obj });
+      this.sendMessage({type: "bet", data: obj});
 
       let ss = this.$store.session;
       let timeGet = new Date().getTime();
@@ -2322,11 +2314,11 @@ export default {
       localStorage.setItem("stateOpen", JSON.stringify(this.betOpen));
 
       window.dispatchEvent(
-        new CustomEvent("stateOpen-localstorage-changed", {
-          detail: {
-            storage: localStorage.getItem("stateOpen"),
-          },
-        })
+          new CustomEvent("stateOpen-localstorage-changed", {
+            detail: {
+              storage: localStorage.getItem("stateOpen"),
+            },
+          })
       );
 
       getData.Notify = this.betOpen.l.bet[0].items.length;
@@ -2469,8 +2461,8 @@ export default {
 
       if (amount == 0) {
         getAmount = getData.isAccount
-          ? getData.blLive.toString()
-          : getData.blDemo.toString();
+            ? getData.blLive.toString()
+            : getData.blDemo.toString();
       }
 
       let check = getAmount.split(".").length - 1;
@@ -2502,28 +2494,28 @@ export default {
       var chartInstance = chartGet;
       try {
         var lastCandle =
-          chartInstance.series[1].points[
+            chartInstance.series[1].points[
             chartInstance.series[1].points.length - 1
-          ];
+                ];
         var color = this.getColor(boPrice.open, boPrice.close);
         if (lastCandle.x === boPrice.date) {
           lastCandle.update(
-            {
-              x: boPrice.date,
-              y: boPrice.volume,
-              color: color,
-            },
-            true
+              {
+                x: boPrice.date,
+                y: boPrice.volume,
+                color: color,
+              },
+              true
           );
         } else {
           chartInstance.series[1].addPoint(
-            {
-              x: boPrice.date,
-              y: boPrice.volume,
-              color: color,
-            },
-            true,
-            true
+              {
+                x: boPrice.date,
+                y: boPrice.volume,
+                color: color,
+              },
+              true,
+              true
           );
         }
       } catch (err) {
@@ -2538,9 +2530,9 @@ export default {
 
       try {
         var lastCandle =
-          chartInstance.series[0].points[
+            chartInstance.series[0].points[
             chartInstance.series[0].points.length - 1
-          ];
+                ];
         var color = this.getColor(boPrice.open, boPrice.close);
 
         var counter = Number(boPrice.candleClose);
@@ -2566,12 +2558,12 @@ export default {
           listData.push(boPrice);
           let begin = 0;
           //console.log(listData);
-          const { dataMax } = chartInstance.xAxis[0].getExtremes();
+          const {dataMax} = chartInstance.xAxis[0].getExtremes();
           begin = this.setSizeStock(listData);
           chartGet.xAxis[0].setExtremes(
-            listData[begin]["date"],
-            dataMax,
-            false
+              listData[begin]["date"],
+              dataMax,
+              false
           );
           chartGet.redraw();
         }
@@ -2581,14 +2573,14 @@ export default {
         let f = chartInstance.yAxis[0].plotLinesAndBands[0];
 
         f.label &&
-          f.label.attr({
-            text:
+        f.label.attr({
+          text:
               '<div class="plotlineChart flex flex-col"><span class="price">' +
               boPrice.close +
               '</span><span class="time self-end">00:' +
               (counter > 9 ? counter : "0" + counter) +
               "</span></div>",
-          });
+        });
 
         if (boPrice.type === "order") {
           this.isOrder = true;
@@ -2601,7 +2593,8 @@ export default {
         }
 
         getData.countDown = counter > 9 ? counter : "0" + counter;
-      } catch {}
+      } catch {
+      }
     },
 
     getColor(openPrice, closePrice) {
@@ -2618,7 +2611,7 @@ export default {
         let chart = this.$refs.chartOs.chart;
 
         let left = chart.series[0].points[0],
-          leftVal;
+            leftVal;
         //Oscillators
         this.NumOscBUY = e.b;
         this.NumOscSELL = e.s;
@@ -2642,7 +2635,8 @@ export default {
           left.update(leftVal, true);
           chart.redraw();
         }
-      } catch {}
+      } catch {
+      }
     },
 
     StaSummary(e) {
@@ -2650,7 +2644,7 @@ export default {
         let chart = this.$refs.chartSu.chart;
 
         let left = chart.series[0].points[0],
-          leftVal;
+            leftVal;
 
         //Summary
         this.NumSumBUY = e.b;
@@ -2676,14 +2670,15 @@ export default {
           left.update(leftVal, true);
           chart.redraw();
         }
-      } catch {}
+      } catch {
+      }
     },
 
     StaMovingAverages(e) {
       try {
         let chart = this.$refs.chartMa.chart;
         let left = chart.series[0].points[0],
-          leftVal;
+            leftVal;
         //Moving
 
         this.NumMovBUY = e.b;
@@ -2709,7 +2704,8 @@ export default {
           left.update(leftVal, true);
           chart.redraw();
         }
-      } catch {}
+      } catch {
+      }
     },
 
     // setSizeStock(){
@@ -2777,19 +2773,19 @@ export default {
       stockChart.series[1].data = volumeStock;
       this.chartOptionsStock = stockChart;
 
-      
+
       let ao = setInterval(() => {
         if (chartGet != "") {
           clearInterval(ao);
-          const { dataMax } = chartGet.xAxis[0].getExtremes(); //dataMin
+          const {dataMax} = chartGet.xAxis[0].getExtremes(); //dataMin
           begin = this.setSizeStock(listData);
           chartGet.xAxis[0].setExtremes(
-            data[begin]["date"],
-            dataMax,
-            false
+              data[begin]["date"],
+              dataMax,
+              false
           );
           chartGet.redraw();
-          
+
         }
       }, 100);
     },
@@ -2808,9 +2804,9 @@ export default {
           if (cH !== h) {
             let chartInstance = this.$refs.chartStock.chart;
             chartInstance.setSize(
-              $(".chartBox").width(),
-              $(".chartBox").height(),
-              true
+                $(".chartBox").width(),
+                $(".chartBox").height(),
+                true
             );
             chartGet = chartInstance;
           } else {
@@ -2822,7 +2818,7 @@ export default {
     },
 
     resizeBieuDo() {
-      this.sendMessage({ type: "getListData" });
+      this.sendMessage({type: "getListData"});
       if (window.innerWidth > 768) {
         deviceVersion = "pc";
       } else {
@@ -2830,21 +2826,21 @@ export default {
       }
       let chartInstance = this.$refs.chartStock.chart;
       chartInstance.setSize(
-        $(".chartBox").width(),
-        $(".chartBox").height(),
-        true
+          $(".chartBox").width(),
+          $(".chartBox").height(),
+          true
       );
       chartGet = chartInstance;
       this.$forceUpdate();
       this.setWidthHistoryBox();
     },
 
-    setWidthHistoryBox(){
-       const historyBox = document.querySelector(".historyBox");
-       const analysis = document.querySelector("#analysis-wrapper");
-       if(historyBox && historyBox.clientWidth){
-          historyBox.style.setProperty('--width', historyBox.clientWidth / analysis.clientWidth);
-       }
+    setWidthHistoryBox() {
+      const historyBox = document.querySelector(".historyBox");
+      const analysis = document.querySelector("#analysis-wrapper");
+      if (historyBox && historyBox.clientWidth) {
+        historyBox.style.setProperty('--width', historyBox.clientWidth / analysis.clientWidth);
+      }
     },
 
     onWindowLoad() {
@@ -2863,7 +2859,7 @@ export default {
 
       this.sendMessage({
         type: "accountDetail",
-        data: { uid: uidAcc, email: getData.email },
+        data: {uid: uidAcc, email: getData.email},
       });
 
       let notify = JSON.parse(localStorage.getItem("stateOpen"));
@@ -2913,24 +2909,24 @@ export default {
           let gData = res.data.data;
 
           (getData.uid = gData.id),
-            (getData.email = gData.email),
-            (getData.profile_image = gData.profile_image),
-            (getData.displayName = gData.nick_name),
-            (getData.uidLive = gData.order[1].u_id),
-            (getData.uidDemo = gData.order[0].u_id),
-            (getData.vip = gData.vip),
-            (getData.vip_lv = gData.level_vip),
-            (getData.pen_commiss = gData.pending_commission),
-            (getData.ref = gData.ref),
-            (getData.c2fa = gData.fa2),
-            (getData.id_front = gData.id_front),
-            (getData.id_back = gData.id_back),
-            (getData.first_name = gData.first_name),
-            (getData.last_name = gData.last_name),
-            (getData.verify = gData.verify),
-            (getData.num_secu = gData.num_secury),
-            (getData.country = gData.c),
-            (getData.blLive = gData.order[1].balance);
+              (getData.email = gData.email),
+              (getData.profile_image = gData.profile_image),
+              (getData.displayName = gData.nick_name),
+              (getData.uidLive = gData.order[1].u_id),
+              (getData.uidDemo = gData.order[0].u_id),
+              (getData.vip = gData.vip),
+              (getData.vip_lv = gData.level_vip),
+              (getData.pen_commiss = gData.pending_commission),
+              (getData.ref = gData.ref),
+              (getData.c2fa = gData.fa2),
+              (getData.id_front = gData.id_front),
+              (getData.id_back = gData.id_back),
+              (getData.first_name = gData.first_name),
+              (getData.last_name = gData.last_name),
+              (getData.verify = gData.verify),
+              (getData.num_secu = gData.num_secury),
+              (getData.country = gData.c),
+              (getData.blLive = gData.order[1].balance);
           getData.blDemo = gData.order[0].balance;
           (getData.balance = gData.balance), (getData.mkt = gData.mkt);
 
@@ -2946,7 +2942,7 @@ export default {
     //this.$store.dispatch('setToken', token)
     let streak = JSON.parse(localStorage.getItem('streak') || '{}');
     this.streak = streak.count || 0;
-    let acc = localStorage.getItem("BO_BALANCE_TYPE");  
+    let acc = localStorage.getItem("BO_BALANCE_TYPE");
     if (acc == "LIVE") {
       getData.isAccount = 1;
     } else {
@@ -3000,7 +2996,7 @@ export default {
       }
       if (data.type === "kq") {
         //console.log(dl);
-        if(getData.isAccount){
+        if (getData.isAccount) {
           this.setStreak(dl);
         }
         if (this.$store.state.forceWin || dl.kq == "win") {
@@ -3027,16 +3023,16 @@ export default {
         this.betOpen.l.bet[0].items = [];
         localStorage.removeItem("stateOpen");
         window.dispatchEvent(
-          new CustomEvent("stateOpen-localstorage-changed", {
-            detail: {
-              storage: undefined,
-            },
-          })
+            new CustomEvent("stateOpen-localstorage-changed", {
+              detail: {
+                storage: undefined,
+              },
+            })
         );
       }
       if (data.type === "mess") {
         if (dl.type == "bet") {
-          const color =  dl.style !== "danger" ? dl.style : "order_fail";
+          const color = dl.style !== "danger" ? dl.style : "order_fail";
           return this.$vs.notify({
             text: dl.mess,
             color: color,
@@ -3055,7 +3051,7 @@ export default {
             localStorage.removeItem("stateOpen");
             window.location.href = window.location.origin + "/login";
           }, 3000);
-          const color =  dl.style !== "danger" ? dl.style : "order_fail";
+          const color = dl.style !== "danger" ? dl.style : "order_fail";
           return this.$vs.notify({
             text: dl.mess,
             color: color,
@@ -3168,6 +3164,7 @@ export default {
   },
   mounted() {
     this.addSound();
+
     function debounce(func) {
       var timer;
       return function (event) {
@@ -3179,10 +3176,10 @@ export default {
     const self = this;
 
     window.addEventListener(
-      "resize",
-      debounce(function () {
-        self.resizeBieuDo();
-      })
+        "resize",
+        debounce(function () {
+          self.resizeBieuDo();
+        })
     );
     //window.addEventListener("load", this.setChartHeight);
 

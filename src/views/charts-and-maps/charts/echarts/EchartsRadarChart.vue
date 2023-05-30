@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-	File Name: EchartsRadarChart.vue
-	Description: Create Radar chart
-	----------------------------------------------------------------------------------------
-	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-	Author: Pixinvent
-	Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
 	<vx-card title="Radar Chart" class="" code-toggler>
 

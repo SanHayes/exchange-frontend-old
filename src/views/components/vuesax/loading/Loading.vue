@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: Loading.vue
-    Description: Loading - Imports all page portions
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <div id="loading-demo">
         <loading-default></loading-default>

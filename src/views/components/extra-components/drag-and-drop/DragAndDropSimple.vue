@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DragAndDropSimple.vue
-    Description: Simple Drag and Drop
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Simple" code-toggler>
         <p>Simple Draggable list with in sync to original list. Remove <code>list</code> prop to break synchronization with original list.</p>

@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: ButtonFilled.vue
-    Description: Filled buttons(Buttons with background color)
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Filled" code-toggler>
 

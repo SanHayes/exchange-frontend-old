@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-  File Name: ButtonGroupSize.vue.vue
-  Description: Buttons Group Size
-  ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-    Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
   <vx-card title="Sizing" code-toggler>
 

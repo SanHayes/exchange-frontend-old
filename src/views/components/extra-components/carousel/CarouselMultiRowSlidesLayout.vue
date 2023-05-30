@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: CarouselMultiRowSlidesLayout.vue
-    Description: Carousel with multiple row layout
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Multi Row Slides Layout" class="carousel-example" code-toggler>
           <!-- swiper -->

@@ -1,12 +1,3 @@
-<!-- =========================================================================================
-	File Name: ClipboardWithoutDirective.vue
-	Description: Clipboard demo without directive
-	----------------------------------------------------------------------------------------
-	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-	Author: Pixinvent
-	Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
 <template>
 	<vx-card title="Without directive" subtitle="You can copy text without a specific button. Use $copyText to copy text when event got fired." code-toggler>
 		<vs-input v-model="text2" class="inline-flex mb-2 mr-2" />

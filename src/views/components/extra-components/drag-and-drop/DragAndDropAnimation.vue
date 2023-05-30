@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DragAndDropAnimation.vue
-    Description: Add animation to drag and drop
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="With Animation" code-toggler>
         <p>Add animation to changes using <code>transition-group</code>.</p>

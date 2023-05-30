@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: VerticalNavMenuItem.vue
-    Description: Vertical NavMenu item component. Extends vuesax framework's 'vs-sidebar-item' component
-    Component Name: VerticalNavMenuItem
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-    Author: Sky Soft
-    Author URL: https://skysoft.pw
-========================================================================================== -->
-
 <template>
   <div id="leftSidebar" class="contentSidebar flex flex-col">
     <VuePerfectScrollbar

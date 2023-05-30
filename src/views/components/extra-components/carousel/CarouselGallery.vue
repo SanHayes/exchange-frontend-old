@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: CarouselGallery.vue
-    Description: Gallery Carousel demo
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Gallery" class="carousel-example-gallery" code-toggler>
         <div>

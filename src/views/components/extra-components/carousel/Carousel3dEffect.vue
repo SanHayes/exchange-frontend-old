@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: Carousel3dEffect.vue
-    Description: Carousel with 3D effect
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="3d Effect" class="carousel-example" code-toggler>
         <div class="swiper-inner">

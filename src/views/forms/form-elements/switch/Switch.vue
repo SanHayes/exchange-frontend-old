@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: Switch.vue
-    Description: Switch element - Imports all page portion
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <div id="form-element-switch-demo">
         <switch-state></switch-state>

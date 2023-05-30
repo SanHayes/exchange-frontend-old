@@ -1,12 +1,3 @@
-<!-- =========================================================================================
-    File Name: QuillEditorThemeSnow.vue
-    Description: Quill editor with snow theme
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
 <template>
   <vx-card title="Theme Snow" code-toggler>
     <p class="mb-5">Snow is a clean, flat toolbar theme</p>

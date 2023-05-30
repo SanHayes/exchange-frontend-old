@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-	File Name: CarouselParallax.vue
-	Description: Parallax Carousel demo
-	----------------------------------------------------------------------------------------
-	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-	Author: Pixinvent
-	Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Parallax" class="carousel-example" code-toggler>
         <!-- swiper -->

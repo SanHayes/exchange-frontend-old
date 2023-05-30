@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: NumberInputSize.vue
-    Description: Change size of number input
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Size" code-toggler>
 

@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: CarouselPagination.vue
-    Description: Carousel with pagination
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Pagination" class="carousel-example" code-toggler>
           <!-- swiper -->

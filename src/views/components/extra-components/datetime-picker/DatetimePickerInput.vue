@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatetimePickerInput.vue
-    Description: allow input in datetime picker
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-    Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Allow input in Picker" code-toggler>
         <p>Use <code>allowInput</code> to create Datepicker with input support</p>

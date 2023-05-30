@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatepickerRtl.vue
-    Description: Create RTL datepicker
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="RTL Datepicker" code-toggler>
         <p>Rendering RTL DatePicker using <code>language</code> prop</p>

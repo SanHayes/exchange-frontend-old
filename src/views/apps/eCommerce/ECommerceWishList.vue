@@ -1,12 +1,3 @@
-<!-- =========================================================================================
-	File Name: ECommerceWishList.vue
-	Description: eCommerce Wish List Page
-	----------------------------------------------------------------------------------------
-	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-	Author: Pixinvent
-	Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
 <template>
   <div id="ecommerce-wishlist-demo">
         <div class="items-grid-view vx-row match-height" v-if="wishListitems.length" appear>

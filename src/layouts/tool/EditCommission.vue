@@ -1,7 +1,6 @@
 <template>
   <div id="tool-edit-commisstion" class="data-list-container">
-
-    <template>
+<template>
  
         <div class="vx-row">
 

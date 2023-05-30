@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DragAndDropMultipleLists.vue
-    Description: Drag and Drop to multiple lists
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Multiple Lists" code-toggler>
         <p>Drag and drop items of more than one list. Add same <code>group</code> to <code>group</code> prop</p>

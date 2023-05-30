@@ -1,11 +1,3 @@
-<!-- =========================================================================================
-  Description: Data List - List View
-  ----------------------------------------------------------------------------------------
-  Item Name: Admin
-  Author: Ares
-  Author Telegram: @skydn93
-========================================================================================== -->
-
 <template>
   <div id="list-bet-trade" class="data-list-container">
     <!-- <vs-prompt title="Export To Excel" class="export-options" @cancle="clearFields" @accept="exportToExcel" accept-text="Export" @close="clearFields" :active.sync="activePrompt">

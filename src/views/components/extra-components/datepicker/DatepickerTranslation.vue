@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatepickerTranslation.vue
-    Description: Create datepicker for other languages
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Translation" code-toggler>
         <p>Date picker language: {{ languages[language].language }}</p>

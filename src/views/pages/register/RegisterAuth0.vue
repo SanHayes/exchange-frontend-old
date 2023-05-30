@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-File Name: RegisterJWT.vue
-Description: Register Page for JWT
-----------------------------------------------------------------------------------------
-Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-  Author: Pixinvent
-Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
   <vs-button class="mb-3 mt-4 ml-2" @click="registerAuth0" color="#eb5424">Auth0</vs-button>
 </template>

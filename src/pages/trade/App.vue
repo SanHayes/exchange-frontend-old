@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-	File Name: App.vue
-	Description: Main vue file - APP
-	----------------------------------------------------------------------------------------
-	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-	Author: Ares
-	Author URL: 
-========================================================================================== -->
-
-
 <template>
 	<div id="app" :class="vueAppClasses">
 		<router-view @setAppClasses="setAppClasses" />

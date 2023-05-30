@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: SliderRange.vue
-    Description: Add range to your sliders
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Range" code-toggler>
 

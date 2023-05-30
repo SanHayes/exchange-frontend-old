@@ -1,14 +1,6 @@
-<!-- =========================================================================================
-  Description: Data List - List View
-  ----------------------------------------------------------------------------------------
-  Item Name: Admin
-  Author: Đức Nguyễn
-  Author URL: @skydn93
-========================================================================================== -->
-
 <template>
   <div id="list-tool-setting" class="data-list-container">
-    <template>
+<template>
       <!-- <p>Sắp tới sẽ cập nhận liên quan tới hệ thống</p> -->
       <div class="vx-row">
         <div class="vx-col w-full mb-base">

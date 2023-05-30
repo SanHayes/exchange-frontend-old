@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: TodoAddNew.vue
-    Description: Add new todo component
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <div class="px-6 pb-2 pt-6">
     <vs-button @click="activePrompt = true" class="w-full">Add Task</vs-button>

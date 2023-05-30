@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: Email.vue
-    Description: Email Application (Inbox)
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <div id="email-app" class="border border-solid d-theme-border-grey-light rounded relative overflow-hidden">
 

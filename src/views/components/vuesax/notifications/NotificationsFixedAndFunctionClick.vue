@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: NotificationsFixedAndFunctionClick.vue
-    Description: Rendering of default notifications
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Fixed and function click" code-toggler>
 

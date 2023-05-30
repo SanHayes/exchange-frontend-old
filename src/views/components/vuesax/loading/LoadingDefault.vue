@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: LoadingDefault.vue
-    Description: Add default loading to your application
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Default" code-toggler>
 

@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: SwitchText.vue
-    Description: Add text to switch
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Text" code-toggler>
         <span>You can add a descriptive text with the slot <code>on</code> or <code>off</code>. You can also join the text with the icons.</span>

@@ -1,7 +1,6 @@
 <template>
   <div id="list-tool-setting" class="data-list-container">
-
-    <template>
+<template>
         <form>
         
             <div class="vx-row">

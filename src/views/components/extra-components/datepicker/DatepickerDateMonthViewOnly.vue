@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatepickerDateMonthViewOnly.vue
-    Description: Create datepicker with date and month view only
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Date and Month View Only" code-toggler>
         <p>Rendering default DatePicker with date and month view only</p>

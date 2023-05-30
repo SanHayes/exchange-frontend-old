@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatetimePickerDatetime.vue
-    Description: datetime picker
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-    Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Datetime Picker" code-toggler>
         <p>Rendering datetime picker by updating config</p>

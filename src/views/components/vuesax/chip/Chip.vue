@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: Chip.vue
-    Description: Chip - Imports all page portions
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <div id="chip-demo">
         <chip-default></chip-default>

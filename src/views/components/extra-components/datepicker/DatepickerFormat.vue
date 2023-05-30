@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatePickerFormat.vue
-    Description: Change datepicker format
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Format Datepicker" code-toggler>
         <p>Change datepicker format with <code>format</code></p>

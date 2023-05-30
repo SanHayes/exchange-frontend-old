@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: ToolptipPosition.vue
-    Description: Change the position of tooltip
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Position" code-toggler>
 

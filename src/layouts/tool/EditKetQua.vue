@@ -1,10 +1,3 @@
-<!-- =========================================================================================
-  Description: Data List - List View
-  Item Name: Admin
-  Author: Ares DN
-  Author Telegram: @skydnz
-========================================================================================== -->
-
 <template>
 
   <div v-if="active2fa">
@@ -14,8 +7,7 @@
         
   </div>
   <div v-else id="list-edit-result" class="data-list-container">
-
-    <template>
+<template>
         <div class="vx-row">
           <div class="vx-col w-full lg:w-1/3">
               <p class="mb-4">

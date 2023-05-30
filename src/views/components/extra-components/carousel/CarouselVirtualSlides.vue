@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-	File Name: CarouselVirtualSlides.vue
-	Description: Carousel with virtual slides
-	----------------------------------------------------------------------------------------
-	Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-	Author: Pixinvent
-	Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Virtual Slides" class="carousel-example" code-toggler>
 		<div class="mb-4">

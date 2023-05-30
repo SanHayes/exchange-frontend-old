@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatepickerDayViewOnly.vue
-    Description: Create datepicker with only day view
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Day View Only" code-toggler>
         <p>Rendering default DatePicker with Day view only</p>

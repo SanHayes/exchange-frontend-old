@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: TabsIcons.vue
-    Description: Display Tabs with Icons
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-    Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
   <vx-card title="Icons" code-toggler>
     <vs-tabs>

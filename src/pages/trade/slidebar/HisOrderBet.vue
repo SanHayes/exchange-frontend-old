@@ -1,12 +1,3 @@
-<!-- =========================================================================================
-  File Name: AddNewDataSidebar.vue
-  Description: Add New Data - Sidebar component
-  ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-  Author: Ares
-  Author URL:
-========================================================================================== -->
-
 <template>
   <vs-sidebar
     :hidden-background="!isSideBar"

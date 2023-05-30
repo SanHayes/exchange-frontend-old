@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: PaginationLinksLimit.vue
-    Description: Limit the amount of links shown
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Limit the amount of links shown" code-toggler>
 

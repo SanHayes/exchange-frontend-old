@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: PopupBackground.vue
-    Description: Change background when popup opens
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Background" code-toggler>
 

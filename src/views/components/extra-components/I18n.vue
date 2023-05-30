@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: i18n.vue
-    Description: I18n demo
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <div id="page-i18n">
         <vx-card title="Change Locale">

@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatetimePickerLocale.vue
-    Description: Create datetime picler according to locale
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-    Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Change Locale" code-toggler>
         <p>Import locale and set <code>locale</code> in config of picker to change locale.</p>

@@ -1,7 +1,6 @@
 <template>
   <div id="tool-add-money" class="data-list-container">
-
-    <template>
+<template>
  
         <div class="vx-row">
 

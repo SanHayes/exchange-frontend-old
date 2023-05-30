@@ -1,11 +1,3 @@
-<!-- =========================================================================================
-  File Name: AddNewDataSidebar.vue
-  Description: Add New Data - Sidebar component
-  Item Name:
-  Author: Ares DN
-  Author URL:
-========================================================================================== -->
-
 <template>
   <vs-sidebar
     click-not-close

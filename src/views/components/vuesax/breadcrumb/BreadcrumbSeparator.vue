@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: BreadcrumbSeparator.vue
-    Description: Change separator using separator directive
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Separator" code-toggler>
 

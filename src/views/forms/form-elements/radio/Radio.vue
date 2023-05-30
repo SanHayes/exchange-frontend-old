@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: Radio.vue
-    Description: Radio Element - Imports all page portions.
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <div id="form-element-radio-demo">
         <radio-default></radio-default>

@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatetimePickerTime.vue
-    Description: Only time picker
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-    Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Time Picker" code-toggler>
         <p>set <code>noCalendar</code> to <code>true</code> to hide calendar</p>

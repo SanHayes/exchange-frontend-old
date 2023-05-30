@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DragAndDropClone.vue
-    Description: Clone from one list to another
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Clone List" code-toggler>
         <p>Clone list items from another existing list. Add <code>pull</code> and <code>put</code> to <code>group</code> prop</p>

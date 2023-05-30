@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: FormValidationTypes.vue
-    Description: Validation types
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Validation types" code-toggler>
 

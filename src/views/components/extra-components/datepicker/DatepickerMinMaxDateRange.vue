@@ -1,13 +1,3 @@
-<!-- =========================================================================================
-    File Name: DatePickerMinMaxDateRange.vue
-    Description: Add min and max date range to datepicker
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Min-Max Date Range" code-toggler>
         <p>You can add min max date range to disable dates in number of ways: <a href="https://github.com/charliekassel/vuejs-datepicker#disabled-dates" target="_blank" rel="nofollow">docs</a></p>
