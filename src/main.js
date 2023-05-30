@@ -1,13 +1,3 @@
-/*=========================================================================================
-  File Name: main.js
-  Description: main vue(js) file
-  ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-  Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-==========================================================================================*/
-
-
 import Vue from 'vue'
 import App from './App.vue'
 
@@ -121,6 +111,14 @@ require('./assets/css/iconfont.css')
 // Note: In latest version you have to add it separately
 // import 'vue-select/dist/vue-select.css';
 
+if (process.env.NODE_ENV !== 'development') {
+    // eslint-disable-next-line no-console
+    console.log(
+        ` %c trading  %c LastBuildTime: ${__APP_INFO__['build_time']},commit:${__APP_INFO__['commit']} `,
+        'color: #fadfa3; background: #030307; padding:5px 0;',
+        'background: #fadfa3; padding:5px 0;'
+    )
+}
 
 Vue.config.productionTip = false
 

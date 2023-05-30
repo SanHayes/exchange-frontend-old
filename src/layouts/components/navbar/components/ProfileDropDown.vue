@@ -82,7 +82,7 @@
 </template>
 
 <script>
-//import firebase from 'firebase/app'
+//import firebase from 'firebase/compat/app'
 //import 'firebase/auth'
 
 import AuthenticationService from '@/services/AuthenticationService'
