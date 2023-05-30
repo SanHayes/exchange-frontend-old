@@ -2086,42 +2086,42 @@ export default {
       }
     },
 
-    getInfoLogin() {
-      AuthenticationService.getInfoUser().then((res) => {
-        if (res.data.success == 1) {
-          let dt = res.data.data;
+    async getInfoLogin() {
+      const res = await AuthenticationService.getInfoUser()
+      if (res.data.success == 1) {
+        let dt = res.data.data;
 
-          getData.uid = dt.id;
-          getData.email = dt.email;
-          getData.profile_image = dt.profile_image;
-          getData.displayName = dt.nick_name;
-          getData.uidLive = dt.order[1].u_id;
-          getData.uidDemo = (dt.order[0] || {}).u_id || 0;
-          getData.am_usdt = dt.b;
-          getData.vip = dt.vip;
-          getData.vip_lv = dt.level_vip;
-          getData.pen_commiss = dt.pending_commission;
-          getData.ref = dt.ref;
-          getData.upid = dt.upid;
-          getData.c2fa = dt.fa2;
-          getData.id_front = dt.id_front;
-          (getData.id_back = dt.id_back), (getData.first_name = dt.first_name);
-          getData.last_name = dt.last_name;
-          getData.verify = dt.verify;
-          getData.num_secu = dt.num_secury;
-          getData.country = dt.c;
-          getData.so_cmnd = dt.so_cmnd;
+        getData.uid = dt.id;
+        getData.email = dt.email;
+        getData.profile_image = dt.profile_image;
+        getData.displayName = dt.nick_name;
+        getData.uidLive = dt.order[1]?.u_id;
+        getData.uidDemo = (dt.order[0] || {})?.u_id || 0;
+        getData.am_usdt = dt.b;
+        getData.vip = dt.vip;
+        getData.vip_lv = dt.level_vip;
+        getData.pen_commiss = dt.pending_commission;
+        getData.ref = dt.ref;
+        getData.upid = dt.upid;
+        getData.c2fa = dt.fa2;
+        getData.id_front = dt.id_front;
+        (getData.id_back = dt.id_back), (getData.first_name = dt.first_name);
+        getData.last_name = dt.last_name;
+        getData.verify = dt.verify;
+        getData.num_secu = dt.num_secury;
+        getData.country = dt.c;
+        getData.so_cmnd = dt.so_cmnd;
 
-          getData.blLive = dt.order[1].balance;
-          getData.blDemo = (dt.order[0] || {}).balance || 0;
-          getData.balance = dt.balance;
+        getData.blLive = dt.order[1]?.balance;
+        getData.blDemo = (dt.order[0] || {})?.balance || 0;
+        getData.balance = dt.balance;
 
-          localStorage.setItem("INFO", JSON.stringify(dt));
-          //localStorage.removeItem('isLog')
+        localStorage.setItem("INFO", JSON.stringify(dt));
+        //localStorage.removeItem('isLog')
 
-          this.$router.push("/trading").catch(() => {});
-        }
-      });
+        console.log(`this.$router`, this.$router)
+        this.$router.push({path: "/trading"});
+      }
     },
 
     loginForm() {
@@ -2139,31 +2139,6 @@ export default {
           //     icon: 'icon-check',
           //     color: 'success'
           // });
-
-          // let gData = d.data;
-
-          // getData.uid= gData.id,
-          // getData.email= gData.email,
-          // getData.profile_image= gData.profile_image,
-          // getData.displayName= gData.nick_name,
-          // getData.uidLive= gData.order[1].u_id,
-          // getData.uidDemo= gData.order[0].u_id,
-          // getData.vip= gData.vip,
-          // getData.vip_lv= gData.level_vip,
-          // getData.pen_commiss= gData.pending_commission,
-          // getData.ref= gData.ref,
-          // getData.c2fa= gData.fa2,
-          // getData.id_front= gData.id_front,
-          // getData.id_back= gData.id_back,
-          // getData.first_name= gData.first_name,
-          // getData.last_name= gData.last_name,
-          // getData.verify= gData.verify,
-          // getData.num_secu= gData.num_secury,
-          // getData.country= gData.c,
-          // getData.blLive = gData.order[1].balance
-          // getData.blDemo = gData.order[0].balance
-          // getData.balance = gData.balance,
-          // getData.mkt = gData.mkt
 
           if (g.g_2fa) {
             this.isG2FA = g.g_2fa;
