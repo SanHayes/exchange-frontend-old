@@ -18,29 +18,32 @@ process.env.VUE_APP_INFO = JSON.stringify(info)
 module.exports = {
 
     pages: {
+        //前台
         index: {
             entry: "src/pages/index/main.js",
             template: "public/client/index.html",
             title: "Home",
             chunks: ["chunk-vendors", "chunk-common", "index"],
         },
-        //oibanoi
-        oibanoi: {
+        //后台
+        portal: {
             entry: "src/main.js",
             template: "public/index.html",
             title: "Admin",
-            chunks: ["chunk-vendors", "chunk-common", "oibanoi"], //portal
+            chunks: ["chunk-vendors", "chunk-common", "portal"],
         },
+        //不知道干嘛的
         daily: {
             entry: "src/dai-ly/main.js",
             template: "public/client/dai-ly.html",
             title: "Đại lý",
             chunks: ["chunk-vendors", "chunk-common", "daily"]
         },
+        //faq
         faqs: {
             entry: "src/faqs/main.js",
             template: "public/client/faqs.html",
-            title: "Gatediamon faqs",
+            title: "faqs",
             chunks: ["chunk-vendors", "chunk-common", "faqs"]
         },
     },

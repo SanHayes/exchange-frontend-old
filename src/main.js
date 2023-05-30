@@ -54,7 +54,7 @@ import '@/assets/css/main.css'
 
 
 // Vue Router
-import router from './router'
+import router from '@/router'
 
 
 // Vuex Store
