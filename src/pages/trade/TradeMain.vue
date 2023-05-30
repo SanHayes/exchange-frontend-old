@@ -406,8 +406,8 @@ export default {
           (getData.email = gData.email),
           (getData.profile_image = gData.profile_image),
           (getData.displayName = gData.nick_name),
-          (getData.uidLive = gData.order[1].u_id),
-          (getData.uidDemo = gData.order[0].u_id),
+          (getData.uidLive = gData.order[1]?.u_id),
+          (getData.uidDemo = gData.order[0]?.u_id),
           (getData.vip = gData.vip),
           (getData.vip_lv = gData.level_vip),
           (getData.pen_commiss = gData.pending_commission),
@@ -420,8 +420,8 @@ export default {
           (getData.verify = gData.verify),
           (getData.num_secu = gData.num_secury),
           (getData.country = gData.c),
-          (getData.blLive = gData.order[1].balance);
-        getData.blDemo = gData.order[0].balance;
+          (getData.blLive = gData.order[1]?.balance);
+        getData.blDemo = gData.order[0]?.balance ?? 0;
         (getData.balance = gData.balance), (getData.mkt = gData.mkt);
       }
     },
