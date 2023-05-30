@@ -2118,8 +2118,6 @@ export default {
 
         localStorage.setItem("INFO", JSON.stringify(dt));
         //localStorage.removeItem('isLog')
-
-        console.log(`this.$router`, this.$router)
         this.$router.push({path: "/trading"});
       }
     },
