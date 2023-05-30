@@ -14,6 +14,7 @@ Vue.use(Vuesax)
 
 // axios
 import axios from "./axios.js"
+
 Vue.prototype.$http = axios
 
 // API Calls
@@ -32,6 +33,7 @@ import '@/firebase/firebaseConfig'
 
 // Auth0 Plugin
 import AuthPlugin from "./plugins/auth";
+
 Vue.use(AuthPlugin);
 
 
@@ -69,22 +71,26 @@ import './filters/filters'
 
 // Clipboard
 import VueClipboard from 'vue-clipboard2'
+
 Vue.use(VueClipboard);
 
 
 // Tour
 import VueTour from 'vue-tour'
+
 Vue.use(VueTour)
 require('vue-tour/dist/vue-tour.css')
 
 
 // VeeValidate
 import VeeValidate from 'vee-validate';
+
 Vue.use(VeeValidate);
 
 
 // Google Maps
 import * as VueGoogleMaps from 'vue2-google-maps'
+
 Vue.use(VueGoogleMaps, {
     load: {
         // Add your API key here
@@ -94,7 +100,8 @@ Vue.use(VueGoogleMaps, {
 })
 
 // Vuejs - Vue wrapper for hammerjs
-import { VueHammer } from 'vue2-hammer'
+import {VueHammer} from 'vue2-hammer'
+
 Vue.use(VueHammer)
 
 
@@ -114,7 +121,7 @@ require('./assets/css/iconfont.css')
 if (process.env.NODE_ENV !== 'development') {
     // eslint-disable-next-line no-console
     console.log(
-        ` %c trading  %c LastBuildTime: ${__APP_INFO__['build_time']},commit:${__APP_INFO__['commit']} `,
+        ` %c trading-admin  %c LastBuildTime: ${__APP_INFO__['build_time']},commit:${__APP_INFO__['commit']} `,
         'color: #fadfa3; background: #030307; padding:5px 0;',
         'background: #fadfa3; padding:5px 0;'
     )
