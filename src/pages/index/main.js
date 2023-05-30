@@ -65,21 +65,24 @@ import '../../filters/filters'
 
 // Clipboard
 import VueClipboard from 'vue-clipboard2'
-Vue.use(VueClipboard);
 
+Vue.use(VueClipboard);
 
 
 // Auth0 Plugin
 import AuthPlugin from "../../plugins/auth";
+
 Vue.use(AuthPlugin);
 
 // Tour
 import VueTour from 'vue-tour'
+
 Vue.use(VueTour)
 require('vue-tour/dist/vue-tour.css')
 
 // Vuejs - Vue wrapper for hammerjs
-import { VueHammer } from 'vue2-hammer'
+import {VueHammer} from 'vue2-hammer'
+
 Vue.use(VueHammer)
 
 
@@ -94,15 +97,25 @@ require('../../assets/css/iconfont.css')
 
 // VeeValidate
 import VeeValidate from 'vee-validate';
+
 Vue.use(VeeValidate);
 
 Vue.config.productionTip = false
 
+
+if (process.env.NODE_ENV !== 'development') {
+    // eslint-disable-next-line no-console
+    console.log(
+        ` %c trading-index  %c LastBuildTime: ${__APP_INFO__['build_time']},commit:${__APP_INFO__['commit']} `,
+        'color: #fadfa3; background: #030307; padding:5px 0;',
+        'background: #fadfa3; padding:5px 0;'
+    )
+}
 
 new Vue({
     i18n,
     acl,
     store,
     router,
-  render: h => h(App)
+    render: h => h(App)
 }).$mount('#app') 

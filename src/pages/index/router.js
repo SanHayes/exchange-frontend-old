@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import {$t} from '@/i18n/client/i18n'
+
 //import auth from "@/auth/authService";
 
 //import firebase from 'firebase/compat/app'
@@ -14,7 +16,7 @@ const router = new Router({
     mode: 'history',
     base: '/',
     scrollBehavior() {
-        return { x: 0, y: 0 }
+        return {x: 0, y: 0}
     },
     routes: [
         {
@@ -122,7 +124,7 @@ const router = new Router({
                     name: 'client-index',
                     component: () => import('../../views/trading/Index.vue'),
                     meta: {
-                        title: 'Trading',
+                        title: $t(`Trade`),
                         requiresAuth: true
                     }
                 },
@@ -131,7 +133,7 @@ const router = new Router({
                     name: 'balance-user',
                     component: () => import('../../views/trading/Wallet.vue'),
                     meta: {
-                        title: 'Balance',
+                        title: $t(`Wallet`),
                         requiresAuth: true
                     }
                 },
@@ -168,7 +170,7 @@ const router = new Router({
                     name: 'championship',
                     component: () => import('../../views/trading/Championship.vue'),
                     meta: {
-                        title: 'Championship',
+                        title: $t(`Championship`),
                         requiresAuth: true
                     }
                 },
@@ -177,7 +179,7 @@ const router = new Router({
                     name: 'lucky',
                     component: () => import('../../views/trading/Lucky.vue'),
                     meta: {
-                        title: 'Lucky',
+                        title: $t(`DrawLuckyLots`),
                         requiresAuth: true
                     }
                 },
@@ -219,7 +221,7 @@ router.beforeEach((to, from, next) => {
     AuthenticationService.getStatusServer()
         .then((res) => {
             if (res.data.ok) {
-                return next({ name: 'maintenance-page' })
+                return next({name: 'maintenance-page'})
             }
         })
 
@@ -227,11 +229,11 @@ router.beforeEach((to, from, next) => {
         AuthenticationService.getActiveGames().then((res) => {
             const activeGames = res.data;
             if (to.name == "lucky" && !activeGames.lucky) {
-                return next({ name: "client-index" })
+                return next({name: "client-index"})
             }
 
             if (to.name == "championship" && !activeGames.champion) {
-                return next({ name: "client-index" })
+                return next({name: "client-index"})
             }
         });
     }
@@ -245,7 +247,7 @@ router.beforeEach((to, from, next) => {
         "reset-password-index",
         "reset-password-param-index"
     ].includes(to.name) && localStorage.hasOwnProperty("tokenUser")) {
-        return next({ name: "client-index" })
+        return next({name: "client-index"})
     }
     // firebase.auth().onAuthStateChanged(() => {
 
