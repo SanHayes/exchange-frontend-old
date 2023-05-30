@@ -267,8 +267,8 @@ export default {
             getData.email = dt.email;
             getData.profile_image = dt.profile_image;
             getData.displayName = dt.nick_name;
-            getData.uidLive = dt.order[1].u_id;
-            getData.uidDemo = dt.order[0].u_id;
+            getData.uidLive = dt.order[1]?.u_id;
+            getData.uidDemo = dt.order[0]?.u_id;
             getData.am_usdt = dt.b;
             getData.vip = dt.vip;
             getData.vip_lv = dt.level_vip;
@@ -285,8 +285,8 @@ export default {
             getData.country = dt.c;
             getData.so_cmnd = dt.so_cmnd;
 
-            getData.blLive = dt.order[1].balance;
-            getData.blDemo = dt.order[0].balance;
+            getData.blLive = dt.order[1]?.balance ?? 0;
+            getData.blDemo = dt.order[0]?.balance ?? 0;
             getData.balance = dt.balance;
 
             localStorage.setItem("INFO", JSON.stringify(dt));
@@ -420,7 +420,7 @@ export default {
           (getData.verify = gData.verify),
           (getData.num_secu = gData.num_secury),
           (getData.country = gData.c),
-          (getData.blLive = gData.order[1]?.balance);
+          (getData.blLive = gData.order[1]?.balance ?? 0);
         getData.blDemo = gData.order[0]?.balance ?? 0;
         (getData.balance = gData.balance), (getData.mkt = gData.mkt);
       }
