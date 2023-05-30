@@ -55,8 +55,14 @@ module.exports = {
             new Webpack.DefinePlugin({
                 __APP_INFO__: process.env.VUE_APP_INFO,
             }),
-        ]
-    }
+        ],
+        cache: {
+            type: "filesystem",
+        },
+    },
+
+    transpileDependencies: true,
+
     //cssSourceMap: false,
     // publicPath: '/',
     // transpileDependencies: [
