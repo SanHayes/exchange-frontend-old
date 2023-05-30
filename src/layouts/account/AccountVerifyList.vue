@@ -151,7 +151,7 @@
 <script>
 //import DataViewSidebar from '@/views/ui-elements/data-list/DataViewSidebar.vue'
 import AuthenticationService from '@/services/AuthenticationService'
-import config from '@/config.json';
+import config from '@/config';
 
 export default {
   // components: {
@@ -245,7 +245,7 @@ export default {
     },
     mediaType(img) {
       if(img != null) {
-        return this.dm + 'api/auth/me/photo/passport/' + img
+        return `${this.dm}/api/auth/me/photo/passport/${img}`
       }else{
         return this.imgLinkDef
       }
@@ -253,7 +253,7 @@ export default {
     getPopupViewImg(link){
 
       if(link != null){
-        this.imgLink = this.dm + 'api/auth/me/photo/passport/' + link
+        this.imgLink = `${this.dm}/api/auth/me/photo/passport/${link}`
       }else{
         this.imgLink = this.imgLinkDef
       }

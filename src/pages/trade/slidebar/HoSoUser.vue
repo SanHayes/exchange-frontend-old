@@ -262,7 +262,7 @@ import HoSoSetting from "@/pages/trade/slidebar/HoSoSetting.vue";
 import AuthenticationService from "@/services/AuthenticationService";
 import getData from "@/pages/trade/navbar/components/data.json";
 import GoogleAuth from "@/pages/trade/slidebar/2FAGoogle";
-import config from "@/config.json";
+import config from "@/config";
 
 export default {
   props: {

@@ -139,7 +139,7 @@ import "quill/dist/quill.core.css";
 import "quill/dist/quill.snow.css";
 import "quill/dist/quill.bubble.css";
 import moment from "moment";
-import config from '@/config.json';
+import config from '@/config';
 
 import { quillEditor } from "vue-quill-editor";
 
@@ -202,7 +202,7 @@ export default {
       if (background.startsWith("blob:")) {
         return background;
       }
-      return this.dm + "api/auth/photo/champions/" + background;
+      return `${this.dm}/api/auth/photo/champions/${background}`;
     }
   },
   methods: {

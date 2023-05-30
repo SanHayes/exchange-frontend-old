@@ -1311,7 +1311,7 @@ import stockInit from "highcharts/modules/stock";
 import loadIndicatorsAll from "highcharts/indicators/indicators";
 import { isMobile, isTablet } from "mobile-device-detect";
 import getData from "@/pages/trade/navbar/components/data.json";
-import config from "@/config.json";
+import config from "@/config";
 import Vue from "vue";
 import AuthenticationService from "@/services/AuthenticationService";
 

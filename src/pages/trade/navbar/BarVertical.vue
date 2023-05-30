@@ -83,7 +83,7 @@
 import Profile from "./components/Profile";
 import Logo from "./Logo.vue";
 import AuthenticationService from "@/services/AuthenticationService";
-import config from "@/config.json";
+import config from "@/config";
 
 export default {
   name: "the-navbar-vertical",

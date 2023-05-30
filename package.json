@@ -31,6 +31,7 @@
     "jsonwebtoken": "^8.5.1",
     "material-icons": "^0.3.1",
     "mobile-device-detect": "^0.4.3",
+    "moment": "^2.29.4",
     "perfect-scrollbar": "^1.4.0",
     "postcss-rtl": "^1.5.0",
     "prismjs": "^1.16.0",

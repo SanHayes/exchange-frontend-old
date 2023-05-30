@@ -247,7 +247,7 @@ import VuePerfectScrollbar from "vue-perfect-scrollbar";
 import AuthenticationService from "@/services/AuthenticationService";
 import getData from "@/pages/trade/navbar/components/data.json";
 import moment from "moment";
-import config from "@/config.json";
+import config from "@/config";
 
 moment.updateLocale("en", {
   relativeTime: {

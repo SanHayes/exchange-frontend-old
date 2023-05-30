@@ -1742,7 +1742,7 @@ import Datepicker from "vuejs-datepicker";
 import vSelect from "vue-select";
 import moment from "moment";
 import getData from "@/pages/trade/navbar/components/data.json";
-import config from "@/config.json";
+import config from "@/config";
 
 import { Chart } from "highcharts-vue";
 import Highcharts from "highcharts";

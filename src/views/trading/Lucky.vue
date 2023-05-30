@@ -948,7 +948,7 @@
 <script>
 import moment from "moment";
 import AuthenticationService from "@/services/AuthenticationService";
-import config from '@/config.json'
+import config from '@/config'
 
 export default {
   data() {

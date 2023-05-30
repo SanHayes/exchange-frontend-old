@@ -214,7 +214,7 @@
 <script>
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
 import AuthenticationService from '@/services/AuthenticationService'
-import config from '@/config.json';
+import config from '@/config';
 
 export default {
   props: {

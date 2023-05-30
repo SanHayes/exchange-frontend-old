@@ -223,7 +223,7 @@
 </template>
 
 <script>
-import config from "@/config.json";
+import config from "@/config";
 import AuthenticationService from "@/services/AuthenticationService";
 
 export default {

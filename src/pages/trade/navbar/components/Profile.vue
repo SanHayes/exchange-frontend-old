@@ -845,7 +845,7 @@ import AuthenticationService from "@/services/AuthenticationService";
 import I18n from "./i18n";
 import NotificationDropDown from "@/pages/user/NotifiDropDown.vue";
 //import { gsap } from "gsap"
-import config from '@/config.json';
+import config from '@/config';
 
 export default {
   components: {

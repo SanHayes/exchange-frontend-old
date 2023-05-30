@@ -408,7 +408,7 @@
 </template>
 
 <script>
-import config from "@/config.json";
+import config from "@/config";
 import AuthenticationService from "@/services/AuthenticationService";
 import GoogleAuth from "./Google2FA.vue";
 import VuePerfectScrollbar from "vue-perfect-scrollbar";

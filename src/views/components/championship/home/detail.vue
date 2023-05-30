@@ -187,7 +187,7 @@
 
 <script>
 import moment from "moment";
-import config from '@/config.json';
+import config from '@/config';
 
 export default {
   props: {
@@ -235,7 +235,7 @@ export default {
   },
   computed: {
     bg() {
-      return this.dm + 'api/auth/photo/champions/' + this.champion.background;
+      return `${this.dm}/api/auth/photo/champions/${this.champion.background}`;
     }
   },
   filters: {

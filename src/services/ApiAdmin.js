@@ -1,6 +1,6 @@
 // axios
 import axios from 'axios'
-import config from '@/config.json';
+import config from '@/config';
 
 export default () => {
     return axios.create({

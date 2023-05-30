@@ -1203,7 +1203,7 @@ import getData from "@/pages/trade/navbar/components/data.json";
 import AuthenticationService from "@/services/AuthenticationService";
 import getSetSys from "@/services/settingSys.json";
 import moment from "moment";
-import config from "@/config.json";
+import config from "@/config";
 
 export default {
   components: {

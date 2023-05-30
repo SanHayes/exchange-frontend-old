@@ -129,7 +129,7 @@
 </template>
 
 <script>
-import config from "@/config.json";
+import config from "@/config";
 import LogRegForGet from "@/pages/user/LogRegForGet";
 export default {
   data() {

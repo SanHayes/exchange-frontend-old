@@ -177,7 +177,7 @@ import AuthenticationService from "@/services/AuthenticationService";
 import { FormWizard, TabContent } from "vue-form-wizard";
 import "vue-form-wizard/dist/vue-form-wizard.min.css";
 import getData from "@/pages/trade/navbar/components/data.json";
-import config from "@/config.json";
+import config from "@/config";
 
 export default {
   props: {
