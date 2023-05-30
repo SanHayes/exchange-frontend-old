@@ -665,9 +665,10 @@ export default {
 };
 </script>
 
-<style scoped src="bootstrap/dist/css/bootstrap.css"></style>
+<!--todo 先注释下面两个样式引入，不然报错-->
+<!--<style scoped src="bootstrap/dist/css/bootstrap.css"></style>-->
 
-<style scoped src="bootstrap-vue/dist/bootstrap-vue.css"></style>
+<!--<style scoped src="bootstrap-vue/dist/bootstrap-vue.css"></style>-->
 
 <style scoped lang="scss">
 .text-danger {

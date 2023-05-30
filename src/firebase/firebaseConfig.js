@@ -2,10 +2,10 @@
 // Please use your own firebase details below. For more details visit: https://pixinvent.com/demo/vuexy-vuejs-admin-dashboard-template/documentation/development/firebaseIntegration.html
 
 import Vue from "vue";
-import firebase from 'firebase/app'
+import {initializeApp} from 'firebase/app'
 
 // Initialize Firebase
-var config = {
+const config = {
     apiKey: "AIzaSyBLkwTvPIH1RCuYSDdB-CLv-NTqL8lKBE8",
     authDomain: "trade-bo.firebaseapp.com",
     projectId: "trade-bo",
@@ -17,4 +17,4 @@ var config = {
 
 Vue.config.productionTip = false;
 
-firebase.initializeApp(config);
+initializeApp(config);

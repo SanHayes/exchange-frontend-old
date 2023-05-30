@@ -32,7 +32,7 @@ import store from '../../store/storeMain'
 import "../../http/requests"
 
 // mock
-import "../../fake-db/index.js"
+// import "../../fake-db/index.js"
 
 // Firebase
 import '@/firebase/firebaseConfig'
