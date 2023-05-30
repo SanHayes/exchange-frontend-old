@@ -82,7 +82,7 @@
 .header {
   min-height: 340px;
   position: relative;
-  background: url(/landing/img/BackgroundFAQs.jpg) no-repeat;
+  background: url('~@/assets/images/landing/BackgroundFAQs.jpg') no-repeat;
   background-size: cover;
   .container {
     position: absolute;
