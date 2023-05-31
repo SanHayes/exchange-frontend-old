@@ -150,7 +150,7 @@
 </template>
 
 <script>
-import { videoPlayer } from 'vue-video-player'
+import VideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
 
 export default{
@@ -312,7 +312,7 @@ export default{
     },
     methods: {},
     components: {
-        videoPlayer,
+      VideoPlayer,
     }
 }
 </script>
