@@ -293,14 +293,12 @@
 .title-wraps{
   position: absolute;
   left: 0;
-  top: 0;
+  top: 20px;
   z-index: 1;
-  width: 100%;
 }
 .titleChartCandle {
   background-color: #2f3242;
   display: inline-flex;
-  margin-left: 10px;
   padding: 5px;
 }
 
@@ -308,7 +306,6 @@
   display: inline-flex;
   width: 20px;
   height: 20px;
-  margin-right: 4px;
   // background-image: url('https://chveus.me/img/crude-oil--big.cfa8517e.svg');
   background-repeat: no-repeat;
   background-position: center;

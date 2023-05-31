@@ -855,6 +855,7 @@ const stockChart = {
     type: 'datetime',
     labels: {
       enabled: true,
+      padding: 0,
       formatter() {
         return Highcharts.dateFormat('%M:%S', this.value);
       },
@@ -875,7 +876,7 @@ const stockChart = {
     ],
     lineWidth: 0,
     minorGridLineWidth: 0,
-    lineColor: '#243140',
+    lineColor: 'transparent',
     minorTickLength: 0,
     tickLength: 0,
     gridLineColor: '#243140',
