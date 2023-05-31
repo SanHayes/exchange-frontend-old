@@ -852,7 +852,6 @@ const stockChart = {
     }
   },
   xAxis: {
-    minRange: 30 * 24,
     type: 'datetime',
     labels: {
       enabled: true,
@@ -860,7 +859,7 @@ const stockChart = {
         return Highcharts.dateFormat('%M:%S', this.value);
       },
       style: {
-        fontSize: 12,
+        fontSize: 10,
         color: '#707070'
       }
     },
