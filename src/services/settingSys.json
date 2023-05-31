@@ -15,7 +15,7 @@
     "typeCurrUseSys": "usdt",
     "minDepositBTC": 0,
     "minDepositETH": 0,
-    "minDepositUSDT": 0,
+    "minDepositUSDT": 500000,
     "minDepositPaypal": 0,
     "minWithdrawalBTC": 0,
     "minWithdrawalETH": 0,

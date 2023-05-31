@@ -275,15 +275,16 @@
                 </div>
               </div>
             </div>
+            <!--充值弹框开始-->
             <div v-if="isVND" :class="isMobile ? 'scrollMobile' : ''">
               <div class="deposit_widthdraw_box" v-if="activeNRT">
                 <div class="form-group relative mt-4">
-                  <h4 class="colorSecondary2">Giá trị USD</h4>
+                  <!--<h4 class="colorSecondary2">Giá trị USD</h4>-->
                   <input
                     type="number"
                     v-model="amount"
                     decimal="true"
-                    :placeholder="`Số tiền tối thiểu: ${getSetSys.minDepositUSDT} USDT`"
+                    :placeholder="`Số tiền tối thiểu: ${getSetSys.minDepositUSDT}`"
                     class="form-control"
                   />
                 </div>
@@ -293,14 +294,14 @@
                       Để thanh toán bạn vui lòng chuyển tiền theo nội dung
                       {{ bank }}
                     </div>
-                    <div>
+                   <!-- <div>
                       Với số tiền
                       <b>{{
                         formatPrice(getSetSys.quotePriceVND * amount, 0)
                       }}</b>
                       VNĐ
-                    </div>
-                    <pre v-html="bankInfo"></pre>
+                    </div>-->
+                    <!--<pre v-html="bankInfo"></pre>-->
                   </div>
                   <div>
                     <b
@@ -312,12 +313,12 @@
                     >* Lưu ý: Hệ thống sẽ không chịu trách nhiệm nếu bạn gửi sai
                     nội dung!</i
                   >
-                  <span class="noted"
+                 <!-- <span class="noted"
                     >1 USD =
                     {{ formatPrice(getSetSys.quotePriceVND, 0) }} VNĐ</span
-                  >
+                  >-->
                   <vs-button
-                    class="buttonCommon greenButton"
+                    class="buttonCommon greenButton mt-5"
                     :class="{ hidden: isNap }"
                     type="filled"
                     @click="DepositVND()"
@@ -780,7 +781,7 @@ export default {
     DepositVND() {
       if (this.amount < getSetSys.minDepositUSDT) {
         return this.$vs.notify({
-          text: `Số tiền nạp tối thiểu là $${getSetSys.minDepositUSDT}.`,
+          text: `Số tiền nạp tối thiểu là ${getSetSys.minDepositUSDT}.`,
           iconPack: "feather",
           icon: "icon-check",
           position: "top-right",

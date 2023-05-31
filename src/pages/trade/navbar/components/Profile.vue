@@ -8,16 +8,16 @@
       <p class="font-semibold">{{ activeUserInfo.displayName }}</p>
      <small>Available</small>
     </div> -->
-    <div class="streak">
+   <!-- <div class="streak">
       <div class="nav-streak-rewards">
-        <!-- <router-link to="/streak-challenge"> -->
+        &lt;!&ndash; <router-link to="/streak-challenge"> &ndash;&gt;
           <span class="nav-streak-rewards-label d-block"> Prize Pool </span>
           <span class="nav-streak-rewards-value d-block">${{ this.nFormatter(prize, 2) }}</span>
-        <!-- </router-link> -->
+        &lt;!&ndash; </router-link> &ndash;&gt;
       </div>
-    </div>
+    </div>-->
 
-    <div class="info-money">
+    <!--<div class="info-money">
       <vs-dropdown vs-custom-content vs-trigger-click>
         <div class="money-i">
           <div class="wrapper-money">
@@ -146,12 +146,13 @@
           </div>
         </vs-dropdown-menu>
       </vs-dropdown>
-    </div>
+    </div>-->
 
     <div class="maddmoney con-img ml-3 mr-3">
       <vs-button
         class="add-money"
-        @click="(popupActiveNapNhanh = true), getBalanceWalletClick()"
+        @click="(popupActiveNapNhanh = true), getBalanceWalletClick(),(getSetSys.isDepositOpen = true),
+                              (getSetSys.isWithdraOpen = false)"
       >
         <span class="nowrap">{{ isMobile ? "Nạp" : "Nạp nhanh" }}</span>
       </vs-button>
@@ -659,12 +660,13 @@
         </ul>
       </vs-dropdown-menu>
     </vs-dropdown>-->
-    <vs-popup
+    <vs-prompt
       class="qDeposit"
-      title="Nạp Nhanh"
+      title=""
+      :buttons-hidden="true"
       :active.sync="popupActiveNapNhanh"
     >
-      <div class="relative">
+      <!--<div class="relative">
         <vs-button
           color="#38495d"
           type="filled"
@@ -724,8 +726,9 @@
         <p class="noticeDeposit text-center mt-2">
           <small>*Giá báo có thể thay đổi</small>
         </p>
-      </div>
-    </vs-popup>
+      </div>-->
+      <nap-rut-tien money-type="VND" />
+    </vs-prompt>
     <vs-popup
       class="text-center"
       :title="null"
@@ -846,9 +849,12 @@ import I18n from "./i18n";
 import NotificationDropDown from "@/pages/user/NotifiDropDown.vue";
 //import { gsap } from "gsap"
 import config from '@/config';
+import NapRutTien from '@/pages/trade/slidebar/NapRutTien.vue';
+import getSetSys from "@/services/settingSys.json";
 
 export default {
   components: {
+    NapRutTien,
     I18n,
     HoSoUserInfo,
     NotificationDropDown,
@@ -864,7 +870,7 @@ export default {
       amountAcc: 0,
       amountAccLive: 0,
       enterAmount: "",
-
+      getSetSys: getSetSys,
       isMenuMobie: false,
       switchAmThanh: true,
       popupActiveCaiDat: false,
@@ -1838,7 +1844,7 @@ export default {
 }
 
 .qDeposit .vs-popup {
-  width: 300px !important;
+  //width: 300px !important;
 }
 .qDeposit .vs-button--text {
   width: 100%;

@@ -1722,7 +1722,8 @@ export default {
 
         getSetSys.minDepositBTC = g.mDBTC; // nạp tiền tối thiểu
         getSetSys.minDepositETH = g.mDETH; // nạp tiền tối thiểu
-        getSetSys.minDepositUSDT = g.mDUSDT; // nạp tiền tối thiểu
+        // 写死
+        // getSetSys.minDepositUSDT = g.mDUSDT; // nạp tiền tối thiểu
         getSetSys.minDepositPaypal = g.mDPaypal; // nạp tiền tối thiểu
 
         getSetSys.minWithdrawalBTC = g.mWBTC; // rút tiền tối thiểu
