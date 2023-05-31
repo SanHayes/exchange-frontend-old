@@ -1223,8 +1223,8 @@ export default {
   text-transform: capitalize;
   & > span:first-child {
     svg {
-      height: 22px !important;
-      width: 22px !important;
+      height: 18px !important;
+      width: 18px !important;
     }
     display: flex;
     align-items: center;
