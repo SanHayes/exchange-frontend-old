@@ -823,7 +823,7 @@
           <div class="showV" :class="{ block: showVGD }">
             <div class="contentBox">
               <div class="vx-row">
-                <div class="vx-col w-full lg:w-1/2 mt-4">
+                <div class="vx-col w-full lg:w-2/2 mt-4">
                   <div class="background backgroundImg backgroundLive">
                     <div
                       class="content flex flex-col justify-center items-center"
