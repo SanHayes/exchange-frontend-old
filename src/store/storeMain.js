@@ -85,7 +85,7 @@ export default new Vuex.Store({
     isRenderdTradeIndex: false,
     forceWin: false, // Nếu TK MKT sẽ có thêm mục bắt phải thắng
     isScrollTrading: true, // Ngăn không cho trading scroll
-    accountType: 0,
+    accountType: 1,
   },
   mutations: {
     // ////////////////////////////////////////////

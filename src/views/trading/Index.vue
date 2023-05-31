@@ -1902,8 +1902,9 @@ export default {
     },
 
     clearBAmount() {
-      this.tinhloinhuan(10);
-      this.betAmount = 10;
+      const {code} = this.selectedAmount
+      this.tinhloinhuan(code / this.multiple);
+      this.betAmount = code;
     },
 
     clickCT(amount) {

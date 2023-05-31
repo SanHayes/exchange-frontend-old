@@ -1390,7 +1390,7 @@ export default {
     this.blanceStart = this.isAcc ? getData.blLive : getData.blDemo;
 
     let acc = localStorage.getItem("BO_BALANCE_TYPE");
-    if (acc == "LIVE") {
+    if (acc !== "DEMO") {
       this.isAcc = getData.isAccount = 1;
       this.$store.commit("SET_ACCOUNT_TYPE", 1);
     } else {
