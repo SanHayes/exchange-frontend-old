@@ -1525,9 +1525,11 @@ export default {
   },
   computed: {
     seconDown() {
+      const getData = this.blObj
       return getData.countDown;
     },
     textTimeDown() {
+      const getData = this.blObj
       return getData.textTimeDown;
     },
     isOpenSideBar() {
@@ -1669,16 +1671,18 @@ export default {
     },
 
     changeBlance(v) {
+      const getData = this.blObj
       if (getData.isAccount) {
         getData.blLive = getData.blLive - v;
       } else {
         getData.blDemo = getData.blDemo - v;
       }
 
-      this.balanceForuser = getData.blDemo;
+      this.balanceForuser = getData.isAccount ? getData.blLive : getData.blDemo;
     },
 
     checkBet(v) {
+      const getData = this.blObj
       // lấy tổng số dư của tài khoản
       let sodu = getData.isAccount ? getData.blLive : getData.blDemo;
 
@@ -1688,8 +1692,8 @@ export default {
     },
 
     BetBuySell(v) {
-      this.playAudio('order');
-
+      this.playAudio("order");
+      const getData = this.blObj
       if (getData.countDown <= 1) {
         return this.$vs.notify({
           text: 'Vui lòng đợi phiên sau!',
@@ -1969,6 +1973,7 @@ export default {
     },
 
     updateCandleStickChart(boPrice) {
+      const getData = this.blObj
       var chartInstance = chartGet;
 
       try {
@@ -2257,12 +2262,13 @@ export default {
     },
 
     onWindowLoad() {
+      const getData = this.blObj
       let uidLive = getData.uidLive;
       let uidDemo = getData.uidDemo;
       let uidAcc = 0;
 
-      let acc = localStorage.getItem('BO_BALANCE_TYPE');
-      if (acc == 'LIVE') {
+      let acc = localStorage.getItem("BO_BALANCE_TYPE");
+      if (acc != "DEMO") {
         getData.isAccount = 1;
       } else {
         getData.isAccount = 0;
@@ -2317,6 +2323,7 @@ export default {
     },
 
     getUserInfo() {
+      const getData = this.blObj
       AuthenticationService.getInfoUser().then((res) => {
         if (res.data.success == 1) {
           let gData = res.data.data;
@@ -2351,12 +2358,13 @@ export default {
     }
   },
   created() {
+    const getData = this.blObj
     //let token = localStorage.getItem('token')
     //this.$store.dispatch('setToken', token)
     let streak = JSON.parse(localStorage.getItem('streak') || '{}');
     this.streak = streak.count || 0;
-    let acc = localStorage.getItem('BO_BALANCE_TYPE');
-    if (acc == 'LIVE') {
+    let acc = localStorage.getItem("BO_BALANCE_TYPE");
+    if (acc != "DEMO") {
       getData.isAccount = 1;
     } else {
       getData.isAccount = 0;
