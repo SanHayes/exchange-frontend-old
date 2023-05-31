@@ -65,14 +65,14 @@
           <div class="relative chartBox">
             <highcharts ref="chartStock" class="wap-chart trans" :constructor-type="'stockChart'" :options="chartOptionsStock"></highcharts>
             <div class="title-wraps">
-              <div class="titleChartCandle items-center">
+              <!-- <div class="titleChartCandle items-center">
                 <span class="iconBTC"></span>
                 <span class="textPrice">USOIL</span>
               </div>
               <div class="titleChartCandle items-center">
                 <span class="iconBTC"></span>
                 <span class="textPrice">UKOIL</span>
-              </div>
+              </div> -->
               <div class="titleChartCandle items-center">
                 <span class="iconBTC"></span>
                 <span class="textPrice">BTC/USDT</span>
