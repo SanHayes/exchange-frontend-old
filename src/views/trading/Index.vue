@@ -1,55 +1,58 @@
 <template>
   <div
-    id="tradePage"
-    v-scroll-lock="$store.state.isScrollTrading"
-    class="trade-container relative"
+      id="tradePage"
+      v-scroll-lock="$store.state.isScrollTrading"
+      class="trade-container relative"
   >
     <div class="streak" v-if="streak"><span class="streak-title">streak</span>
-    <div class="ep-container" style="width: 32px; height: 32px;">
+      <div class="ep-container" style="width: 32px; height: 32px;">
         <div class="ep-content">
-            <div class="ep-svg-container"><svg height="32" width="32" xmlns="http://www.w3.org/2000/svg" class="ep-svg">
-                    <g class="ep-circle--container">
-                        <defs>
-                        </defs>
-                        <g class="ep-circle"
-                            style="transition-timing-function: ease-in-out; transform: rotate(-90deg);">
-                            <circle r="15.2" cx="16" cy="16" stroke="#617F8D" stroke-dasharray="" fill="#06354C"
-                                stroke-width="1.6" class="ep-circle--empty"
-                                style="transition-duration: 1000ms; transition-timing-function: ease-in-out;"></circle>
-                            <circle r="15.2" cx="16" cy="16" fill="transparent" stroke="#2AE6D8" stroke-width="1.6"
-                                stroke-linecap="round" stroke-dasharray="95.50441666912971"
-                                class="ep-circle--progress animation__default"
-                                :style="{'stroke-dashoffset': 96 - (96 / 9 * streak)}"
-                                style="transition: all 1000ms ease-in-out 0s, opacity 0.3s 0s; transform-origin: 50% 50%; opacity: 1; --ep-circumference:95.5044; --ep-negative-circumference:-95.5044; --ep-double-circumference:191.009; --ep-stroke-offset:84.8928; --ep-loop-stroke-offset:-106.116; --ep-bounce-out-stroke-offset:0; --ep-bounce-in-stroke-offset:84.8928; --ep-reverse-stroke-offset:275.902; --ep-loading-stroke-offset:19.1009; animation-duration: 1000ms;">
-                              
-                            </circle>
-                        </g>
-                    </g>
-                </svg>
-            </div>
-            <div class="ep-legend--container" style="max-width: 32px;">
-                <div class="ep-legend--value"><span class="ep-legend--value__counter">
+          <div class="ep-svg-container">
+            <svg height="32" width="32" xmlns="http://www.w3.org/2000/svg" class="ep-svg">
+              <g class="ep-circle--container">
+                <defs>
+                </defs>
+                <g class="ep-circle"
+                   style="transition-timing-function: ease-in-out; transform: rotate(-90deg);">
+                  <circle r="15.2" cx="16" cy="16" stroke="#617F8D" stroke-dasharray="" fill="#06354C"
+                          stroke-width="1.6" class="ep-circle--empty"
+                          style="transition-duration: 1000ms; transition-timing-function: ease-in-out;"></circle>
+                  <circle r="15.2" cx="16" cy="16" fill="transparent" stroke="#2AE6D8" stroke-width="1.6"
+                          stroke-linecap="round" stroke-dasharray="95.50441666912971"
+                          class="ep-circle--progress animation__default"
+                          :style="{'stroke-dashoffset': 96 - (96 / 9 * streak)}"
+                          style="transition: all 1000ms ease-in-out 0s, opacity 0.3s 0s; transform-origin: 50% 50%; opacity: 1; --ep-circumference:95.5044; --ep-negative-circumference:-95.5044; --ep-double-circumference:191.009; --ep-stroke-offset:84.8928; --ep-loop-stroke-offset:-106.116; --ep-bounce-out-stroke-offset:0; --ep-bounce-in-stroke-offset:84.8928; --ep-reverse-stroke-offset:275.902; --ep-loading-stroke-offset:19.1009; animation-duration: 1000ms;">
+
+                  </circle>
+                </g>
+              </g>
+            </svg>
+          </div>
+          <div class="ep-legend--container" style="max-width: 32px;">
+            <div class="ep-legend--value"><span class="ep-legend--value__counter">
                         <span>11.11111111111111</span>
-                    </span><span class="streak-value">x<span>{{streak}}</span></span></div>
-                </div>
-            </div>
-        </div><canvas id="canvas-fire"></canvas><svg id="svg-fire" xmlns="http://www.w3.org/2000/svg" version="1.1">
-            <filter id="goo">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"></feGaussianBlur>
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 60 -9">
-                </feColorMatrix>
-            </filter>
-        </svg>
+                    </span><span class="streak-value">x<span>{{ streak }}</span></span></div>
+          </div>
+        </div>
+      </div>
+      <canvas id="canvas-fire"></canvas>
+      <svg id="svg-fire" xmlns="http://www.w3.org/2000/svg" version="1.1">
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="7" result="blur"></feGaussianBlur>
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 60 -9">
+          </feColorMatrix>
+        </filter>
+      </svg>
     </div>
     <div class="vx-row m-0 wrapper">
       <div :class="['vx-col w-full relative trans']" id="left-content">
         <div class="h-full">
           <div class="relative chartBox">
             <highcharts
-              ref="chartStock"
-              class="wap-chart trans"
-              :constructor-type="'stockChart'"
-              :options="chartOptionsStock"
+                ref="chartStock"
+                class="wap-chart trans"
+                :constructor-type="'stockChart'"
+                :options="chartOptionsStock"
             ></highcharts>
             <div class="titleChartCandle flex items-center">
               <span class="iconBTC"></span>
@@ -58,22 +61,22 @@
             <div class="slider sidebarMobile">
               <div class="slidercontent">
                 <div
-                  class="backgroundOverlay"
-                  :style="`background-image: url(${require('@/assets/images/sky/overlay_left.svg')});`"
+                    class="backgroundOverlay"
+                    :style="`background-image: url(${require('@/assets/images/sky/overlay_left.svg')});`"
                 ></div>
                 <div class="flex flex-col justify-between progress_c">
                   <span class="font-12 zIndex99" style="color: #fa5f65"
-                    >{{ CSSELL }}%</span
+                  >{{ CSSELL }}%</span
                   >
                   <vs-progress
-                    style="width: 354px; background: #fa5f65 !important"
-                    class="bg-red progress"
-                    :height="4"
-                    :percent="CSBUY"
-                    color="success"
+                      style="width: 354px; background: #fa5f65 !important"
+                      class="bg-red progress"
+                      :height="4"
+                      :percent="CSBUY"
+                      color="success"
                   ></vs-progress>
                   <span class="font-12 zIndex99" style="color: #29c770"
-                    >{{ CSBUY }}%</span
+                  >{{ CSBUY }}%</span
                   >
                 </div>
               </div>
@@ -82,20 +85,20 @@
           <div id="analysis-wrapper" class="analysis-wrapper relative">
             <vs-tabs>
               <vs-tab
-                label="INDICATORS"
-                @click="(activeGau = true), (activeHis = true)"
+                  label="INDICATORS"
+                  @click="(activeGau = true), (activeHis = true)"
               >
               </vs-tab>
               <vs-tab
-                label="LAST RESULTS"
-                @click="(activeGau = true), (activeHis = false)"
+                  label="LAST RESULTS"
+                  @click="(activeGau = true), (activeHis = false)"
               >
               </vs-tab>
             </vs-tabs>
 
             <div
-              class="wrap-gauge-meter"
-              :class="{ active: activeGau, hidden: !activeHis }"
+                class="wrap-gauge-meter"
+                :class="{ active: activeGau, hidden: !activeHis }"
             >
               <div class="wrap-gauge-meter-inner">
                 <div class="gauge-meter">
@@ -106,58 +109,58 @@
                           Oscillators
                           <span class="gauge-meter-title-icon">
                             <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="22"
-                              height="22"
-                              viewBox="0 0 22 22"
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="22"
+                                height="22"
+                                viewBox="0 0 22 22"
                             >
                               <g
-                                id="c-question"
-                                transform="translate(3.068 -8.774)"
+                                  id="c-question"
+                                  transform="translate(3.068 -8.774)"
                               >
                                 <g
-                                  id="Ellipse_1825"
-                                  data-name="Ellipse 1825"
-                                  transform="translate(-2.068 9.774)"
-                                  fill="none"
-                                  stroke="#fefefe"
-                                  stroke-linecap="square"
-                                  stroke-miterlimit="10"
-                                  stroke-width="1"
+                                    id="Ellipse_1825"
+                                    data-name="Ellipse 1825"
+                                    transform="translate(-2.068 9.774)"
+                                    fill="none"
+                                    stroke="#fefefe"
+                                    stroke-linecap="square"
+                                    stroke-miterlimit="10"
+                                    stroke-width="1"
                                 >
                                   <circle
-                                    cx="10"
-                                    cy="10"
-                                    r="10"
-                                    stroke="none"
+                                      cx="10"
+                                      cy="10"
+                                      r="10"
+                                      stroke="none"
                                   ></circle>
                                   <circle
-                                    cx="10"
-                                    cy="10"
-                                    r="10.5"
-                                    fill="none"
+                                      cx="10"
+                                      cy="10"
+                                      r="10.5"
+                                      fill="none"
                                   ></circle>
                                 </g>
                                 <g
-                                  id="question"
-                                  transform="translate(3.497 13.43)"
+                                    id="question"
+                                    transform="translate(3.497 13.43)"
                                 >
                                   <path
-                                    id="Path_30768"
-                                    data-name="Path 30768"
-                                    d="M8.359,10.774a4.349,4.349,0,0,1,.4-2.323,5.026,5.026,0,0,1,1.4-1.421c1.317-.981,1.876-1.491,1.876-2.54,0-1.166-.924-1.637-2.166-1.637a7.306,7.306,0,0,0-3.334.866L5.694,2.063A9.2,9.2,0,0,1,10.035,1a4.89,4.89,0,0,1,3.1.9A3,3,0,0,1,14.287,4.4,3.24,3.24,0,0,1,13.4,6.7,10.58,10.58,0,0,1,11.872,8,5.71,5.71,0,0,0,10.63,9.137a2.68,2.68,0,0,0-.315,1.637H8.359Z"
-                                    transform="translate(-5.694 -1)"
-                                    fill="#fefefe"
+                                      id="Path_30768"
+                                      data-name="Path 30768"
+                                      d="M8.359,10.774a4.349,4.349,0,0,1,.4-2.323,5.026,5.026,0,0,1,1.4-1.421c1.317-.981,1.876-1.491,1.876-2.54,0-1.166-.924-1.637-2.166-1.637a7.306,7.306,0,0,0-3.334.866L5.694,2.063A9.2,9.2,0,0,1,10.035,1a4.89,4.89,0,0,1,3.1.9A3,3,0,0,1,14.287,4.4,3.24,3.24,0,0,1,13.4,6.7,10.58,10.58,0,0,1,11.872,8,5.71,5.71,0,0,0,10.63,9.137a2.68,2.68,0,0,0-.315,1.637H8.359Z"
+                                      transform="translate(-5.694 -1)"
+                                      fill="#fefefe"
                                   ></path>
                                   <ellipse
-                                    id="Ellipse_1827"
-                                    data-name="Ellipse 1827"
-                                    cx="1.363"
-                                    cy="1.284"
-                                    rx="1.363"
-                                    ry="1.284"
-                                    transform="translate(2.252 11.56)"
-                                    fill="#fefefe"
+                                      id="Ellipse_1827"
+                                      data-name="Ellipse 1827"
+                                      cx="1.363"
+                                      cy="1.284"
+                                      rx="1.363"
+                                      ry="1.284"
+                                      transform="translate(2.252 11.56)"
+                                      fill="#fefefe"
                                   ></ellipse>
                                 </g>
                               </g>
@@ -171,15 +174,15 @@
                       <div class="gauge-meter-background rank-2"></div>
                       <ul class="gauge-meter-label-list">
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item
                             gauge-meter-label-item--strong-sell
                           "
                         >
-                          strong<br />sell
+                          strong<br/>sell
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item gauge-meter-label-item--sell
                             active
                           "
@@ -187,7 +190,7 @@
                           sell
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item
                             gauge-meter-label-item--neutral
                           "
@@ -195,57 +198,57 @@
                           neutral
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item gauge-meter-label-item--buy
                           "
                         >
                           buy
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item
                             gauge-meter-label-item--strong-buy
                           "
                         >
-                          strong<br />buy
+                          strong<br/>buy
                         </li>
                       </ul>
                       <ul class="gauge-meter-status-list">
                         <li class="gauge-meter-status-item">
                           <span
-                            class="
+                              class="
                               gauge-meter-status-value
                               gauge-meter-status-value--sell
                             "
-                            >{{ NumOscSELL }}</span
+                          >{{ NumOscSELL }}</span
                           >
                           <span class="gauge-meter-status-text">Sell</span>
                         </li>
                         <li class="gauge-meter-status-item">
                           <span
-                            class="
+                              class="
                               gauge-meter-status-value
                               gauge-meter-status-value--neutral
                             "
-                            >{{ NumOscNeutral }}</span
+                          >{{ NumOscNeutral }}</span
                           >
                           <span class="gauge-meter-status-text">Neutral</span>
                         </li>
                         <li class="gauge-meter-status-item">
                           <span
-                            class="
+                              class="
                               gauge-meter-status-value
                               gauge-meter-status-value--buy
                             "
-                            >{{ NumOscBUY }}</span
+                          >{{ NumOscBUY }}</span
                           >
                           <span class="gauge-meter-status-text">Buy</span>
                         </li>
                       </ul>
                       <highcharts
-                        ref="chartOs"
-                        class="gauge-meter-pane"
-                        :options="optionsOs"
+                          ref="chartOs"
+                          class="gauge-meter-pane"
+                          :options="optionsOs"
                       ></highcharts>
                     </div>
                   </div>
@@ -255,59 +258,59 @@
                         <h3 class="gauge-meter-title">
                           Summary
                           <span class="gauge-meter-title-icon"
-                            ><svg
+                          ><svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="22"
                               height="22"
                               viewBox="0 0 22 22"
-                            >
+                          >
                               <g
-                                id="c-question"
-                                transform="translate(3.068 -8.774)"
+                                  id="c-question"
+                                  transform="translate(3.068 -8.774)"
                               >
                                 <g
-                                  id="Ellipse_1825"
-                                  data-name="Ellipse 1825"
-                                  transform="translate(-2.068 9.774)"
-                                  fill="none"
-                                  stroke="#fefefe"
-                                  stroke-linecap="square"
-                                  stroke-miterlimit="10"
-                                  stroke-width="1"
+                                    id="Ellipse_1825"
+                                    data-name="Ellipse 1825"
+                                    transform="translate(-2.068 9.774)"
+                                    fill="none"
+                                    stroke="#fefefe"
+                                    stroke-linecap="square"
+                                    stroke-miterlimit="10"
+                                    stroke-width="1"
                                 >
                                   <circle
-                                    cx="10"
-                                    cy="10"
-                                    r="10"
-                                    stroke="none"
+                                      cx="10"
+                                      cy="10"
+                                      r="10"
+                                      stroke="none"
                                   ></circle>
                                   <circle
-                                    cx="10"
-                                    cy="10"
-                                    r="10.5"
-                                    fill="none"
+                                      cx="10"
+                                      cy="10"
+                                      r="10.5"
+                                      fill="none"
                                   ></circle>
                                 </g>
                                 <g
-                                  id="question"
-                                  transform="translate(3.497 13.43)"
+                                    id="question"
+                                    transform="translate(3.497 13.43)"
                                 >
                                   <path
-                                    id="Path_30768"
-                                    data-name="Path 30768"
-                                    d="M8.359,10.774a4.349,4.349,0,0,1,.4-2.323,5.026,5.026,0,0,1,1.4-1.421c1.317-.981,1.876-1.491,1.876-2.54,0-1.166-.924-1.637-2.166-1.637a7.306,7.306,0,0,0-3.334.866L5.694,2.063A9.2,9.2,0,0,1,10.035,1a4.89,4.89,0,0,1,3.1.9A3,3,0,0,1,14.287,4.4,3.24,3.24,0,0,1,13.4,6.7,10.58,10.58,0,0,1,11.872,8,5.71,5.71,0,0,0,10.63,9.137a2.68,2.68,0,0,0-.315,1.637H8.359Z"
-                                    transform="translate(-5.694 -1)"
-                                    fill="#fefefe"
+                                      id="Path_30768"
+                                      data-name="Path 30768"
+                                      d="M8.359,10.774a4.349,4.349,0,0,1,.4-2.323,5.026,5.026,0,0,1,1.4-1.421c1.317-.981,1.876-1.491,1.876-2.54,0-1.166-.924-1.637-2.166-1.637a7.306,7.306,0,0,0-3.334.866L5.694,2.063A9.2,9.2,0,0,1,10.035,1a4.89,4.89,0,0,1,3.1.9A3,3,0,0,1,14.287,4.4,3.24,3.24,0,0,1,13.4,6.7,10.58,10.58,0,0,1,11.872,8,5.71,5.71,0,0,0,10.63,9.137a2.68,2.68,0,0,0-.315,1.637H8.359Z"
+                                      transform="translate(-5.694 -1)"
+                                      fill="#fefefe"
                                   ></path>
                                   <ellipse
-                                    id="Ellipse_1827"
-                                    data-name="Ellipse 1827"
-                                    cx="1.363"
-                                    cy="1.284"
-                                    rx="1.363"
-                                    ry="1.284"
-                                    transform="translate(2.252 11.56)"
-                                    fill="#fefefe"
+                                      id="Ellipse_1827"
+                                      data-name="Ellipse 1827"
+                                      cx="1.363"
+                                      cy="1.284"
+                                      rx="1.363"
+                                      ry="1.284"
+                                      transform="translate(2.252 11.56)"
+                                      fill="#fefefe"
                                   ></ellipse>
                                 </g>
                               </g></svg
@@ -320,23 +323,23 @@
                       <div class="gauge-meter-background rank-3"></div>
                       <ul class="gauge-meter-label-list">
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item
                             gauge-meter-label-item--strong-sell
                           "
                         >
                           strong
-                          <br />sell
+                          <br/>sell
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item gauge-meter-label-item--sell
                           "
                         >
                           sell
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item
                             gauge-meter-label-item--neutral
                             active
@@ -345,59 +348,59 @@
                           neutral
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item gauge-meter-label-item--buy
                           "
                         >
                           buy
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item
                             gauge-meter-label-item--strong-buy
                           "
                         >
                           strong
-                          <br />buy
+                          <br/>buy
                         </li>
                       </ul>
                       <ul class="gauge-meter-status-list">
                         <li class="gauge-meter-status-item">
                           <span
-                            class="
+                              class="
                               gauge-meter-status-value
                               gauge-meter-status-value--sell
                             "
-                            >{{ NumSumSELL }}</span
+                          >{{ NumSumSELL }}</span
                           >
                           <span class="gauge-meter-status-text">Sell</span>
                         </li>
                         <li class="gauge-meter-status-item">
                           <span
-                            class="
+                              class="
                               gauge-meter-status-value
                               gauge-meter-status-value--neutral
                             "
-                            >{{ NumSumNeutral }}</span
+                          >{{ NumSumNeutral }}</span
                           >
                           <span class="gauge-meter-status-text">Neutral</span>
                         </li>
                         <li class="gauge-meter-status-item">
                           <span
-                            class="
+                              class="
                               gauge-meter-status-value
                               gauge-meter-status-value--buy
                             "
-                            >{{ NumSumBUY }}</span
+                          >{{ NumSumBUY }}</span
                           >
                           <span class="gauge-meter-status-text">Buy</span>
                         </li>
                       </ul>
                       <!--  -->
                       <highcharts
-                        class="gauge-meter-pane"
-                        :options="optionsSu"
-                        ref="chartSu"
+                          class="gauge-meter-pane"
+                          :options="optionsSu"
+                          ref="chartSu"
                       ></highcharts>
                       <!--  -->
                     </div>
@@ -408,59 +411,59 @@
                         <h3 class="gauge-meter-title">
                           Moving Averages
                           <span class="gauge-meter-title-icon"
-                            ><svg
+                          ><svg
                               xmlns="http://www.w3.org/2000/svg"
                               width="22"
                               height="22"
                               viewBox="0 0 22 22"
-                            >
+                          >
                               <g
-                                id="c-question"
-                                transform="translate(3.068 -8.774)"
+                                  id="c-question"
+                                  transform="translate(3.068 -8.774)"
                               >
                                 <g
-                                  id="Ellipse_1825"
-                                  data-name="Ellipse 1825"
-                                  transform="translate(-2.068 9.774)"
-                                  fill="none"
-                                  stroke="#fefefe"
-                                  stroke-linecap="square"
-                                  stroke-miterlimit="10"
-                                  stroke-width="1"
+                                    id="Ellipse_1825"
+                                    data-name="Ellipse 1825"
+                                    transform="translate(-2.068 9.774)"
+                                    fill="none"
+                                    stroke="#fefefe"
+                                    stroke-linecap="square"
+                                    stroke-miterlimit="10"
+                                    stroke-width="1"
                                 >
                                   <circle
-                                    cx="10"
-                                    cy="10"
-                                    r="10"
-                                    stroke="none"
+                                      cx="10"
+                                      cy="10"
+                                      r="10"
+                                      stroke="none"
                                   ></circle>
                                   <circle
-                                    cx="10"
-                                    cy="10"
-                                    r="10.5"
-                                    fill="none"
+                                      cx="10"
+                                      cy="10"
+                                      r="10.5"
+                                      fill="none"
                                   ></circle>
                                 </g>
                                 <g
-                                  id="question"
-                                  transform="translate(3.497 13.43)"
+                                    id="question"
+                                    transform="translate(3.497 13.43)"
                                 >
                                   <path
-                                    id="Path_30768"
-                                    data-name="Path 30768"
-                                    d="M8.359,10.774a4.349,4.349,0,0,1,.4-2.323,5.026,5.026,0,0,1,1.4-1.421c1.317-.981,1.876-1.491,1.876-2.54,0-1.166-.924-1.637-2.166-1.637a7.306,7.306,0,0,0-3.334.866L5.694,2.063A9.2,9.2,0,0,1,10.035,1a4.89,4.89,0,0,1,3.1.9A3,3,0,0,1,14.287,4.4,3.24,3.24,0,0,1,13.4,6.7,10.58,10.58,0,0,1,11.872,8,5.71,5.71,0,0,0,10.63,9.137a2.68,2.68,0,0,0-.315,1.637H8.359Z"
-                                    transform="translate(-5.694 -1)"
-                                    fill="#fefefe"
+                                      id="Path_30768"
+                                      data-name="Path 30768"
+                                      d="M8.359,10.774a4.349,4.349,0,0,1,.4-2.323,5.026,5.026,0,0,1,1.4-1.421c1.317-.981,1.876-1.491,1.876-2.54,0-1.166-.924-1.637-2.166-1.637a7.306,7.306,0,0,0-3.334.866L5.694,2.063A9.2,9.2,0,0,1,10.035,1a4.89,4.89,0,0,1,3.1.9A3,3,0,0,1,14.287,4.4,3.24,3.24,0,0,1,13.4,6.7,10.58,10.58,0,0,1,11.872,8,5.71,5.71,0,0,0,10.63,9.137a2.68,2.68,0,0,0-.315,1.637H8.359Z"
+                                      transform="translate(-5.694 -1)"
+                                      fill="#fefefe"
                                   ></path>
                                   <ellipse
-                                    id="Ellipse_1827"
-                                    data-name="Ellipse 1827"
-                                    cx="1.363"
-                                    cy="1.284"
-                                    rx="1.363"
-                                    ry="1.284"
-                                    transform="translate(2.252 11.56)"
-                                    fill="#fefefe"
+                                      id="Ellipse_1827"
+                                      data-name="Ellipse 1827"
+                                      cx="1.363"
+                                      cy="1.284"
+                                      rx="1.363"
+                                      ry="1.284"
+                                      transform="translate(2.252 11.56)"
+                                      fill="#fefefe"
                                   ></ellipse>
                                 </g>
                               </g></svg
@@ -473,23 +476,23 @@
                       <div class="gauge-meter-background rank-3"></div>
                       <ul class="gauge-meter-label-list">
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item
                             gauge-meter-label-item--strong-sell
                           "
                         >
                           strong
-                          <br />sell
+                          <br/>sell
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item gauge-meter-label-item--sell
                           "
                         >
                           sell
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item
                             gauge-meter-label-item--neutral
                             active
@@ -498,58 +501,58 @@
                           neutral
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item gauge-meter-label-item--buy
                           "
                         >
                           buy
                         </li>
                         <li
-                          class="
+                            class="
                             gauge-meter-label-item
                             gauge-meter-label-item--strong-buy
                           "
                         >
                           strong
-                          <br />buy
+                          <br/>buy
                         </li>
                       </ul>
                       <ul class="gauge-meter-status-list">
                         <li class="gauge-meter-status-item">
                           <span
-                            class="
+                              class="
                               gauge-meter-status-value
                               gauge-meter-status-value--sell
                             "
-                            >{{ NumMovSELL }}</span
+                          >{{ NumMovSELL }}</span
                           >
                           <span class="gauge-meter-status-text">Sell</span>
                         </li>
                         <li class="gauge-meter-status-item">
                           <span
-                            class="
+                              class="
                               gauge-meter-status-value
                               gauge-meter-status-value--neutral
                             "
-                            >{{ NumMovNeutral }}</span
+                          >{{ NumMovNeutral }}</span
                           >
                           <span class="gauge-meter-status-text">Neutral</span>
                         </li>
                         <li class="gauge-meter-status-item">
                           <span
-                            class="
+                              class="
                               gauge-meter-status-value
                               gauge-meter-status-value--buy
                             "
-                            >{{ NumMovBUY }}</span
+                          >{{ NumMovBUY }}</span
                           >
                           <span class="gauge-meter-status-text">Buy</span>
                         </li>
                       </ul>
                       <highcharts
-                        class="gauge-meter-pane"
-                        :options="optionsMa"
-                        ref="chartMa"
+                          class="gauge-meter-pane"
+                          :options="optionsMa"
+                          ref="chartMa"
                       ></highcharts>
                     </div>
                   </div>
@@ -557,9 +560,9 @@
               </div>
             </div>
             <div
-              class="historyBox"
-              :class="{ active: !activeGau, hidden: activeHis }"
-              style="transform: translateX(0px);"
+                class="historyBox"
+                :class="{ active: !activeGau, hidden: activeHis }"
+                style="transform: translateX(0px);"
             >
               <div class="overviewInfo flex items-center">
                 <span class="badgeItem">
@@ -575,312 +578,312 @@
                 <div class="vx-row history-column">
                   <div class="vx-col w-18 list1">
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                   </div>
                   <div class="vx-col w-18 list2">
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                   </div>
                   <div class="vx-col w-18 list3">
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                   </div>
                   <div class="vx-col w-18 list4">
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                   </div>
                   <div class="vx-col w-18 list5">
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-1 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-1 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-2 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-2 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-3 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-3 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-4 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-4 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                     <span
-                      class="gridcs-5 inline-flex m-1 item rounded-full empty"
+                        class="gridcs-5 inline-flex m-1 item rounded-full empty"
                     ></span>
                   </div>
                 </div>
@@ -892,103 +895,82 @@
       <div class="vx-col w-full rightBar c-desktop trans" id="right-content">
         <div class="pc block">
           <div class="mb-6">
-            <div class="mt-2 mb-2 font-11-mobile">Giá trị</div>
-            <div class="vx-row m-0 mt-2">
-              <div class="item-col md:w-3/12 w-full text-center mt-2 m_hide">
-                <span
-                  class="w-full bpF cursor-pointer num1 operator"
-                  @click="truBetAmount"
-                  >-</span
-                >
+            <div class="wrapper">
+              <div class="session">
+                <!--交易号-->
+                <div class="title">Giao dịch</div>
+                <div class="ss">601967636</div>
               </div>
-              <div
-                class="
-                  item-col
-                  md:w-6/12
-                  w-full
-                  text-center
-                  mt-2
-                  num1
-                  m_full_w
-                  no-margin-m
-                "
-              >
-                <vs-input
-                  @keyup="nhapBetAmount"
-                  class="w-full inp"
-                  icon-pack="feather"
-                  icon="icon-dollar-sign"
-                  placeholder="10"
-                  v-model="betAmount"
-                  icon-no-border
-                />
-              </div>
-              <div class="item-col md:w-3/12 w-full text-center mt-2 m_hide">
-                <span
-                  class="w-full bpF cursor-pointer num1 operator"
-                  @click="congBetAmount"
-                  >+</span
-                >
+              <div class="wrapper-time">
+                <div class="text">{{ textTimeDown }}</div>
+                <div class="time">{{ seconDown }}s</div>
               </div>
             </div>
-            <div class="vx-row m-0 mt-2 m_hide">
+            <div class="price-center mt-3">Ví tiền: {{ balanceForuser }}</div>
+            <div class="amount m-0 mt-3">
+              <div>Số tiền</div>
+              <div class="relative">
+                <v-select v-model="selectedAmount" :options="amounts"></v-select>
+              </div>
+            </div>
+<!--            <div class="vx-row m-0 mt-2 m_hide">
               <div class="item-col md:w-4/12 w-full text-center mt-2">
                 <span class="w-full bpF cursor-pointer h-12" @click="clickCT(5)"
-                  >+5</span
+                >+5</span
                 >
               </div>
               <div class="item-col md:w-4/12 w-full text-center mt-2">
                 <span
-                  class="w-full bpF cursor-pointer h-12"
-                  @click="clickCT(10)"
-                  >+10</span
+                    class="w-full bpF cursor-pointer h-12"
+                    @click="clickCT(10)"
+                >+10</span
                 >
               </div>
               <div class="item-col md:w-4/12 w-full text-center mt-2">
                 <span
-                  class="w-full bpF cursor-pointer h-12"
-                  @click="clickCT(20)"
-                  >+20</span
+                    class="w-full bpF cursor-pointer h-12"
+                    @click="clickCT(20)"
+                >+20</span
                 >
               </div>
               <div class="item-col md:w-4/12 w-full text-center mt-2">
                 <span
-                  class="w-full bpF cursor-pointer h-12"
-                  @click="clickCT(50)"
-                  >+50</span
+                    class="w-full bpF cursor-pointer h-12"
+                    @click="clickCT(50)"
+                >+50</span
                 >
               </div>
               <div class="item-col md:w-4/12 w-full text-center mt-2">
                 <span
-                  class="w-full bpF cursor-pointer h-12"
-                  @click="clickCT(100)"
-                  >+100</span
+                    class="w-full bpF cursor-pointer h-12"
+                    @click="clickCT(100)"
+                >+100</span
                 >
               </div>
               <div class="item-col md:w-4/12 w-full text-center mt-2">
                 <span class="w-full bpF cursor-pointer h-12" @click="clickCT(0)"
-                  >All</span
+                >All</span
                 >
               </div>
-            </div>
+            </div>-->
           </div>
           <div class="lg:relative mb-5 no-margin-m">
             <div class="text-center">
               <div class="profitPercent mb-2">Lợi nhuận <span class="text-color-red">95%</span></div>
               <div
-                class="profitValue color-green text-3xl font-bold no-margin-m"
+                  class="profitValue color-green text-3xl font-bold no-margin-m"
               >
-                +${{ loiNhuan }}
+                +{{ loiNhuan }} {{unit}}
               </div>
             </div>
           </div>
           <div class="lg:relative mb-10 text-center no-margin-m">
             <div class="text-center">Chỉ báo tâm lý</div>
             <vs-progress
-              class="bg-green"
-              :height="7"
-              :percent="CSBUY"
-              color="danger"
+                class="bg-green"
+                :height="7"
+                :percent="CSBUY"
+                color="danger"
             ></vs-progress>
             <div class="block">
               <span class="color-red float-left"> {{ CSBUY }}% </span>
@@ -999,58 +981,23 @@
           <div class="lg:relative mb-5 mt-10 no-margin-m">
             <div class="h-6"></div>
             <div
-              @click="isBet && BetBuySell('buy')"
-              :class="`btn_dat_cuoc tang ${!isBet ? 'disabled' : ''}`"
+                @click="isBet && BetBuySell('buy')"
+                :class="`btn_dat_cuoc tang mb-5 ${!isBet ? 'disabled' : ''}`"
             >
               MUA
               <feather-icon
-                icon="TrendingUpIcon"
-                svgClasses="w-6 h-5"
+                  icon="TrendingUpIcon"
+                  svgClasses="w-6 h-5"
               ></feather-icon>
             </div>
-
             <div
-              class="mb-2 mt-2 col-md-12 col-4 bet-box-time btn_dat_cuoc"
-              style="
-                border: 1px solid #fc5f5f;
-                border-radius: 4px;
-                background-color: #1d233b;
-              "
-            >
-              <a
-                class="
-                  btn btn-trade-time
-                  btnTransparent
-                  w-100
-                  flex flex-col
-                  justify-center
-                  items-center
-                "
-                style="height: 37px; color: #fff"
-              >
-                <div
-                  class="font-14 mb-0"
-                  style="line-height: normal; font-size: 0.875rem"
-                >
-                  {{ textTimeDown }}
-                </div>
-                <div
-                  class="mb-0 font-bold ml-1 timer_counter second"
-                  style="line-height: normal; font-size: 1.125rem"
-                >
-                  {{ seconDown }}s
-                </div>
-              </a>
-            </div>
-
-            <div
-              @click="isBet && BetBuySell('sell')"
-              :class="`btn_dat_cuoc giam ${!isBet ? 'disabled' : ''}`"
+                @click="isBet && BetBuySell('sell')"
+                :class="`btn_dat_cuoc giam ${!isBet ? 'disabled' : ''}`"
             >
               BÁN
               <feather-icon
-                icon="TrendingDownIcon"
-                svgClasses="w-6 h-5"
+                  icon="TrendingDownIcon"
+                  svgClasses="w-6 h-5"
               ></feather-icon>
             </div>
           </div>
@@ -1058,10 +1005,10 @@
         <div class="mobile hidden">
           <div class="sidebarPC relative">
             <vs-progress
-              class="bg-red"
-              :height="4"
-              :percent="CSBUY"
-              color="success"
+                class="bg-red"
+                :height="4"
+                :percent="CSBUY"
+                color="success"
             ></vs-progress>
             <div class="block">
               <span class="color-green float-left"> {{ CSBUY }}% </span>
@@ -1073,24 +1020,24 @@
               Lợi nhuận
               <span class="profitPercent text-color-red mb-2">95%</span>
               <span class="profitValue color-green text-2xl font-bold"
-                >+${{ loiNhuan }}</span
+              >+{{ loiNhuan }}{{unit}}</span
               >
             </div>
           </div>
-          <div class="relative">
+<!--          <div class="relative">
             <div class="flex">
               <div class="flex w-full mr-2">
                 <div @click="truBetAmount" class="operator_mobile w-full">
                   <svg
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="css-i6dzq1"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="css-i6dzq1"
                   >
                     <line x1="5" y1="12" x2="19" y2="12"></line>
                   </svg>
@@ -1098,28 +1045,28 @@
               </div>
               <div class="flex relative" style="width: 55rem">
                 <vs-input
-                  readonly="readonly"
-                  @click.stop="showMobileMenu = !showMobileMenu"
-                  class="w-full betInput"
-                  icon-pack="feather"
-                  icon="icon-dollar-sign"
-                  placeholder="10"
-                  v-model="betAmount"
-                  icon-no-border
+                    readonly="readonly"
+                    @click.stop="showMobileMenu = !showMobileMenu"
+                    class="w-full betInput"
+                    icon-pack="feather"
+                    icon="icon-dollar-sign"
+                    placeholder="10"
+                    v-model="betAmount"
+                    icon-no-border
                 />
               </div>
               <div class="flex w-full ml-2">
                 <div @click="congBetAmount" class="operator_mobile w-full">
                   <svg
-                    viewBox="0 0 24 24"
-                    width="24"
-                    height="24"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    fill="none"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="css-i6dzq1"
+                      viewBox="0 0 24 24"
+                      width="24"
+                      height="24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      fill="none"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="css-i6dzq1"
                   >
                     <line x1="12" y1="5" x2="12" y2="19"></line>
                     <line x1="5" y1="12" x2="19" y2="12"></line>
@@ -1127,12 +1074,21 @@
                 </div>
               </div>
             </div>
+          </div>-->
+          <div class="wrapper-cuoc-mobile">
+<!--            <div class="relative">-->
+              <v-select append-to-body :calculate-position="withPopper" v-model="selectedAmount" :options="amounts"></v-select>
+<!--            </div>-->
+            <div class="session-mobile">
+              <div>Phiên</div>
+              <div>601967751</div>
+            </div>
           </div>
           <div class="relative mb-5 mt-3">
             <div style="display: flex; justify-content: space-between">
               <div
-                @click="BetBuySell('sell')"
-                :class="`btn_dat_cuoc_m giam ${!isBet ? 'disabled' : ''}`"
+                  @click="BetBuySell('sell')"
+                  :class="`btn_dat_cuoc_m giam ${!isBet ? 'disabled' : ''}`"
               >
                 BÁN
               </div>
@@ -1143,8 +1099,8 @@
                 </div>
               </div>
               <div
-                @click="BetBuySell('buy')"
-                :class="`btn_dat_cuoc_m tang ${!isBet ? 'disabled' : ''}`"
+                  @click="BetBuySell('buy')"
+                  :class="`btn_dat_cuoc_m tang ${!isBet ? 'disabled' : ''}`"
               >
                 MUA
               </div>
@@ -1152,8 +1108,8 @@
           </div>
           <div class="keyboard-input-wrap" :class="{ active: showMobileMenu }">
             <div
-              class="numKeyboardInput"
-              @click="showMobileMenu = !showMobileMenu"
+                class="numKeyboardInput"
+                @click="showMobileMenu = !showMobileMenu"
             ></div>
             <div class="keyboard" :class="{ hiddenKey: !showMobileMenu }">
               <div id="amountWrapper" class="amountWrapper">
@@ -1163,43 +1119,43 @@
                 <div class="groupButtonMobile flex">
                   <div class="flex w-full mr-2">
                     <vs-button
-                      @click="truBetAmount"
-                      class="w-full"
-                      type="border"
-                      icon-pack="feather"
-                      icon="icon-minus"
+                        @click="truBetAmount"
+                        class="w-full"
+                        type="border"
+                        icon-pack="feather"
+                        icon="icon-minus"
                     ></vs-button>
                   </div>
                   <div class="flex relative" style="width: 55rem">
                     <vs-input
-                      readonly="readonly"
-                      @keyup="nhapBetAmount"
-                      class="w-full betInput"
-                      icon-pack="feather"
-                      icon="icon-dollar-sign"
-                      placeholder="10"
-                      v-model="betAmount"
-                      icon-no-border
+                        readonly="readonly"
+                        @keyup="nhapBetAmount"
+                        class="w-full betInput"
+                        icon-pack="feather"
+                        icon="icon-dollar-sign"
+                        placeholder="10"
+                        v-model="betAmount"
+                        icon-no-border
                     />
                     <feather-icon
-                      @click="clearBAmount()"
-                      style="
+                        @click="clearBAmount()"
+                        style="
                         right: 5px;
                         top: 7px;
                         position: absolute !important;
                       "
-                      class="cursor-pointer"
-                      icon="XCircleIcon"
-                      svgClasses="w-6 h-6 text-grey"
+                        class="cursor-pointer"
+                        icon="XCircleIcon"
+                        svgClasses="w-6 h-6 text-grey"
                     ></feather-icon>
                   </div>
                   <div class="flex w-full ml-2">
                     <vs-button
-                      @click="congBetAmount"
-                      class="w-full"
-                      type="border"
-                      icon-pack="feather"
-                      icon="icon-plus"
+                        @click="congBetAmount"
+                        class="w-full"
+                        type="border"
+                        icon-pack="feather"
+                        icon="icon-plus"
                     ></vs-button>
                   </div>
                 </div>
@@ -1208,49 +1164,49 @@
                     Lợi nhuận
                     <span class="profitPercent text-color-red mb-2">95%</span>
                     <span class="profitValue color-green text-3xl font-bold"
-                      >+${{ loiNhuan }}</span
+                    >+${{ loiNhuan }}</span
                     >
                   </div>
                 </div>
               </div>
               <table id="keyboardLandscape" style="height: calc(100% - 160px)">
                 <tbody>
-                  <tr class="suggestion">
-                    <td @click="clickCT(5)">+5</td>
-                    <td @click="clickCT(10)">+10</td>
-                    <td @click="clickCT(50)">+50</td>
-                    <td @click="clickCT(100)">+100</td>
-                  </tr>
-                  <tr>
-                    <td @click="writeBetAmountKey(1)">1</td>
-                    <td @click="writeBetAmountKey(2)">2</td>
-                    <td @click="writeBetAmountKey(3)">3</td>
-                    <td rowspan="2" @click="clickCT(0)"><span>Tất cả</span></td>
-                  </tr>
-                  <tr>
-                    <td @click="writeBetAmountKey(4)">4</td>
-                    <td @click="writeBetAmountKey(5)">5</td>
-                    <td @click="writeBetAmountKey(6)">6</td>
-                  </tr>
-                  <tr>
-                    <td @click="writeBetAmountKey(7)">7</td>
-                    <td @click="writeBetAmountKey(8)">8</td>
-                    <td @click="writeBetAmountKey(9)">9</td>
-                    <td rowspan="2" @click="showMobileMenu = !showMobileMenu">
-                      Hoàn tất
-                    </td>
-                  </tr>
-                  <tr>
-                    <td @click="writeBetAmountKey('.')">.</td>
-                    <td @click="writeBetAmountKey(0)">0</td>
-                    <td @click="deleteString">
-                      <feather-icon
+                <tr class="suggestion">
+                  <td @click="clickCT(5)">+5</td>
+                  <td @click="clickCT(10)">+10</td>
+                  <td @click="clickCT(50)">+50</td>
+                  <td @click="clickCT(100)">+100</td>
+                </tr>
+                <tr>
+                  <td @click="writeBetAmountKey(1)">1</td>
+                  <td @click="writeBetAmountKey(2)">2</td>
+                  <td @click="writeBetAmountKey(3)">3</td>
+                  <td rowspan="2" @click="clickCT(0)"><span>Tất cả</span></td>
+                </tr>
+                <tr>
+                  <td @click="writeBetAmountKey(4)">4</td>
+                  <td @click="writeBetAmountKey(5)">5</td>
+                  <td @click="writeBetAmountKey(6)">6</td>
+                </tr>
+                <tr>
+                  <td @click="writeBetAmountKey(7)">7</td>
+                  <td @click="writeBetAmountKey(8)">8</td>
+                  <td @click="writeBetAmountKey(9)">9</td>
+                  <td rowspan="2" @click="showMobileMenu = !showMobileMenu">
+                    Hoàn tất
+                  </td>
+                </tr>
+                <tr>
+                  <td @click="writeBetAmountKey('.')">.</td>
+                  <td @click="writeBetAmountKey(0)">0</td>
+                  <td @click="deleteString">
+                    <feather-icon
                         class="cursor-pointer"
                         icon="DeleteIcon"
                         svgClasses="w-6 h-6 text-grey"
-                      ></feather-icon>
-                    </td>
-                  </tr>
+                    ></feather-icon>
+                  </td>
+                </tr>
                 </tbody>
               </table>
             </div>
@@ -1258,8 +1214,8 @@
         </div>
       </div>
       <div
-        :class="['c-body trans']"
-        :style="`${isOpenSideBar && !isTablet ? 'width: 230px' : ''}`"
+          :class="['c-body trans']"
+          :style="`${isOpenSideBar && !isTablet ? 'width: 230px' : ''}`"
       ></div>
     </div>
 
@@ -1270,9 +1226,9 @@
           <div class="wrapNotify congratulation h-100">
             <div class="boxNotify">
               <img
-                :src="require('@/assets/images/logo/logo.png')"
-                alt=""
-                class="iconWin"
+                  :src="require('@/assets/images/logo/logo.png')"
+                  alt=""
+                  class="iconWin"
               />
               <div class="badgeDemo" v-if="!blObj.isAccount">DEMO</div>
               <div class="boxContent flex justify-center items-center flex-col">
@@ -1281,11 +1237,11 @@
                 </div>
                 <p class="titleWin">Xin chúc mừng!</p>
                 <span class="message_money text-4xl font-bold"
-                  >+{{ moneyWin }}$</span
+                >+{{ moneyWin }}$</span
                 >
               </div>
               <span class="cursor-pointer pointer"
-                ><i class="iconClose" data-feather="x"></i
+              ><i class="iconClose" data-feather="x"></i
               ></span>
             </div>
           </div>
@@ -1307,7 +1263,10 @@ import config from "@/config";
 import Vue from "vue";
 import AuthenticationService from "@/services/AuthenticationService";
 import VScrollLock from "v-scroll-lock";
+import vSelect from "vue-select";
 import ReconnectingWebSocket from 'reconnecting-websocket';
+import { createPopper } from '@popperjs/core'
+
 Vue.use(VScrollLock);
 
 More(Highcharts);
@@ -2031,6 +1990,7 @@ const gaugeMeterMa = {
 export default {
   components: {
     highcharts: Chart,
+    vSelect
   },
   data() {
     return {
@@ -2091,6 +2051,71 @@ export default {
       },
       isTablet,
       session: 0,
+      amounts: [
+        {
+          label: "20K",
+          code: 20000,
+        },
+        {
+          label: "50K",
+          code: 50000,
+        },
+        {
+          label: "100K",
+          code: 100000,
+        },
+        {
+          label: "200K",
+          code: 200000,
+        },
+        {
+          label: "500K",
+          code: 500000,
+        },
+        {
+          label: "1M",
+          code: 1000000,
+        },
+        {
+          label: "2M",
+          code: 2000000,
+        },
+        {
+          label: "3M",
+          code: 3000000,
+        },
+        {
+          label: "5M",
+          code: 5000000,
+        },
+        {
+          label: "10M",
+          code: 10000000,
+        },
+        {
+          label: "20M",
+          code: 20000000,
+        },
+        {
+          label: "30M",
+          code: 30000000,
+        },
+        {
+          label: "50M",
+          code: 50000000,
+        },
+        {
+          label: "100M",
+          code: 100000000,
+        },
+      ],
+      selectedAmount: {
+        label: "20k",
+        code: 20000,
+      },
+      unit: 'K',
+      multiple: 1000,
+      placement: 'top'
     };
   },
   computed: {
@@ -2106,7 +2131,18 @@ export default {
     },
   },
   watch: {
-
+    selectedAmount:{
+      handler: function(val){
+        const {code} = val
+        if (code >= 1000000){
+          this.unit = 'M'
+          this.multiple = 1000000
+        }
+        this.betAmount = code
+        this.tinhloinhuan(code / this.multiple)
+      },
+      immediate: true
+    },
     session(ss) {
       let streak = JSON.parse(localStorage.getItem('streak') || '{}');
       if (streak.session != ss - 1) {
@@ -2175,6 +2211,32 @@ export default {
     }
   },
   methods: {
+    withPopper(dropdownList, component, { width }) {
+      dropdownList.style.width = width
+      const popper = createPopper(component.$refs.toggle, dropdownList, {
+        placement: this.placement,
+        modifiers: [
+          {
+            name: 'offset',
+            options: {
+              offset: [0, -1],
+            },
+          },
+          {
+            name: 'toggleClass',
+            enabled: true,
+            phase: 'write',
+            fn({ state }) {
+              component.$el.classList.toggle(
+                  'drop-up',
+                  true
+              )
+            },
+          },
+        ],
+      })
+      return () => popper.destroy()
+    },
     setStreak(result) {
       if ((result.kq == "lose" && result.money < 10) || result.kq == "win" && result.money < 19.5) {
         localStorage.setItem('streak', JSON.stringify(streak));
@@ -2337,7 +2399,7 @@ export default {
       //         icon:'icon-check'});
       // }
     },
-
+    // 输入框弹出键盘点击事件
     deleteString() {
       let getAmount = this.betAmount.toString();
       let total = getAmount.slice(0, -1);
@@ -2354,7 +2416,7 @@ export default {
       this.betAmount = this.formatPrice(g, 0);
       this.tinhloinhuan(g);
     },
-
+    // 输入框弹出键盘点击事件
     writeBetAmountKey(v) {
       let getAmount = this.betAmount.toString() + v;
       let sl = getAmount.split(".");
@@ -2374,7 +2436,7 @@ export default {
       this.betAmount = this.formatPrice(a, 0);
       this.tinhloinhuan(a);
     },
-
+    // 输入框左边按钮
     congBetAmount() {
       let getAmount = this.betAmount.toString();
       let sl = getAmount.split(".");
@@ -2393,7 +2455,7 @@ export default {
       this.tinhloinhuan(tt);
       this.betAmount = this.formatPrice(tt, 0);
     },
-
+    // 输入框右边边按钮
     truBetAmount() {
       let getAmount = this.betAmount.toString();
       let sl = getAmount.split(".");
@@ -2412,7 +2474,7 @@ export default {
       this.tinhloinhuan(tt);
       this.betAmount = this.formatPrice(tt, 0);
     },
-
+    // 输入框输入事件
     nhapBetAmount(e) {
       let g = e.target.value;
       let check = g.split(".").length - 1;
@@ -2964,7 +3026,7 @@ export default {
       let data = JSON.parse(event.data);
 
       let dl = data.data;
-
+      console.log('data', data)
       if (data.type === "getListDauTien") {
         if (!!dl) {
           listData = dl;
@@ -3238,24 +3300,72 @@ export default {
   font-family: Frizon;
   src: url("~@/assets/fonts/Frizon.ttf");
 }
-.streak{
+.wrapper{
+  display: flex;
+  justify-content: space-between;
+}
+.wrapper .session {
+  width: 50%;
+}
+.wrapper .wrapper-time {
+  color: #ff0;
+  text-align: right;
+}
+.price-center {
+  text-align: center;
+  background: #2c3e50;
+  border-radius: 0.25em;
+  height: 3em;
+  line-height: 3em;
+}
+::v-deep .vs__dropdown-toggle {
+  border: 0;
+  box-shadow: none;
+  padding-left: 1em;
+  padding-right: 1em;
+  background-color: #2c3e50 !important;
+  background-image: none;
+  cursor: pointer;
+}
+.wrapper-cuoc-mobile{
+  display: flex;
+  .v-select{
+    flex: 1;
+  }
+  ::v-deep .vs__dropdown-toggle{
+    height: 3em;
+  }
+  .session-mobile{
+    background: #2c3e50;
+    padding: 0 10px;
+    border-radius: 0.25em;
+    margin-left: 10px;
+    width: 100px;
+  }
+}
+.profitPercent{
+  color: #d2a15a!important;
+  font-size: 20px;
+}
+.streak {
   width: 100px;
   height: 38px;
   position: absolute;
   left: 145px;
   top: 0px;
-  background: linear-gradient(133deg,#020024,rgba(12,126,104,.43) 0,rgba(42,172,230,.47));
+  background: linear-gradient(133deg, #020024, rgba(12, 126, 104, .43) 0, rgba(42, 172, 230, .47));
   border: 1px solid #2ae6d8;
   border-radius: 5px;
   padding-left: 20px;
   cursor: pointer;
 
-   @media screen and (max-width: 883px){
+  @media screen and (max-width: 883px) {
     top: 23px;
   }
-  @media screen and (max-width: 768px){
+  @media screen and (max-width: 768px) {
     top: 30px;
   }
+
   &:before {
     content: "";
     display: block;
@@ -3266,6 +3376,7 @@ export default {
     left: -17px;
     top: 5px;
   }
+
   .streak-title {
     font-family: Frizon;
     font-size: 13px;
@@ -3275,6 +3386,7 @@ export default {
     line-height: 36px;
     color: #fff;
   }
+
   .ep-container {
     position: absolute;
     right: -16px;
@@ -3297,7 +3409,8 @@ export default {
         display: flex;
         align-items: center;
         position: absolute;
-        svg{
+
+        svg {
           overflow: hidden;
 
           g.ep-circle--container {
@@ -3310,24 +3423,28 @@ export default {
           }
         }
       }
+
       .ep-legend--container {
         position: absolute;
         text-align: center;
 
         .ep-legend--value {
-            transition: .3s;
-            text-align: center;
-            opacity: 1;
+          transition: .3s;
+          text-align: center;
+          opacity: 1;
         }
       }
     }
+
     .streak-value {
       font-size: 14px;
       color: #2ae6d8;
     }
-    .ep-legend--value__counter{
+
+    .ep-legend--value__counter {
       display: none;
     }
+
     &:after {
       content: "";
       display: block;
@@ -3343,9 +3460,10 @@ export default {
 }
 
 //
-.text-color-red{
+.text-color-red {
   color: #fc5f5f;
 }
+
 .btn_dat_cuoc_m {
   border-radius: 10px;
   display: flex;
@@ -3663,6 +3781,7 @@ export default {
   padding-top: 20px;
   transition: 0.4s all;
 }
+
 .wrap-gauge-meter-inner {
   height: 100%;
 }
@@ -3678,6 +3797,7 @@ export default {
 
   margin: 2px 1.5px !important;
 }
+
 .sidebarMobile {
   display: none;
 }
@@ -3696,15 +3816,19 @@ export default {
 .gridcs-1 {
   grid-column-start: 1;
 }
+
 .gridcs-2 {
   grid-column-start: 2;
 }
+
 .gridcs-3 {
   grid-column-start: 3;
 }
+
 .gridcs-4 {
   grid-column-start: 4;
 }
+
 .gridcs-5 {
   grid-column-start: 5;
 }
@@ -3758,32 +3882,38 @@ export default {
     overflow: unset !important;
   }
 }
+
 @media screen and (max-width: 1300px) {
   .wrap-gauge-meter-inner {
     height: auto;
     overflow: initial;
   }
 }
+
 @media screen and (max-width: 1023px) and (min-width: 991px) {
   .wrap-gauge-meter-inner {
     padding-bottom: 65px;
   }
 }
+
 @media screen and (max-width: 1023px) and (min-width: 991px) and (orientation: landscape) {
   .wrap-gauge-meter-inner {
     padding-bottom: 65px !important;
   }
 }
+
 @media screen and (max-width: 1023px) and (orientation: landscape) {
   .wrap-gauge-meter {
     padding-top: 36px;
   }
 }
+
 @media screen and (max-width: 767px) {
   .wrap-gauge-meter {
     padding-top: 35px;
   }
 }
+
 .gauge-meter {
   width: 900px;
   height: 135px;
@@ -3791,11 +3921,13 @@ export default {
   margin: 0 auto;
   top: 15px;
 }
+
 @media screen and (max-width: 1500px) {
   .gauge-meter {
     width: 700px;
   }
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter {
     width: 600px;
@@ -3805,22 +3937,26 @@ export default {
     margin-top: 20px;
   }
 }
+
 @media screen and (max-width: 1200px) {
   .gauge-meter {
     margin-top: 15px;
   }
 }
+
 @media screen and (max-width: 1024px) {
   .gauge-meter {
     margin-top: 10px;
   }
 }
+
 @media screen and (max-width: 1000px) and (orientation: landscape) {
   .gauge-meter {
     margin-top: 5px;
     width: 350px;
   }
 }
+
 @media screen and (max-width: 767px) {
   .gauge-meter {
     width: 350px;
@@ -3830,11 +3966,13 @@ export default {
     margin-top: 3.2rem !important;
   }
 }
+
 @media screen and (max-width: 575px) {
   .gauge-meter {
     margin-top: 35px;
   }
 }
+
 @media screen and (max-width: 420px) {
   .gauge-meter {
     margin-top: 10px;
@@ -3852,40 +3990,48 @@ export default {
 .gauge-meter.is-show-transaction {
   width: 90%;
 }
+
 .gauge-meter-sub {
   width: 176px;
   height: 100%;
   position: absolute;
   bottom: 0;
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter-sub {
     width: 88px;
   }
 }
+
 .gauge-meter--os {
   left: 0;
   width: 140px;
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter--os {
     width: 70px;
   }
 }
+
 .gauge-meter--su {
   left: 50%;
   transform: translateX(-50%);
 }
+
 .gauge-meter--ma {
   width: 140px;
   left: auto;
   right: 0;
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter--ma {
     width: 70px;
   }
 }
+
 .gauge-meter-title {
   font-size: 16px;
   font-weight: bold;
@@ -3898,9 +4044,11 @@ export default {
   color: #fff;
   cursor: pointer;
 }
+
 .gauge-meter-title:hover {
   text-decoration: underline;
 }
+
 .gauge-meter-title-icon {
   width: 16px;
   height: 16px;
@@ -3909,10 +4057,12 @@ export default {
   transform: translateY(-50%);
   right: -20px;
 }
+
 .gauge-meter-title-icon svg {
   width: 100%;
   height: auto;
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter-title-icon {
     width: 12px;
@@ -3920,11 +4070,13 @@ export default {
     right: -14px;
   }
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter-title {
     font-size: 10px;
   }
 }
+
 .gauge-meter-sub-title {
   color: #fff;
   font-size: 14px;
@@ -3947,6 +4099,7 @@ export default {
     bottom: -12px;
   }
 }
+
 .gauge-meter-border {
   width: 100%;
   height: 88px;
@@ -3954,6 +4107,7 @@ export default {
   bottom: 0;
   left: 0;
 }
+
 .gauge-meter-border:after {
   content: "";
   position: absolute;
@@ -3965,21 +4119,25 @@ export default {
   background-size: cover;
   background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iR3JvdXBfMjE1NTMiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9Ijg2IiBoZWlnaHQ9IjQzIiB2aWV3Qm94PSIwIDAgODYgNDMiPgogIDxnIGlkPSJQYXRoXzM1MzYzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDE4LjI1OSkiPgogICAgPHBhdGggaWQ9IlBhdGhfMzUzNzMiIGRhdGEtbmFtZT0iUGF0aCAzNTM3MyIgZD0iTTk0My4yNjIsMTE4Ni40MmEuODM0LjgzNCwwLDAsMS0uODY4LS44MjQsNDAuNTA5LDQwLjUwOSwwLDAsMSw3LjYzNi0yMy41Ni44NjguODY4LDAsMSwxLDEuMzg4LDEuMDQyLDM5LjEzNywzOS4xMzcsMCwwLDAtNy4yODksMjIuNDc1Ljg0NC44NDQsMCwwLDEtLjg2OC44NjhaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtOTQyLjM5MSAtMTE2MS42NzkpIiBmaWxsPSIjZWY1NDUwIi8+CiAgPC9nPgogIDxnIGlkPSJQYXRoXzM1MzY3IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg3Ni43ODkgMTguMjE1KSI+CiAgICA8cGF0aCBpZD0iUGF0aF8zNTM3NCIgZGF0YS1uYW1lPSJQYXRoIDM1Mzc0IiBkPSJNMTEyOC42MTksMTE4Ni4zNjNoMGEuODguODgsMCwwLDEtLjg2OC0uOTExLDM5LjUyNSwzOS41MjUsMCwwLDAtNy4yODktMjIuNDc1Ljg2OC44NjgsMCwxLDEsMS4zODgtMS4wNDEsNDAuNTA5LDQwLjUwOSwwLDAsMSw3LjYzNiwyMy41NkEuODY5Ljg2OSwwLDAsMSwxMTI4LjYxOSwxMTg2LjM2M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMTIwLjI3OSAtMTE2MS41NzkpIiBmaWxsPSIjMzFiYWEwIi8+CiAgPC9nPgogIDxnIGlkPSJQYXRoXzM1MzY0IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSg4LjgzIDIuNjgpIj4KICAgIDxwYXRoIGlkPSJQYXRoXzM1Mzc1IiBkYXRhLW5hbWU9IlBhdGggMzUzNzUiIGQ9Ik05NjMuNjM0LDExNDAuNjYzYS45NTMuOTUzLDAsMCwxLS41NjQtLjE3My44NDYuODQ2LDAsMCwxLS4xMy0xLjIxNSw1Mi40NTcsNTIuNDU3LDAsMCwxLDUuODU4LTUuOTQ0YzQuNzczLTQuMjA5LDkuMzcyLTYuOSwxMy43MTEtOC4wN2EuODUyLjg1MiwwLDEsMSwuNDM0LDEuNjQ5Yy05LjcxOSwyLjU2LTE4LjU3LDEzLjMyLTE4LjY1NywxMy40NTFBLjg0OC44NDgsMCwwLDEsOTYzLjYzNCwxMTQwLjY2M1oiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC05NjIuNzQxIC0xMTI1LjIzKSIgZmlsbD0iI2Y1OTg5NiIvPgogIDwvZz4KICA8ZyBpZD0iUGF0aF8zNTM2NiIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTYuMjQxIDIuNjc3KSI+CiAgICA8cGF0aCBpZD0iUGF0aF8zNTM3NiIgZGF0YS1uYW1lPSJQYXRoIDM1Mzc2IiBkPSJNMTA5Mi45MTUsMTE0MC42NmExLjAyNSwxLjAyNSwwLDAsMS0uNjk0LS4zYy0uMDg3LS4wODctOC45MzgtMTAuODQ3LTE4LjY1Ny0xMy40NWEuODUzLjg1MywwLDEsMSwuNDM0LTEuNjQ5YzQuMzM5LDEuMTI4LDguOTM4LDMuODYyLDEzLjcxMSw4LjA3YTYyLjMzMiw2Mi4zMzIsMCwwLDEsNS44NTcsNS45NDQuODQyLjg0MiwwLDAsMS0uMTMsMS4yMTVBLjkyOS45MjksMCwwLDEsMTA5Mi45MTUsMTE0MC42NloiIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0xMDcyLjkyMyAtMTEyNS4yMjMpIiBmaWxsPSIjOGZmMGNiIi8+CiAgPC9nPgogIDxnIGlkPSJQYXRoXzM1MzY1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMC4yMTEpIj4KICAgIDxwYXRoIGlkPSJQYXRoXzM1Mzc3IiBkYXRhLW5hbWU9IlBhdGggMzUzNzciIGQ9Ik0xMDM3LjMsMTEyMi42NzVhLjczOC43MzgsMCwwLDEtLjMtLjA0M2MtMTEuMTA4LTQuMDc4LTIzLjI1Ni0uMDQzLTIzLjM4NywwYS44MjkuODI5LDAsMCwxLTEuMDg1LS41NjQuODM4LjgzOCwwLDAsMSwuNTIxLTEuMDg1Yy41MjEtLjE3MywxMi44NDMtNC4yNTIsMjQuNTU4LDBhLjg3Mi44NzIsMCwwLDEtLjMsMS42OTJaIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtMTAxMi40NzUgLTExMTkuMDU0KSIgZmlsbD0iI2QxZDRkYyIvPgogIDwvZz4KPC9zdmc+Cg==");
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter-border {
     height: 44px;
   }
 }
+
 .gauge-meter--os .gauge-meter-border,
 .gauge-meter--ma .gauge-meter-border {
   height: 50px;
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter--os .gauge-meter-border,
   .gauge-meter--ma .gauge-meter-border {
     height: 35px;
   }
 }
+
 .gauge-meter-background {
   width: 100%;
   height: 100%;
@@ -3991,21 +4149,27 @@ export default {
   transition: all 0.3s;
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iODYiIGhlaWdodD0iNDMiIHZpZXdCb3g9IjAgMCA4NiA0MyI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCI+CiAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfNTE0MSIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgNTE0MSIgd2lkdGg9Ijg2IiBoZWlnaHQ9IjQzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjAxKSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjNzA3MDcwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjAuNSIgeTE9IjAuMDA2IiB4Mj0iMC41MDciIHkyPSIwLjQ5NCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMC42MDQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNjVjYmIwIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOTdkY2NmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIGlkPSJNYXNrX0dyb3VwXzY0MSIgZGF0YS1uYW1lPSJNYXNrIEdyb3VwIDY0MSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjAxKSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAtcGF0aCkiPgogICAgPHBhdGggaWQ9IlBhdGhfMzU0NDAiIGRhdGEtbmFtZT0iUGF0aCAzNTQ0MCIgZD0iTTQzLDBDNjYuNzQ4LDAsODYsMTguOCw4Niw0MlM2Ni43NDgsODQsNDMsODQsMCw2NS4yLDAsNDIsMTkuMjUyLDAsNDMsMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC45OSkiIG9wYWNpdHk9IjAuNiIgZmlsbD0idXJsKCNsaW5lYXItZ3JhZGllbnQpIi8+CiAgPC9nPgo8L3N2Zz4K");
 }
+
 .gauge-meter-background.rank-1 {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iODYiIGhlaWdodD0iNDMiIHZpZXdCb3g9IjAgMCA4NiA0MyI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCI+CiAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfNTE0MCIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgNTE0MCIgd2lkdGg9Ijg2IiBoZWlnaHQ9IjQzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjAxKSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjNzA3MDcwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjAuNSIgeTE9IjAuMDA2IiB4Mj0iMC41MDciIHkyPSIwLjQ5NCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNlZjU0NTAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjYzk2NzY3IiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOTdkY2NmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIGlkPSJNYXNrX0dyb3VwXzY0MCIgZGF0YS1uYW1lPSJNYXNrIEdyb3VwIDY0MCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjAxKSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAtcGF0aCkiPgogICAgPHBhdGggaWQ9IlBhdGhfMzU0MzkiIGRhdGEtbmFtZT0iUGF0aCAzNTQzOSIgZD0iTTQzLDBDNjYuNzQ4LDAsODYsMTguOCw4Niw0MlM2Ni43NDgsODQsNDMsODQsMCw2NS4yLDAsNDIsMTkuMjUyLDAsNDMsMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC45OSkiIG9wYWNpdHk9IjAuNiIgZmlsbD0idXJsKCNsaW5lYXItZ3JhZGllbnQpIi8+CiAgPC9nPgo8L3N2Zz4K");
 }
+
 .gauge-meter-background.rank-2 {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iODYiIGhlaWdodD0iNDMiIHZpZXdCb3g9IjAgMCA4NiA0MyI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCI+CiAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfNTA4NCIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgNTA4NCIgd2lkdGg9Ijg2IiBoZWlnaHQ9IjQzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjAxKSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjNzA3MDcwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjAuNSIgeTE9Ii0wLjI5OCIgeDI9IjAuNTA3IiB5Mj0iMC40OTQiIGdyYWRpZW50VW5pdHM9Im9iamVjdEJvdW5kaW5nQm94Ij4KICAgICAgPHN0b3Agb2Zmc2V0PSIwIiBzdG9wLWNvbG9yPSIjZmQ5MjkxIiBzdG9wLW9wYWNpdHk9IjAuOCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmNTk4OTYiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPGcgaWQ9Ik1hc2tfR3JvdXBfNjIxIiBkYXRhLW5hbWU9Ik1hc2sgR3JvdXAgNjIxIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDAuMDEpIiBjbGlwLXBhdGg9InVybCgjY2xpcC1wYXRoKSI+CiAgICA8ZWxsaXBzZSBpZD0iRWxsaXBzZV8yMjM5IiBkYXRhLW5hbWU9IkVsbGlwc2UgMjIzOSIgY3g9IjQzIiBjeT0iNDIiIHJ4PSI0MyIgcnk9IjQyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDAuOTkpIiBvcGFjaXR5PSIwLjYiIGZpbGw9InVybCgjbGluZWFyLWdyYWRpZW50KSIvPgogIDwvZz4KPC9zdmc+Cg==");
 }
+
 .gauge-meter-background.rank-3 {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iODYiIGhlaWdodD0iNDMiIHZpZXdCb3g9IjAgMCA4NiA0MyI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCI+CiAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfNTE0MSIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgNTE0MSIgd2lkdGg9Ijg2IiBoZWlnaHQ9IjQzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjAxKSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjNzA3MDcwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjAuNSIgeTE9IjAuMDA2IiB4Mj0iMC41MDciIHkyPSIwLjQ5NCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMC42MDQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNjVjYmIwIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOTdkY2NmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIGlkPSJNYXNrX0dyb3VwXzY0MSIgZGF0YS1uYW1lPSJNYXNrIEdyb3VwIDY0MSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjAxKSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAtcGF0aCkiPgogICAgPHBhdGggaWQ9IlBhdGhfMzU0NDAiIGRhdGEtbmFtZT0iUGF0aCAzNTQ0MCIgZD0iTTQzLDBDNjYuNzQ4LDAsODYsMTguOCw4Niw0MlM2Ni43NDgsODQsNDMsODQsMCw2NS4yLDAsNDIsMTkuMjUyLDAsNDMsMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC45OSkiIG9wYWNpdHk9IjAuNiIgZmlsbD0idXJsKCNsaW5lYXItZ3JhZGllbnQpIi8+CiAgPC9nPgo8L3N2Zz4K");
 }
+
 .gauge-meter-background.rank-4 {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iODYiIGhlaWdodD0iNDMiIHZpZXdCb3g9IjAgMCA4NiA0MyI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCI+CiAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfNTE1MiIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgNTE1MiIgd2lkdGg9Ijg2IiBoZWlnaHQ9IjQzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjAxKSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjNzA3MDcwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjAuNSIgeTE9Ii0wLjI2IiB4Mj0iMC41MDciIHkyPSIwLjQ5NCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiM4ZmYwY2IiIHN0b3Atb3BhY2l0eT0iMC44Ii8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhmZjBjYiIgc3RvcC1vcGFjaXR5PSIwIi8+CiAgICAgIDxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzhmZjBjYiIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNmZmYiIHN0b3Atb3BhY2l0eT0iMCIvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPGcgaWQ9Ik1hc2tfR3JvdXBfNjQ1IiBkYXRhLW5hbWU9Ik1hc2sgR3JvdXAgNjQ1IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDAuMDEpIiBjbGlwLXBhdGg9InVybCgjY2xpcC1wYXRoKSI+CiAgICA8ZWxsaXBzZSBpZD0iRWxsaXBzZV8yMzIxIiBkYXRhLW5hbWU9IkVsbGlwc2UgMjMyMSIgY3g9IjQzIiBjeT0iNDIiIHJ4PSI0MyIgcnk9IjQyIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIDAuOTkpIiBvcGFjaXR5PSIwLjYiIGZpbGw9InVybCgjbGluZWFyLWdyYWRpZW50KSIvPgogIDwvZz4KPC9zdmc+Cg==");
 }
+
 .gauge-meter-background.rank-5 {
   background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iODYiIGhlaWdodD0iNDMiIHZpZXdCb3g9IjAgMCA4NiA0MyI+CiAgPGRlZnM+CiAgICA8Y2xpcFBhdGggaWQ9ImNsaXAtcGF0aCI+CiAgICAgIDxyZWN0IGlkPSJSZWN0YW5nbGVfNTA4NCIgZGF0YS1uYW1lPSJSZWN0YW5nbGUgNTA4NCIgd2lkdGg9Ijg2IiBoZWlnaHQ9IjQzIiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwIC0wLjAxKSIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjNzA3MDcwIiBzdHJva2Utd2lkdGg9IjEiLz4KICAgIDwvY2xpcFBhdGg+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImxpbmVhci1ncmFkaWVudCIgeDE9IjAuNSIgeTE9IjAuMDA2IiB4Mj0iMC41MDciIHkyPSIwLjQ5NCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giPgogICAgICA8c3RvcCBvZmZzZXQ9IjAiIHN0b3AtY29sb3I9IiMzMWJhYTAiIHN0b3Atb3BhY2l0eT0iMC42MDQiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNjVjYmIwIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjOTdkY2NmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgPC9kZWZzPgogIDxnIGlkPSJNYXNrX0dyb3VwXzYyMSIgZGF0YS1uYW1lPSJNYXNrIEdyb3VwIDYyMSIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMCAwLjAxKSIgY2xpcC1wYXRoPSJ1cmwoI2NsaXAtcGF0aCkiPgogICAgPHBhdGggaWQ9IlBhdGhfMzUzODIiIGRhdGEtbmFtZT0iUGF0aCAzNTM4MiIgZD0iTTQzLDBDNjYuNzQ4LDAsODYsMTguOCw4Niw0MlM2Ni43NDgsODQsNDMsODQsMCw2NS4yLDAsNDIsMTkuMjUyLDAsNDMsMFoiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgMC45OSkiIG9wYWNpdHk9IjAuODAyIiBmaWxsPSJ1cmwoI2xpbmVhci1ncmFkaWVudCkiLz4KICA8L2c+Cjwvc3ZnPgo=");
 }
+
 .gauge-meter-pane {
   width: 100%;
   height: 100%;
@@ -4147,6 +4311,7 @@ export default {
     display: none;
   }
 }
+
 .gauge-meter-label-item {
   font-size: 10px;
   color: #8383a1;
@@ -4156,54 +4321,66 @@ export default {
   text-transform: uppercase;
   transition: all 0.3s;
 }
+
 .gauge-meter-label-item.active {
   color: #fff;
 }
+
 .gauge-meter-label-item--strong-sell {
   top: 45px;
   left: -42px;
 }
+
 .gauge-meter--os .gauge-meter-label-item--strong-sell,
 .gauge-meter--ma .gauge-meter-label-item--strong-sell {
   top: 40px;
   left: -40px;
 }
+
 .gauge-meter-label-item--sell {
   top: 5px;
   left: 5px;
 }
+
 .gauge-meter--os .gauge-meter-label-item--sell,
 .gauge-meter--ma .gauge-meter-label-item--sell {
   top: 8px;
   left: -2px;
 }
+
 .gauge-meter-label-item--neutral {
   top: -20px;
   left: 50%;
   transform: translateX(-50%);
 }
+
 .gauge-meter--os .gauge-meter-label-item--neutral,
 .gauge-meter--ma .gauge-meter-label-item--neutral {
   top: -15px;
 }
+
 .gauge-meter-label-item--buy {
   top: 5px;
   right: 7px;
 }
+
 .gauge-meter--os .gauge-meter-label-item--buy,
 .gauge-meter--ma .gauge-meter-label-item--buy {
   top: 8px;
   right: 0px;
 }
+
 .gauge-meter-label-item--strong-buy {
   top: 45px;
   right: -42px;
 }
+
 .gauge-meter--os .gauge-meter-label-item--strong-buy,
 .gauge-meter--ma .gauge-meter-label-item--strong-buy {
   top: 40px;
   right: -40px;
 }
+
 .gauge-meter-status-list {
   position: absolute;
   width: 100%;
@@ -4213,59 +4390,72 @@ export default {
   display: flex;
   justify-content: center;
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter-status-list {
     bottom: -55px;
   }
 }
+
 @media screen and (max-width: 1023px) and (orientation: landscape) {
   .gauge-meter-status-list {
     display: none;
   }
 }
+
 @media screen and (max-width: 767px) {
   .gauge-meter-status-list {
     display: none;
   }
 }
+
 .gauge-meter-status-item {
   display: flex;
   flex-direction: column;
   padding: 0 10px;
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter-status-item {
     padding: 0 5px;
     font-size: 12px;
   }
 }
+
 .gauge-meter-status-value {
   color: #fff;
   text-align: center;
   font-weight: bold;
 }
+
 .gauge-meter-status-value--sell {
   color: #ef5450;
 }
+
 .gauge-meter-status-value--buy {
   color: #31baa0;
 }
+
 .gauge-meter-status-value--neutral {
   color: #d1d4dc;
 }
+
 .gauge-meter-status-text {
   color: #8383a1;
 }
+
 .gauge-meter-popover {
   position: absolute;
   top: 0;
   left: 50%;
   transform: translateX(-50%);
 }
+
 .gauge-meter--os .gauge-meter-popover,
 .gauge-meter--ma .gauge-meter-popover {
   top: 23px;
 }
+
 @media screen and (max-width: 1300px) {
   .gauge-meter--os .gauge-meter-popover,
   .gauge-meter--ma .gauge-meter-popover {
@@ -4468,6 +4658,7 @@ export default {
     height: calc(100vh - 250px);
   }
 }
+
 @media screen and (max-width: 986px) and (orientation: portrait) {
   #tradePage .pc {
     display: none !important;
@@ -4553,6 +4744,7 @@ export default {
 
   .btn-trade-time {
     height: 30px !important;
+
     & > div {
       font-size: 11px !important;
     }
@@ -4606,6 +4798,7 @@ export default {
         padding-top: 75px !important;
     }*/
 }
+
 @media screen and (max-width: 767px) {
   .navbar-floating .router-content {
     margin-top: 30px;
@@ -4615,6 +4808,7 @@ export default {
     min-height: unset;
   }
 }
+
 /* @media screen and (max-width: 575px){
     #tradePage .chartBox {
         height: calc(100vh - 490px);
@@ -4645,24 +4839,31 @@ export default {
   justify-content: center;
   color: #fff;
 }
+
 .color-light-blue {
   color: #00cebe !important;
 }
+
 .color-green {
   color: #3bb5a0 !important;
 }
+
 .color-red {
   color: #fa5f65 !important;
 }
+
 .bg-green {
   background: #3bb5a0 !important;
 }
+
 .bg-red {
   background: #fa5f65 !important;
 }
+
 .empty {
   background: #637284;
 }
+
 .minutes-set {
   float: left;
   margin-right: 28px;
@@ -4703,18 +4904,21 @@ export default {
   stroke: #b6b6b6;
   stroke-width: 12px;
 }
+
 .red .e-c-progress {
   fill: none;
   stroke: #ff0000;
   stroke-width: 12px;
   transition: stroke-dashoffset 0.7s;
 }
+
 .green .e-c-progress {
   fill: none;
   stroke: #31baa0;
   stroke-width: 12px;
   transition: stroke-dashoffset 0.7s;
 }
+
 .red .e-c-progress {
   fill: none;
   stroke: #ff0000;
@@ -4740,18 +4944,23 @@ export default {
   stroke: #31baa0;
   stroke-width: 10px;
 }
+
 #e-pointer {
   transition: transform 0.7s;
 }
+
 .hide-sm {
   display: none !important;
 }
+
 .hide-xs {
   display: block;
 }
+
 .box-btn-buy-sell {
   position: relative;
 }
+
 .box-btn-buy-sell .col-2 {
   position: static;
 }
@@ -4769,11 +4978,13 @@ export default {
   margin-bottom: 2px;
   padding: 2px 5px;
 }
+
 .plotlineChart .time {
   display: inline-block;
   background-color: #F1DD48;
   padding: 2px 5px;
 }
+
 /* Custom color manko */
 .plotlineChart span {
   background-color: #F1DD48 !important;
@@ -4844,37 +5055,41 @@ export default {
 </style>
 
 <style lang="scss">
-.vs-notifications.vs-noti-order_success, .vs-notifications.vs-noti-order_fail{
+.vs-notifications.vs-noti-order_success, .vs-notifications.vs-noti-order_fail {
   background: #011022;
   border: 1px solid #022f65;
   margin-right: 20px;
   padding: 10px;
   margin-top: 80px;
   top: 10px;
-  .content-noti{
+
+  .content-noti {
     .con-text-noti {
-      h3{
+      h3 {
         display: none;
       }
-      p{
+
+      p {
         margin-left: 10px;
       }
     }
-     .vs-icon-noti{   
-        // background: #31baa0;
-        border-radius: 100%;
-        &::before{
-          font-size: 25px;
-        }
-     }
+
+    .vs-icon-noti {
+      // background: #31baa0;
+      border-radius: 100%;
+
+      &::before {
+        font-size: 25px;
+      }
+    }
   }
 }
 
-.vs-notifications.vs-noti-order_success .content-noti .vs-icon-noti{
-  background: #31baa0;    
+.vs-notifications.vs-noti-order_success .content-noti .vs-icon-noti {
+  background: #31baa0;
 }
 
-.vs-notifications.vs-noti-order_fail .content-noti .vs-icon-noti{
-  background: #FC5454;    
+.vs-notifications.vs-noti-order_fail .content-noti .vs-icon-noti {
+  background: #FC5454;
 }
 </style>
