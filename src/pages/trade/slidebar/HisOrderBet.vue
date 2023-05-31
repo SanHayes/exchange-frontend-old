@@ -473,7 +473,7 @@ export default {
     ::v-deep .vs-sidebar {
       width: 230px !important;
       max-width: 90vw !important;
-      top: 65px;
+      //top: 65px;
     }
   }
 

@@ -1214,7 +1214,7 @@
         </div>
       </div>
       <div
-          :class="['c-body trans']"
+          :class="['c-body trans his-bet-wrapper']"
           :style="`${isOpenSideBar && !isTablet ? 'width: 230px' : ''}`"
       ></div>
     </div>
@@ -2172,18 +2172,18 @@ export default {
       if (isTablet || isMobile) return isOpenSideBarStore;
       if (isOpenSideBarStore) {
         if (tradeView) {
-          tradeView.style.transform = `translateX(-230px)`;
+          // tradeView.style.transform = `translateX(-230px)`;
         }
         if (cDesktop) {
-          cDesktop.style.transform = `translateX(-230px)`;
+          // cDesktop.style.transform = `translateX(-230px)`;
         }
         if (historyBox) {
           // historyBox.style.transform = `translateX(-230px)`;
-          historyBox.style.width = "calc(100% - 230px)";
-          historyBox.style.setProperty('--width', (analysis.clientWidth - 230) / analysis.clientWidth);
+      /*    historyBox.style.width = "calc(100% - 230px)";
+          historyBox.style.setProperty('--width', (analysis.clientWidth - 230) / analysis.clientWidth);*/
         }
         if (gaugeMeter) {
-          gaugeMeter.style.transform = `translateX(-128px)`;
+          // gaugeMeter.style.transform = `translateX(-128px)`;
         }
       } else {
         if (tradeView) {
@@ -3545,6 +3545,14 @@ export default {
       flex: 0 0 210px;
       max-width: 210px;
     }
+  }
+  .his-bet-wrapper {
+    position: fixed;
+    width: 210px;
+    top: 80px;
+    z-index: 100;
+    right: 0;
+    border-left: 2px solid #000;
   }
 }
 
