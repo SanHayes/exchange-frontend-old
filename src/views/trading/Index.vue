@@ -3026,7 +3026,6 @@ export default {
       let data = JSON.parse(event.data);
 
       let dl = data.data;
-      console.log('data', data)
       if (data.type === "getListDauTien") {
         if (!!dl) {
           listData = dl;

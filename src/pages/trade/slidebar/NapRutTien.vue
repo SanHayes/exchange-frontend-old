@@ -284,7 +284,7 @@
                     type="number"
                     v-model="amount"
                     decimal="true"
-                    :placeholder="`Số tiền tối thiểu: ${getSetSys.minDepositUSDT}`"
+                    :placeholder="`Số tiền tối thiểu: ${formatPrice(getSetSys.minDepositUSDT)}`"
                     class="form-control"
                   />
                 </div>
@@ -328,7 +328,7 @@
               </div>
 
               <div v-else class="deposit_widthdraw_box">
-                <div class="colorSecondary2">
+                <!--<div class="colorSecondary2">
                   USD trong ví:
                   <span class="price mr-2"> {{ getAmount }}$ </span>
                 </div>
@@ -337,13 +337,13 @@
                   <span class="price mr-2">
                     {{ formatPrice(amount * getSetSys.quotePriceVND, 0) }} VNĐ
                   </span>
-                </div>
+                </div>-->
                 <div class="form-group relative mt-4">
                   <input
                     v-model="amount"
                     type="number"
                     decimal="true"
-                    :placeholder="`Số tiền tối thiểu: ${getSetSys.minWithdrawalUSDT} USDT`"
+                    :placeholder="`Số tiền tối thiểu: ${formatPrice(getSetSys.minWithdrawalUSDT)}`"
                     class="form-control"
                   />
                   <button
@@ -753,7 +753,8 @@ export default {
       bank: `${getData.displayName}_${makeid(4)}`,
       isMobile,
 
-      DISABLE_2FA: false,
+      // DISABLE_2FA: false,
+      DISABLE_2FA: true,
       bankInfo: "",
 
       disableCheckWallet: false,
@@ -808,6 +809,7 @@ export default {
 
         if (d.success) {
           this.isNap = false;
+          this.$emit('update:active',false)
           return this.$vs.notify({
             text: "Gửi yêu cầu nạp tiền thành công!",
             iconPack: "feather",

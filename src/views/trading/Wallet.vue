@@ -1189,7 +1189,7 @@
     <rut-tien :isSidebarActive="addSidebarRutTien" @closeSidebar="toggleDataSidebarRutTien"/> -->
 
     <vs-prompt title="" :active.sync="popupActiveNRTien" :buttons-hidden="true">
-      <nap-rut-tien :money-type="moneyType" />
+      <nap-rut-tien :active.sync="popupActiveNRTien" :money-type="moneyType" />
     </vs-prompt>
   </div>
 </template>
@@ -1728,10 +1728,10 @@ export default {
 
         getSetSys.minWithdrawalBTC = g.mWBTC; // rút tiền tối thiểu
         getSetSys.minWithdrawalETH = g.mWETH; // rút tiền tối thiểu
-        getSetSys.minWithdrawalUSDT = g.mWUSDT; // rút tiền tối thiểu
+        // getSetSys.minWithdrawalUSDT = g.mWUSDT; // rút tiền tối thiểu
         getSetSys.minWithdrawalPaypal = g.mWPaypal; // rút tiền tối thiểu
-
-        getSetSys.isActiveWalletPaypal = g.iAWPaypal; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
+        // 去掉PAYPAL
+        // getSetSys.isActiveWalletPaypal = g.iAWPaypal; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
         getSetSys.isActiveWalletETH = g.iAWETH; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
         getSetSys.isActiveWalletUSDT = g.iAWUSDT; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
         getSetSys.isActiveWalletBTC = g.iAWBTC; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống

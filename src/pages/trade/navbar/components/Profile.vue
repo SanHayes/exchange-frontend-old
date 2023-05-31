@@ -167,6 +167,7 @@
     <!--<div class="con-img ml-3">
       <vs-button type="line" icon-pack="feather" :color="colorRT" icon="icon-dollar-sign" @click.stop="viewRutTien()">Rút tiền</vs-button>
     </div> -->
+    <!--设置-->
     <div
       class="con-img ml-3 mr-3 cursor-pointer msetting"
       @click="popupActiveCaiDat = true"
@@ -727,7 +728,7 @@
           <small>*Giá báo có thể thay đổi</small>
         </p>
       </div>-->
-      <nap-rut-tien money-type="VND" />
+      <nap-rut-tien :active.sync="popupActiveNapNhanh" money-type="VND" />
     </vs-prompt>
     <vs-popup
       class="text-center"
@@ -929,6 +930,65 @@ export default {
     },
   },
   methods: {
+    getSysWallet() {
+      AuthenticationService.getSetupWallet().then((res) => {
+        let g = res.data.data;
+        getSetSys.quotePriceUSDT = this.replaceAll(
+            this.formatPrice(g.qUSDT, 2),
+            ",",
+            ""
+        ); // giá sấp sĩ USD
+        getSetSys.quotePriceETH = this.replaceAll(
+            this.formatPrice(g.qETH, 4),
+            ",",
+            ""
+        ); // giá sấp sĩ USD
+        getSetSys.quotePriceBTC = this.replaceAll(
+            this.formatPrice(g.qBTC, 6),
+            ",",
+            ""
+        ); // giá sấp sĩ USD
+        getSetSys.quotePricePAYPAL = this.replaceAll(
+            this.formatPrice(g.qPaypal, 2),
+            ",",
+            ""
+        ); //  giá sấp sĩ USD
+        getSetSys.quotePriceVND = this.replaceAll(
+            this.formatPrice(g.qVND, 2),
+            ",",
+            ""
+        ); //  giá sấp sĩ USD
+
+        getSetSys.typeCurrUseSys = g.tCUseSys; // đồng tiền tệ sử dụng trong hệ thống
+
+        getSetSys.minDepositBTC = g.mDBTC; // nạp tiền tối thiểu
+        getSetSys.minDepositETH = g.mDETH; // nạp tiền tối thiểu
+        // 写死
+        // getSetSys.minDepositUSDT = g.mDUSDT; // nạp tiền tối thiểu
+        getSetSys.minDepositPaypal = g.mDPaypal; // nạp tiền tối thiểu
+
+        getSetSys.minWithdrawalBTC = g.mWBTC; // rút tiền tối thiểu
+        getSetSys.minWithdrawalETH = g.mWETH; // rút tiền tối thiểu
+        // getSetSys.minWithdrawalUSDT = g.mWUSDT; // rút tiền tối thiểu
+        getSetSys.minWithdrawalPaypal = g.mWPaypal; // rút tiền tối thiểu
+        // 去掉PAYPAL
+        // getSetSys.isActiveWalletPaypal = g.iAWPaypal; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
+        getSetSys.isActiveWalletETH = g.iAWETH; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
+        getSetSys.isActiveWalletUSDT = g.iAWUSDT; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
+        getSetSys.isActiveWalletBTC = g.iAWBTC; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
+        getSetSys.isActiveWalletVND = g.iAWVND; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
+
+        getSetSys.feeRutPaypalNoiBo = g.fDPaypalNB;
+        getSetSys.feeRutPaypalAcc = g.fDPaypalAcc;
+        getSetSys.feeRutBTCNoiBo = g.fDBTCNB;
+        getSetSys.feeRutBTCAcc = g.fDBTCAcc;
+        getSetSys.feeRutETHNoiBo = g.fDETHNB;
+        getSetSys.feeRutETHERC20 = g.fDETHERC20;
+        getSetSys.feeRutUSDTNoiBo = g.fDUSDTNB;
+        getSetSys.feeRutUSDTBEP20 = g.fDUSDTBEP20;
+        getSetSys.feeRutUSDTERC20 = g.fDUSDTERC20;
+      });
+    },
     clickShowPopTrans() {
       this.popupTransferActive = true;
 
@@ -1346,6 +1406,7 @@ export default {
         this.prize = resp.data.data.sum;
       }
     });
+    this.getSysWallet()
   },
   mounted() {
     let stateOpen = localStorage.getItem("stateOpen");
