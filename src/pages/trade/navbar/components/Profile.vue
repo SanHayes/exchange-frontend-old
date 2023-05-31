@@ -866,7 +866,7 @@ export default {
       config,
       popupTransferActive: false,
       textWalletHtml:
-        '<span class="mr-1 color-blue uppercase green">USDT</span> <span>Wallet</span>',
+        '<span class="mr-1 color-blue uppercase green"></span> <span>Ví điện tử</span>',
       textAccLive: "Tài khoản Thực",
       amountAcc: 0,
       amountAccLive: 0,

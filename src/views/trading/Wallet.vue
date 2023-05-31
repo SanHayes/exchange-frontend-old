@@ -823,7 +823,7 @@
           <div class="showV" :class="{ block: showVGD }">
             <div class="contentBox">
               <div class="vx-row">
-                <div class="vx-col w-full lg:w-2/2 mt-4">
+                <div class="vx-col w-full lg:w-2/2 mt-4" style="max-width: 500px;">
                   <div class="background backgroundImg backgroundLive">
                     <div
                       class="content flex flex-col justify-center items-center"
@@ -1234,7 +1234,7 @@ export default {
 
       blObj: getData,
       textWalletHtml:
-        '<span class="mr-1 color-blue uppercase green">USDT</span> <span>Wallet</span>',
+        '<span class="mr-1 color-blue uppercase green"></span> <span>Ví điện tử</span>',
       textAccLive: "Tài khoản Thực",
       amountAcc: 0,
       amountAccLive: 0,
