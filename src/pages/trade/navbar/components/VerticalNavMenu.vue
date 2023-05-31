@@ -27,7 +27,7 @@
               "
             />
           </template>
-          <router-link
+<!--          <router-link
             tag="div"
             class="vx-logo cursor-pointer flex items-center mx-auto"
             :to="{name: 'client-index'}"
@@ -44,7 +44,7 @@
               v-if="title"
               >{{ title }}</span
             >
-          </router-link>
+          </router-link>-->
         </div>
 
         <list-menu-handmade />
@@ -311,8 +311,8 @@ export default {
 
 .c-sidebar {
   & > div {
-    background: #02142b !important;
-    width: 80vw;
+    background: #02142b!important;
+    width: 105px;
     max-width: 309px;
   }
 }
