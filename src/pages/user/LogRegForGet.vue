@@ -135,7 +135,7 @@
                   >
                 </div>
 
-                <div>
+<!--                <div>
                   <div
                     data-text="Or continue with"
                     class="divider__with-text mt-4 mb-4"
@@ -244,7 +244,7 @@
                       </button></a
                     >
                   </div>
-                </div>
+                </div>-->
               </div>
             </div>
             <div class="loginForm white mt-0" v-else>
@@ -511,7 +511,7 @@
                   >
                 </div>
 
-                <div
+<!--                <div
                   class="mb-5 relative"
                   :class="{ 'md-invalid': msgNickName3rd != '' }"
                 >
@@ -533,7 +533,7 @@
                   <span class="md-count float-right text-xs italic"
                     >{{ nickName3rd.length }} / 20</span
                   >
-                </div>
+                </div>-->
 
                 <div class="flex">
                   <div
@@ -799,7 +799,7 @@
                   >
                 </div>
 
-                <div
+<!--                <div
                   class="mb-5 relative"
                   :class="{ 'md-invalid': msgNickName != '' }"
                 >
@@ -821,7 +821,7 @@
                   <span class="md-count float-right text-xs italic"
                     >{{ countNickNameReg }} / 20</span
                   >
-                </div>
+                </div>-->
 
                 <div
                   class="mb-5 relative"
@@ -849,7 +849,7 @@
                     >Đăng ký</vs-button
                   >
                 </div>
-                <div>
+<!--                <div>
                   <div
                     data-text="Or continue with"
                     class="divider__with-text mt-4 mb-4"
@@ -958,7 +958,7 @@
                       </button></a
                     >
                   </div>
-                </div>
+                </div>-->
               </div>
             </div>
             <div v-if="isSubmitReg">
@@ -1818,20 +1818,20 @@ export default {
         this.msgPassReg = "";
       }
 
-      const regex = /^[a-zA-Z0-9-_]+$/;
+      // const regex = /^[a-zA-Z0-9-_]+$/;
 
-      if (
-        this.nickName === "" ||
-        this.nickName.length < 6 ||
-        this.nickName.length > 20 ||
-        !regex.test(this.nickName)
-      ) {
-        this.msgNickName =
-          "Biệt danh phải từ 6 đến 20 ký tự, bắt đầu bằng chữ và không chứa ký tự đặc biệt.";
-        return;
-      } else {
-        this.msgNickName = "";
-      }
+      // if (
+      //   this.nickName === "" ||
+      //   this.nickName.length < 6 ||
+      //   this.nickName.length > 20 ||
+      //   !regex.test(this.nickName)
+      // ) {
+      //   this.msgNickName =
+      //     "Biệt danh phải từ 6 đến 20 ký tự, bắt đầu bằng chữ và không chứa ký tự đặc biệt.";
+      //   return;
+      // } else {
+      //   this.msgNickName = "";
+      // }
 
       let isActive = true;
 
@@ -1841,27 +1841,44 @@ export default {
         let obj = {
           email: this.emailReg,
           password: this.passwordReg,
-          nick_name: this.nickName,
+          // nick_name: this.nickName,
           upline_id: this.codeRef,
         };
 
         //
 
-        AuthenticationService.registerUser(obj).then((res) => {
+        AuthenticationService.registerUser(obj).then(async (res) => {
           this.ldFrom = false;
           if (res.data.success == 1) {
-            this.isSubmitReg = true;
-            setTimeout(() => {
-              this.countDownResendMail();
-            }, 500);
+            // this.isSubmitReg = true;
+            const {data: {success, g_2fa, token}} = await AuthenticationService.loginUser({
+              email: this.emailReg,
+              password: this.passwordReg,
+            })
+            if (success === 1) {
+              if (g_2fa) {
+                this.isG2FA = g_2fa;
+                this.saveToken = token;
+                return;
+              }
+            }
+            localStorage.setItem("tokenUser", token);
 
-            this.$vs.notify({
-              title: "Đăng ký thành công",
-              text: "Chúng tôi đã gửi 1 một liên kết kích hoạt đến tài khoản của bạn.",
-              iconPack: "feather",
-              icon: "icon-check",
-              color: "success",
-            });
+            this.activeLogin = false;
+
+            await this.getInfoLogin();
+            return;
+            // setTimeout(() => {
+            //   this.countDownResendMail();
+            // }, 500);
+            //
+            // this.$vs.notify({
+            //   title: "Đăng ký thành công",
+            //   text: "Chúng tôi đã gửi 1 một liên kết kích hoạt đến tài khoản của bạn.",
+            //   iconPack: "feather",
+            //   icon: "icon-check",
+            //   color: "success",
+            // });
           } else if (res.data.success == 2) {
             this.$vs.notify({
               text: "Email này đã tồn tại",
