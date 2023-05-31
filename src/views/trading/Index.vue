@@ -2623,7 +2623,7 @@ export default {
           const {dataMax} = chartInstance.xAxis[0].getExtremes();
           begin = this.setSizeStock(listData);
           chartGet.xAxis[0].setExtremes(
-              listData[begin]["date"],
+              listData[begin]?.date,
               dataMax,
               false
           );
