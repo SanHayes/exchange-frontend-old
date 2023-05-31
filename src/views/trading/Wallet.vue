@@ -856,7 +856,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="vx-col w-full lg:w-1/2 mt-4">
+<!--                <div class="vx-col w-full lg:w-1/2 mt-4">
                   <div class="background backgroundImg backgroundDemo">
                     <div
                       class="content flex flex-col justify-center items-center"
@@ -888,7 +888,7 @@
                       </button>
                     </div>
                   </div>
-                </div>
+                </div>-->
               </div>
               <div class="sectionTable lg:pb-4">
                 <div class="balance">
