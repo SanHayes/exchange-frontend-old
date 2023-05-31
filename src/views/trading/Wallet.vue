@@ -823,7 +823,7 @@
           <div class="showV" :class="{ block: showVGD }">
             <div class="contentBox">
               <div class="vx-row">
-                <div class="vx-col w-full lg:w-1/2 mt-4">
+                <div class="vx-col w-full lg:w-2/2 mt-4" style="max-width: 500px;">
                   <div class="background backgroundImg backgroundLive">
                     <div
                       class="content flex flex-col justify-center items-center"
@@ -856,7 +856,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="vx-col w-full lg:w-1/2 mt-4">
+<!--                <div class="vx-col w-full lg:w-1/2 mt-4">
                   <div class="background backgroundImg backgroundDemo">
                     <div
                       class="content flex flex-col justify-center items-center"
@@ -888,7 +888,7 @@
                       </button>
                     </div>
                   </div>
-                </div>
+                </div>-->
               </div>
               <div class="sectionTable lg:pb-4">
                 <div class="balance">
@@ -1189,7 +1189,7 @@
     <rut-tien :isSidebarActive="addSidebarRutTien" @closeSidebar="toggleDataSidebarRutTien"/> -->
 
     <vs-prompt title="" :active.sync="popupActiveNRTien" :buttons-hidden="true">
-      <nap-rut-tien :money-type="moneyType" />
+      <nap-rut-tien :active.sync="popupActiveNRTien" :money-type="moneyType" />
     </vs-prompt>
   </div>
 </template>
@@ -1234,7 +1234,7 @@ export default {
 
       blObj: getData,
       textWalletHtml:
-        '<span class="mr-1 color-blue uppercase green">USDT</span> <span>Wallet</span>',
+        '<span class="mr-1 color-blue uppercase green"></span> <span>Ví điện tử</span>',
       textAccLive: "Tài khoản Thực",
       amountAcc: 0,
       amountAccLive: 0,
@@ -1728,10 +1728,10 @@ export default {
 
         getSetSys.minWithdrawalBTC = g.mWBTC; // rút tiền tối thiểu
         getSetSys.minWithdrawalETH = g.mWETH; // rút tiền tối thiểu
-        getSetSys.minWithdrawalUSDT = g.mWUSDT; // rút tiền tối thiểu
+        // getSetSys.minWithdrawalUSDT = g.mWUSDT; // rút tiền tối thiểu
         getSetSys.minWithdrawalPaypal = g.mWPaypal; // rút tiền tối thiểu
-
-        getSetSys.isActiveWalletPaypal = g.iAWPaypal; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
+        // 去掉PAYPAL
+        // getSetSys.isActiveWalletPaypal = g.iAWPaypal; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
         getSetSys.isActiveWalletETH = g.iAWETH; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
         getSetSys.isActiveWalletUSDT = g.iAWUSDT; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
         getSetSys.isActiveWalletBTC = g.iAWBTC; // Bật / tắt đồng COIN sử dụng nạp và gửi tiền trong hệ thống
