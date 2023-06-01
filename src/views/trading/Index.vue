@@ -421,7 +421,7 @@
                 <div class="time">{{ seconDown }}s</div>
               </div>
             </div>
-            <div class="price-center mt-3">Ví tiền: {{ balanceForuser }}</div>
+            <div class="price-center mt-3">Ví tiền: {{ formatPrice(balanceForuser) }}</div>
             <div class="amount m-0 mt-3">
               <div>Số tiền</div>
               <div class="relative">
@@ -2018,7 +2018,6 @@ export default {
           f.label.attr({
             text: '<div class="plotlineChart flex flex-col"><span class="price">' + boPrice.close + '</span><span class="time self-end">00:' + (counter > 9 ? counter : '0' + counter) + '</span></div>'
           });
-
         if (boPrice.type === 'order') {
           this.isOrder = true;
           this.isBet = true;
