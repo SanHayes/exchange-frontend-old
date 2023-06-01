@@ -1947,7 +1947,7 @@ export default {
       try {
         var lastCandle = chartInstance.series[1].points[chartInstance.series[1].points.length - 1];
         var color = this.getColor(boPrice.open, boPrice.close);
-        if (lastCandle.x === boPrice.date) {
+        if (lastCandle.x === boPrice?.date) {
           lastCandle.update(
             {
               x: boPrice.date,
