@@ -1887,7 +1887,8 @@ export default {
         //currency: '',
         minimumFractionDigits: minimum
       });
-      return formatter.format(value);
+      let val = Number(value).toFixed(0)
+      return formatter.format(val);
     },
 
     tinhloinhuan(m) {
@@ -2007,7 +2008,7 @@ export default {
           //console.log(listData);
           const { dataMax } = chartInstance.xAxis[0].getExtremes();
           begin = this.setSizeStock(listData);
-          chartGet.xAxis[0].setExtremes(listData[begin]?.date, dataMax, false);
+          chartGet.xAxis[0]?.setExtremes(listData[begin]?.date, dataMax, false);
           chartGet.redraw();
         }
         chartInstance.xAxis[0].options.plotLines[0].value = boPrice.date;
@@ -2211,7 +2212,7 @@ export default {
           clearInterval(ao);
           const { dataMax } = chartGet.xAxis[0].getExtremes(); //dataMin
           begin = this.setSizeStock(listData);
-          chartGet.xAxis[0].setExtremes(data[begin]['date'], dataMax, false);
+          chartGet.xAxis[0]?.setExtremes(data[begin]['date'], dataMax, false);
           chartGet.redraw();
         }
       }, 100);
