@@ -418,7 +418,7 @@
               </div>
               <div class="wrapper-time">
                 <div class="text">{{ textTimeDown }}</div>
-                <div class="time">{{ seconDown }}s</div>
+                <div v-if="seconDown !== null" class="time">{{ seconDown }}s</div>
               </div>
             </div>
             <div class="price-center mt-3">Ví tiền: {{ formatPrice(balanceForuser) }}</div>
@@ -484,7 +484,7 @@
             </div>
           </div>
 
-          <div class="lg:relative mb-5 mt-10 no-margin-m">
+          <div v-if="seconDown !== null" class="lg:relative mb-5 mt-10 no-margin-m">
             <div class="h-6"></div>
             <div @click="isBet && BetBuySell('buy')" :class="`btn_dat_cuoc tang mb-5 ${!isBet ? 'disabled' : ''}`">
               MUA
@@ -572,7 +572,7 @@
             </div>
           </div>
           <div class="relative mb-5 mt-3">
-            <div style="display: flex; justify-content: space-between">
+            <div v-if="seconDown !== null" style="display: flex; justify-content: space-between">
               <div @click="BetBuySell('sell')" :class="`btn_dat_cuoc_m giam ${!isBet ? 'disabled' : ''}`">BÁN</div>
               <div class="font-bold btn_dat_cuoc_m time">
                 <div>{{ textTimeDown }}</div>
@@ -745,7 +745,7 @@ const stockChart = {
     plotBackgroundImage: require('@/assets/images/sky/world_map.svg'),
     marginLeft: 0,
     marginRight: 'pc' !== deviceVersion ? 60 : 80,
-    marginBottom: 'pc' !== deviceVersion ? 20 : 30,
+    marginBottom: 'pc' !== deviceVersion ? 40 : 30,
 
     // margin: 0,
     // defaultSeriesType: 'areaspline',
@@ -855,7 +855,7 @@ const stockChart = {
     type: 'datetime',
     labels: {
       enabled: true,
-      padding: 0,
+      // padding: 0,
       formatter() {
         return Highcharts.dateFormat('%M:%S', this.value);
       },
@@ -1429,7 +1429,7 @@ export default {
 
       moneyWin: 0,
       isWinPop: false,
-      blObj: getData,
+      blObj: {...getData},
       isBet: true,
       CSBUY: 0,
       CSSELL: 0,
