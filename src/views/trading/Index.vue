@@ -2227,9 +2227,9 @@ export default {
         let w = $('.chartBox').width();
         let h = $('.chartBox').height();
         if (!!w && !!h) {
-          let cH = this.$refs.chartStock.chart.chartHeight;
+          let cH = this.$refs.chartStock?.chart.chartHeight;
           if (cH !== h) {
-            let chartInstance = this.$refs.chartStock.chart;
+            let chartInstance = this.$refs.chartStock?.chart;
             chartInstance.setSize($('.chartBox').width(), $('.chartBox').height(), true);
             chartGet = chartInstance;
           } else {
@@ -2247,7 +2247,7 @@ export default {
       } else {
         deviceVersion = 'mobile';
       }
-      let chartInstance = this.$refs.chartStock.chart;
+      let chartInstance = this.$refs.chartStock?.chart;
       chartInstance.setSize($('.chartBox').width(), $('.chartBox').height(), true);
       chartGet = chartInstance;
       this.$forceUpdate();
