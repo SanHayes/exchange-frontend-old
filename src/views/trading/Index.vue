@@ -414,10 +414,11 @@
               <div class="session">
                 <!--交易号-->
                 <div class="title">Giao dịch</div>
-                <div class="ss">601967636</div>
+                <div class="ss">{{ session }}</div>
               </div>
               <div class="wrapper-time">
                 <div class="text">{{ textTimeDown }}</div>
+<!--               倒计时-->
                 <div v-if="seconDown !== null" class="time">{{ seconDown }}s</div>
               </div>
             </div>
@@ -568,7 +569,7 @@
             <!--            </div>-->
             <div class="session-mobile">
               <div>Phiên</div>
-              <div>601967751</div>
+              <div>{{ session }}</div>
             </div>
           </div>
           <div class="relative mb-5 mt-3">
@@ -855,7 +856,7 @@ const stockChart = {
     type: 'datetime',
     labels: {
       enabled: true,
-      // padding: 0,
+      padding: 0,
       formatter() {
         return Highcharts.dateFormat('%M:%S', this.value);
       },
@@ -1886,7 +1887,8 @@ export default {
         //currency: '',
         minimumFractionDigits: minimum
       });
-      return formatter.format(value);
+      let val = Number(value).toFixed(0)
+      return formatter.format(val);
     },
 
     tinhloinhuan(m) {
@@ -1946,7 +1948,7 @@ export default {
       try {
         var lastCandle = chartInstance.series[1].points[chartInstance.series[1].points.length - 1];
         var color = this.getColor(boPrice.open, boPrice.close);
-        if (lastCandle.x === boPrice.date) {
+        if (lastCandle.x === boPrice?.date) {
           lastCandle.update(
             {
               x: boPrice.date,
@@ -2006,7 +2008,7 @@ export default {
           //console.log(listData);
           const { dataMax } = chartInstance.xAxis[0].getExtremes();
           begin = this.setSizeStock(listData);
-          chartGet.xAxis[0].setExtremes(listData[begin]?.date, dataMax, false);
+          chartGet.xAxis[0]?.setExtremes(listData[begin]?.date, dataMax, false);
           chartGet.redraw();
         }
         chartInstance.xAxis[0].options.plotLines[0].value = boPrice.date;
@@ -2210,7 +2212,7 @@ export default {
           clearInterval(ao);
           const { dataMax } = chartGet.xAxis[0].getExtremes(); //dataMin
           begin = this.setSizeStock(listData);
-          chartGet.xAxis[0].setExtremes(data[begin]['date'], dataMax, false);
+          chartGet.xAxis[0]?.setExtremes(data[begin]['date'], dataMax, false);
           chartGet.redraw();
         }
       }, 100);
@@ -2226,10 +2228,10 @@ export default {
         let w = $('.chartBox').width();
         let h = $('.chartBox').height();
         if (!!w && !!h) {
-          let cH = this.$refs.chartStock.chart.chartHeight;
+          let cH = this.$refs.chartStock?.chart.chartHeight;
           if (cH !== h) {
-            let chartInstance = this.$refs.chartStock.chart;
-            chartInstance.setSize($('.chartBox').width(), $('.chartBox').height(), true);
+            let chartInstance = this.$refs.chartStock?.chart;
+            chartInstance?.setSize($('.chartBox').width(), $('.chartBox').height(), true);
             chartGet = chartInstance;
           } else {
             clearInterval(setS);
@@ -2246,8 +2248,8 @@ export default {
       } else {
         deviceVersion = 'mobile';
       }
-      let chartInstance = this.$refs.chartStock.chart;
-      chartInstance.setSize($('.chartBox').width(), $('.chartBox').height(), true);
+      let chartInstance = this.$refs.chartStock?.chart;
+      chartInstance?.setSize($('.chartBox').width(), $('.chartBox').height(), true);
       chartGet = chartInstance;
       this.$forceUpdate();
       this.setWidthHistoryBox();
