@@ -2230,7 +2230,7 @@ export default {
           let cH = this.$refs.chartStock?.chart.chartHeight;
           if (cH !== h) {
             let chartInstance = this.$refs.chartStock?.chart;
-            chartInstance.setSize($('.chartBox').width(), $('.chartBox').height(), true);
+            chartInstance?.setSize($('.chartBox').width(), $('.chartBox').height(), true);
             chartGet = chartInstance;
           } else {
             clearInterval(setS);
@@ -2248,7 +2248,7 @@ export default {
         deviceVersion = 'mobile';
       }
       let chartInstance = this.$refs.chartStock?.chart;
-      chartInstance.setSize($('.chartBox').width(), $('.chartBox').height(), true);
+      chartInstance?.setSize($('.chartBox').width(), $('.chartBox').height(), true);
       chartGet = chartInstance;
       this.$forceUpdate();
       this.setWidthHistoryBox();
