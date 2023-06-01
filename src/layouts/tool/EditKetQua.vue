@@ -4,7 +4,7 @@
         Nhập mã xác thực 2 FA để truy cập trang
         <vs-input class="mt-5" placeholder="Nhập mã 2FA" v-model="code_2fa" />
         <vs-button class="mt-5 vs-con-loading__container loading-btn" @click="openPage">Xác nhận </vs-button>
-        
+
   </div>
   <div v-else id="list-edit-result" class="data-list-container">
 <template>
