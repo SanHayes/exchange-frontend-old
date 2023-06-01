@@ -16,7 +16,20 @@
         &lt;!&ndash; </router-link> &ndash;&gt;
       </div>
     </div>-->
-
+    <div class="info-money">
+      <div class="money-i">
+        <div class="wrapper-money">
+          <div class="text-money">
+            Ví tiền:
+            {{
+              isAcc
+                  ? this.nFormatter(blObj.blLive, 2)
+                  : this.nFormatter(blObj.blDemo, 2)
+            }}
+          </div>
+        </div>
+      </div>
+    </div>
     <!--<div class="info-money">
       <vs-dropdown vs-custom-content vs-trigger-click>
         <div class="money-i">
@@ -1702,7 +1715,7 @@ export default {
   .mhoso,
   .ttM,
   .mhelper,
-  .maddmoney,
+  //.maddmoney,
   .mDatLenh {
     display: none !important;
   }
@@ -1815,18 +1828,21 @@ export default {
 
 @media (max-width: 1024.98px) {
   .info-money {
-    border-radius: 3px !important;
     height: 40px;
     display: flex;
     align-items: center;
   }
 }
-
+@media (min-width: 600px) {
+  .info-money{
+    display: none !important;
+  }
+}
 .info-money {
   background-color: #2f3342 !important;
   border-radius: 10px;
-  padding-left: 20px;
-  padding-right: 10px;
+  padding-left: 6px;
+  padding-right: 6px;
   margin-left: 10px;
 
   & > * {
@@ -1837,7 +1853,7 @@ export default {
     white-space: nowrap;
     line-height: normal;
     color: #fff;
-    font-size: 8px;
+    font-size: 15px;
     text-align: left !important;
     margin-bottom: 0.25rem !important;
   }
@@ -1865,7 +1881,7 @@ export default {
     padding: 5px 0;
     margin-right: 0.5rem !important;
     display: flex;
-    flex-direction: column;
+    //flex-direction: column;
     align-items: flex-start;
   }
 }
