@@ -115,17 +115,18 @@
                       </div>
                     </div>
                   </div>
+            <!--  v-if="getSetSys.isActiveWalletUSDT"-->
                   <div
-                    class="itemSelectUnit USDT"
-                    @click="selectTypePay('USDT')"
-                    v-if="getSetSys.isActiveWalletUSDT"
+                      class="itemSelectUnit USDT"
+                      @click="selectTypePay('USDT')"
+                      v-if="false"
                   >
-                    <div class="icon USDT"></div>
-                    <div class="info">
-                      <div class="amount w-full">
-                        <span class="number">{{ balanceUSDT }}</span>
-                      </div>
+                  <div class="icon USDT"></div>
+                  <div class="info">
+                    <div class="amount w-full">
+                      <span class="number">{{ balanceUSDT }}</span>
                     </div>
+                  </div>
                   </div>
                   <div
                     class="itemSelectUnit ETH"
