@@ -301,7 +301,7 @@
                       }}</b>
                       VNĐ
                     </div>-->
-                    <!--<pre v-html="bankInfo"></pre>-->
+                    <pre v-html="bankInfo"></pre>
                   </div>
                   <div>
                     <b

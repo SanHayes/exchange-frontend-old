@@ -18,11 +18,13 @@
 }
 
 .price-center {
-  text-align: center;
   background: #2c3e50;
   border-radius: 0.25em;
   height: 3em;
-  line-height: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 ::v-deep .vs__dropdown-toggle {

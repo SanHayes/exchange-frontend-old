@@ -23,8 +23,8 @@
             Ví tiền:
             {{
               isAcc
-                  ? this.nFormatter(blObj.blLive, 0)
-                  : this.nFormatter(blObj.blDemo, 0)
+                  ? this.formatPrice(blObj.blLive, 0)
+                  : this.formatPrice(blObj.blDemo, 0)
             }}
           </div>
         </div>
