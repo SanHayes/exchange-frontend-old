@@ -349,6 +349,7 @@ export default {
 
     showHoSoSetting() {
       this.toggleDataSidebar(true);
+      this.isSidebarActiveLocal = false
     },
 
     toggleDataSidebar(val = false) {

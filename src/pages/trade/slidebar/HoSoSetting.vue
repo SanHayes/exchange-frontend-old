@@ -45,10 +45,10 @@
               <div class="vx-row">
                 <p class="d-flex w-full">Thông tin cá nhân</p>
                 <div class="vx-col md:w-1/2 w-full mt-5">
-                  <vs-input label="Họ" v-model="first_n" class="w-full" />
+                  <vs-input label="Họ" v-model="first_n" class="w-full" style="border: #333;"/>
                 </div>
                 <div class="vx-col md:w-1/2 w-full mt-5">
-                  <vs-input label="Tên" v-model="last_n" class="w-full" />
+                  <vs-input label="Tên" v-model="last_n" class="w-full" style="border: #333;"/>
                 </div>
                 <div class="vx-col w-full mt-5">
                   <vs-input
