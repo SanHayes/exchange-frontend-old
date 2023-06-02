@@ -151,7 +151,7 @@
           >Đổi</vs-button
         >
         <p class="clearfix"></p>
-        <span v-if="!DISABLE_2FA" class="d-flex" style="font-size: 12px; margin-bottom: 5px"
+<!--        <span v-if="!DISABLE_2FA" class="d-flex" style="font-size: 12px; margin-bottom: 5px"
           >Bắt buộc bật 2FA để rút tiền hoặc cập nhật các bảo mật.</span
         >
         <p class="clearfix"></p>
@@ -164,7 +164,7 @@
             icon-pack="feather"
             vs-icon="icon-check"
           />
-        </div>
+        </div>-->
       </div>
 
       <vs-popup

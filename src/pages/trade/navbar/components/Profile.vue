@@ -20,12 +20,12 @@
       <div class="money-i">
         <div class="wrapper-money">
           <div class="text-money">
-            Ví tiền:
-            {{
+            Ví tiền: {{ this.formatPrice(blObj.blLive) }}
+<!--            {{
               isAcc
-                  ? this.formatPrice(blObj.blLive, 0)
-                  : this.formatPrice(blObj.blDemo, 0)
-            }}
+                  ? this.nFormatter(blObj.blLive, 0)
+                  : this.nFormatter(blObj.blDemo, 0)
+            }}-->
           </div>
         </div>
       </div>
@@ -1317,9 +1317,10 @@ export default {
         //currency: '',
         minimumFractionDigits: minimum,
       });
-      return formatter.format(value);
+      let val = Number(value).toFixed(0)
+      return formatter.format(val);
     },
-
+      // 转义
     nFormatter(num, digits) {
       const lookup = [
         { value: 1, symbol: "" },
