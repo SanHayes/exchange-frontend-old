@@ -3,10 +3,6 @@ import ApiAdmin from '@/services/ApiAdmin'
 import ApiAgency from '@/services/ApiAgency'
 
 export default {
-
-
-
-
     //2fa admin
     active2fa(obj) {
         return ApiAdmin().post('api/users/active-2fa', obj)
@@ -259,11 +255,9 @@ export default {
     //=========== END USER
 
 
-
-
     //========== MEMBER
 
-    activeUser(obj){
+    activeUser(obj) {
         return ApiAdmin().post('api/users/admin-active-user', obj)
     },
 
@@ -452,9 +446,6 @@ export default {
     },
 
 
-
-
-
     //================
     //================
     //================
@@ -482,7 +473,6 @@ export default {
     //================
     //================
     //================
-
 
 
     //================
@@ -516,7 +506,6 @@ export default {
     //================
     //================
     //================
-
 
 
     //================
@@ -636,8 +625,3 @@ export default {
     },
 
 }
-
-// AuthenticationService.register({
-//         email: 'testing@gmail.com',
-//         password: '123456'
-// })

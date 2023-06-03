@@ -6,7 +6,7 @@ export default () => {
     return axios.create({
         baseURL: `${config.domain}`,
         headers: {
-            Authorization: `Sky ${localStorage.getItem('tokenAgency')}`
+            Authorization: `Bearer ${localStorage.getItem('tokenAgency')}`
         }
     })
 }
