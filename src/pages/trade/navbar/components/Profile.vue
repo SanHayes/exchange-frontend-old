@@ -20,7 +20,9 @@
       <div class="money-i">
         <div class="wrapper-money">
           <div class="text-money">
-            Ví tiền: {{ this.formatPrice(blObj.blLive) }}
+            Ví tiền: {{
+              this.formatPrice($store.state.currentBalance === 0 ? blObj.blLive : $store.state.currentBalance)
+            }}
 <!--            {{
               isAcc
                   ? this.nFormatter(blObj.blLive, 0)

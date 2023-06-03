@@ -2407,6 +2407,7 @@ export default {
         }
       }
       if (data.type === 'checkBet') {
+        this.$store.dispatch('setCurrentBalance', data.balance)
         this.isBet = true;
         return this.$vs.notify({
           text: 'Đặt lệnh thành công',
