@@ -37,7 +37,7 @@
               <!--<vs-avatar v-else-if="url_avatar!=''" :src="url_avatar" size="80px" class="mr-4" /> -->
               <vs-avatar
                 v-else-if="!!avatar"
-                :src="`${dm}api/auth/me/photo/${avatar}`"
+                :src="`${dm}/api/auth/me/photo/${avatar}`"
                 size="80px"
                 class="mr-4"
               />
@@ -294,7 +294,7 @@ export default {
       passOld: "",
       passNew: "",
       passRenew: "",
-      avatar: "df.jpg",
+      avatar: "@/assets/images/avatar/da.jpg",
       url_avatar: "",
       nickName: "",
       email: "",
