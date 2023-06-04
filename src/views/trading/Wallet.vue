@@ -566,9 +566,10 @@
                                     class="deitalType transfer_in"
                                     v-if="tr.type_key == 'nt'"
                                     >Nạp tiền
-                                    {{
+<!--                                    {{
                                       tr.paypal_order_id ? "Paypal" : ""
-                                    }}</span
+                                    }}-->
+                                  </span
                                   >
                                 </div>
                                 <span
@@ -582,14 +583,14 @@
                                     v-if="tr.type_key == 'rt'"
                                     >Nạp tiền</span
                                   >
-                                  <span
+<!--                                  <span
                                     class="deitalType transfer_in"
                                     v-if="tr.type_key == 'nt'"
                                     >Rút tiền
                                     {{
                                       tr.paypal_order_id ? "Paypal" : ""
                                     }}</span
-                                  >
+                                  >-->
                                 </div>
 
                                 <span
