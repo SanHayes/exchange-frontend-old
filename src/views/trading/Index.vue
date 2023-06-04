@@ -1680,6 +1680,7 @@ export default {
       }
 
       this.balanceForuser = getData.isAccount ? getData.blLive : getData.blDemo;
+      this.$store.dispatch('setCurrentBalance', this.balanceForuser)
     },
 
     checkBet(v) {
@@ -1688,7 +1689,7 @@ export default {
       let sodu = getData.isAccount ? getData.blLive : getData.blDemo;
 
       this.balanceForuser = sodu;
-
+      this.$store.dispatch('setCurrentBalance', this.balanceForuser)
       if (sodu < v) return true;
     },
 
@@ -2351,7 +2352,8 @@ export default {
             (getData.blLive = gData.order[1]?.balance ?? 0);
           getData.blDemo = gData.order[0]?.balance ?? 0;
           (getData.balance = gData.balance), (getData.mkt = gData.mkt);
-
+          this.balanceForuser = getData.isAccount ? getData.blLive : getData.blDemo;
+          this.$store.dispatch('setCurrentBalance', this.balanceForuser)
           localStorage.setItem('INFO', JSON.stringify(gData));
         } else {
           window.location.href = window.location.origin + '/login';
@@ -2374,7 +2376,7 @@ export default {
 
     // lấy tổng số dư của tài khoản
     this.balanceForuser = getData.isAccount ? getData.blLive : getData.blDemo;
-
+    this.$store.dispatch('setCurrentBalance', this.balanceForuser)
     this.connection = new ReconnectingWebSocket(config.BASE_URL_SOCKET);
 
     this.connection.onopen = function () {
@@ -2452,6 +2454,7 @@ export default {
             }
           })
         );
+        this.getUserInfo();
       }
       if (data.type === 'mess') {
         if (dl.type == 'bet') {
