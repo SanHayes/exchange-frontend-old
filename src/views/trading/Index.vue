@@ -1462,34 +1462,34 @@ export default {
           label: '20K',
           code: 20000
         },
-        {
+        /*{
           label: '50K',
           code: 50000
-        },
+        },*/
         {
           label: '100K',
           code: 100000
         },
-        {
+       /* {
           label: '200K',
           code: 200000
         },
         {
           label: '500K',
           code: 500000
-        },
+        },*/
         {
           label: '1M',
           code: 1000000
         },
-        {
+        /*{
           label: '2M',
           code: 2000000
         },
         {
           label: '3M',
           code: 3000000
-        },
+        },*/
         {
           label: '5M',
           code: 5000000
@@ -1502,10 +1502,10 @@ export default {
           label: '20M',
           code: 20000000
         },
-        {
+      /*  {
           label: '30M',
           code: 30000000
-        },
+        },*/
         {
           label: '50M',
           code: 50000000
@@ -1513,6 +1513,14 @@ export default {
         {
           label: '100M',
           code: 100000000
+        },
+        {
+          label: '200M',
+          code: 200000000
+        },
+        {
+          label: '300M',
+          code: 300000000
         }
       ],
       selectedAmount: {
