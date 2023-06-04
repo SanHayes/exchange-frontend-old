@@ -175,6 +175,7 @@
                                         <vs-select-item value="Eximbank" text="Eximbank" />
                                         <vs-select-item value="Lienvietpostbank" text="Lienvietpostbank" />
                                         <vs-select-item value="VIB" text="VIB" />
+                                        <vs-select-item value="Agribank" text="Agribank" />
                                     </vs-select>
                                 </div>
                                 <div class="form-group relative">
