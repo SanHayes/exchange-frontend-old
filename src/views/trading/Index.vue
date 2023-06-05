@@ -1733,7 +1733,7 @@ export default {
           icon: 'icon-x'
         });
       }
-      if (+gAmount < 200000) {
+      if (+gAmount < 20000) {
         return this.$vs.notify({
           text: `Số tiền tối thiểu là 20k.`,
           iconPack: "feather",
