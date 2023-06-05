@@ -426,7 +426,7 @@
             <div class="amount m-0 mt-3">
               <div>Số tiền</div>
               <div class="relative">
-                <v-select v-model="selectedAmount" :options="amounts"></v-select>
+                <v-select taggable :create-option="createOption" v-model="selectedAmount" :options="amounts"></v-select>
               </div>
             </div>
             <!--            <div class="vx-row m-0 mt-2 m_hide">
@@ -565,7 +565,7 @@
           </div>-->
           <div class="wrapper-cuoc-mobile">
             <!--            <div class="relative">-->
-            <v-select append-to-body :calculate-position="withPopper" v-model="selectedAmount" :options="amounts"></v-select>
+            <v-select taggable  :create-option="createOption" append-to-body :calculate-position="withPopper" v-model="selectedAmount" :options="amounts"></v-select>
             <!--            </div>-->
             <div class="session-mobile">
               <div>Phiên</div>
@@ -1626,6 +1626,12 @@ export default {
     }
   },
   methods: {
+    createOption(code){
+      return {
+        label: this.formatPrice(code),
+        code
+      }
+    },
     withPopper(dropdownList, component, { width }) {
       dropdownList.style.width = width;
       const popper = createPopper(component.$refs.toggle, dropdownList, {
@@ -1727,7 +1733,15 @@ export default {
           icon: 'icon-x'
         });
       }
-
+      if (+gAmount < 200000) {
+        return this.$vs.notify({
+          text: `Số tiền tối thiểu là 20k.`,
+          iconPack: "feather",
+          icon: "icon-check",
+          position: "top-right",
+          color: "danger",
+        });
+      }
       let email = getData.email;
       let typeAccount = getData.isAccount;
       let uidLive = getData.uidLive;
