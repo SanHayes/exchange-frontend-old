@@ -1,6 +1,6 @@
 <template>
   <div id="tradePage" v-scroll-lock="$store.state.isScrollTrading" class="trade-container relative">
-    <div class="streak" v-if="streak">
+    <div class="streak" v-if="false">
       <span class="streak-title">streak</span>
       <div class="ep-container" style="width: 32px; height: 32px">
         <div class="ep-content">
@@ -663,7 +663,7 @@
                   <!---->
                 </div>
                 <p class="titleWin">Xin chúc mừng!</p>
-                <span class="message_money text-4xl font-bold">+{{ moneyWin }}$</span>
+                <span class="message_money text-4xl font-bold">+{{ moneyWin }}VND</span>
               </div>
               <span class="cursor-pointer pointer"><i class="iconClose" data-feather="x"></i></span>
             </div>

@@ -130,7 +130,7 @@
         <span v-else-if="getDataJson.verify == 2" class="lightyellow italic"
           >* Tài khoản đang được xem xét</span
         >
-        <span v-else class="green italic">* Tài khoản đã được xác minh</span>
+        <!--<span v-else class="green italic">* Tài khoản đã được xác minh</span>-->
       </div>
 
       <p class="clearfix"></p>
