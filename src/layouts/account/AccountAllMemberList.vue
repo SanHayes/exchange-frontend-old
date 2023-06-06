@@ -651,7 +651,7 @@ export default {
       const check = await this.$store.dispatch("check2fa");
       if(!check){
         return;
-      };
+      }
       delete data["type"]
       // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
       this.sidebarData = data

@@ -32,7 +32,7 @@
         <span class="text-danger text-sm" v-show="errors.has('item-email')">{{ errors.first('item-email') }}</span>
 
         <!-- NICKNAME -->
-        <vs-input label="Biệt danh" v-model="dataNick" class="mt-5 w-full" name="item-nick" v-validate="'required|min:6|max:20'" />
+        <vs-input label="Biệt danh" v-model="dataNick" class="mt-5 w-full" name="item-nick" v-validate="'required|min:6|max:50'" />
         <span class="text-danger text-sm" v-show="errors.has('item-nick')">{{ errors.first('item-nick') }}</span>
 
 
