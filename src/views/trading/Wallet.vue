@@ -1345,10 +1345,10 @@ export default {
           tr.type_key == "ctsa" ||
           tr.type_key == "nn" ||
           tr.type_key == "mv"
-            ? "-$" + this.formatPrice(tr.amount, 2)
-            : "+$" + this.formatPrice(tr.amount, 2);
+            ? "-" + this.formatPrice(tr.amount, 2)
+            : "+" + this.formatPrice(tr.amount, 2);
       } else if (getData.displayName.toUpperCase() == tr.to_u.toUpperCase()) {
-        this.valueShow = "+$" + this.formatPrice(tr.amount, 2);
+        this.valueShow = "+" + this.formatPrice(tr.amount, 2);
       }
 
       switch (tr.type_key) {
