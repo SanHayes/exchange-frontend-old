@@ -1504,7 +1504,7 @@ export default {
         code: 1
       },
       unit: 'K',
-      multiple: 1000,
+      multiple: 1,
       placement: 'top'
     };
   },
@@ -1528,10 +1528,10 @@ export default {
         const { code } = val;
         if (code >= 1000000) {
           this.unit = 'M';
-          this.multiple = 1000000;
+          this.multiple = 1;
         } else {
           this.unit = 'K'
-          this.multiple = 1000
+          this.multiple = 1
         }
         this.betAmount = code;
         this.tinhloinhuan(code / this.multiple);
@@ -1895,7 +1895,7 @@ export default {
 
     tinhloinhuan(m) {
       let lb = Number(m);
-      lb = lb + (lb * 95) / 100;
+      lb = lb + (lb * 90) / 100;
       // tính lợi nhuận 95%
       console.log('tinhloinhuan', lb)
       // this.loiNhuan = this.formatPrice(lb, 0);
