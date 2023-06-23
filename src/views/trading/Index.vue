@@ -472,8 +472,8 @@
           </div>
           <div class="lg:relative mb-5 no-margin-m">
             <div class="text-center">
-              <div class="profitPercent mb-2">Lợi nhuận <span class="text-color-red">95%</span></div>
-              <div class="profitValue color-green text-3xl font-bold no-margin-m">+{{ loiNhuan }} {{ unit }}</div>
+              <div class="profitPercent mb-2">Lợi nhuận <span class="text-color-red">0.9</span></div>
+              <div class="profitValue color-green text-3xl font-bold no-margin-m">+{{ loiNhuan }} $</div>
             </div>
           </div>
           <div class="lg:relative mb-10 text-center no-margin-m">
@@ -488,11 +488,11 @@
           <div v-if="seconDown !== null" class="lg:relative mb-5 mt-10 no-margin-m">
             <div class="h-6"></div>
             <div @click="isBet && BetBuySell('buy')" :class="`btn_dat_cuoc tang mb-5 ${!isBet ? 'disabled' : ''}`">
-              MUA
+              MUA TĂNG
               <feather-icon icon="TrendingUpIcon" svgClasses="w-6 h-5"></feather-icon>
             </div>
             <div @click="isBet && BetBuySell('sell')" :class="`btn_dat_cuoc giam ${!isBet ? 'disabled' : ''}`">
-              BÁN
+              MUA GIẢM
               <feather-icon icon="TrendingDownIcon" svgClasses="w-6 h-5"></feather-icon>
             </div>
           </div>
@@ -508,8 +508,8 @@
           <div class="relative">
             <div class="mt-1 text-center c-loinhuan">
               Lợi nhuận
-              <span class="profitPercent text-color-red mb-2">95%</span>
-              <span class="profitValue color-green text-2xl font-bold">+{{ loiNhuan }}{{ unit }}</span>
+              <span class="profitPercent text-color-red mb-2">0.9</span>
+              <span class="profitValue color-green text-2xl font-bold">+{{ loiNhuan }}$</span>
             </div>
           </div>
           <!--          <div class="relative">
@@ -574,12 +574,12 @@
           </div>
           <div class="relative mb-5 mt-3">
             <div v-if="seconDown !== null" style="display: flex; justify-content: space-between">
-              <div @click="BetBuySell('sell')" :class="`btn_dat_cuoc_m giam ${!isBet ? 'disabled' : ''}`">BÁN</div>
+              <div @click="BetBuySell('sell')" :class="`btn_dat_cuoc_m giam ${!isBet ? 'disabled' : ''}`">MUA GIẢM</div>
               <div class="font-bold btn_dat_cuoc_m time">
                 <div>{{ textTimeDown }}</div>
                 <div class="display-remain-time timer_counter second">{{ seconDown }}s</div>
               </div>
-              <div @click="BetBuySell('buy')" :class="`btn_dat_cuoc_m tang ${!isBet ? 'disabled' : ''}`">MUA</div>
+              <div @click="BetBuySell('buy')" :class="`btn_dat_cuoc_m tang ${!isBet ? 'disabled' : ''}`">MUA TĂNG</div>
             </div>
           </div>
           <div class="keyboard-input-wrap" :class="{ active: showMobileMenu }">
@@ -604,7 +604,7 @@
                 <div class="relative">
                   <div class="mt-2 mb-2 text-center">
                     Lợi nhuận
-                    <span class="profitPercent text-color-red mb-2">95%</span>
+                    <span class="profitPercent text-color-red mb-2">0.9</span>
                     <span class="profitValue color-green text-3xl font-bold">+${{ loiNhuan }}</span>
                   </div>
                 </div>
@@ -1459,73 +1459,49 @@ export default {
       session: 0,
       amounts: [
         {
-          label: '20K',
+          label: '1$',
+          code: 1
+        },
+        {
+          label: '5$',
+          code: 5
+        },
+        {
+          label: '10$',
+          code: 10
+        },
+        {
+          label: '50$',
+          code: 50
+        },
+        {
+          label: '100$',
+          code: 100
+        },
+        {
+          label: '500$',
+          code: 500
+        },
+        {
+          label: '1000$',
+          code: 1000
+        },
+        {
+          label: '5000$',
+          code: 5000
+        },
+        {
+          label: '10000$',
+          code: 10000
+        },
+        {
+          label: '20000$',
           code: 20000
-        },
-        /*{
-          label: '50K',
-          code: 50000
-        },*/
-        {
-          label: '100K',
-          code: 100000
-        },
-       /* {
-          label: '200K',
-          code: 200000
-        },
-        {
-          label: '500K',
-          code: 500000
-        },*/
-        {
-          label: '1M',
-          code: 1000000
-        },
-        /*{
-          label: '2M',
-          code: 2000000
-        },
-        {
-          label: '3M',
-          code: 3000000
-        },*/
-        {
-          label: '5M',
-          code: 5000000
-        },
-        {
-          label: '10M',
-          code: 10000000
-        },
-        {
-          label: '20M',
-          code: 20000000
-        },
-      /*  {
-          label: '30M',
-          code: 30000000
-        },*/
-        {
-          label: '50M',
-          code: 50000000
-        },
-        {
-          label: '100M',
-          code: 100000000
-        },
-        {
-          label: '200M',
-          code: 200000000
-        },
-        {
-          label: '300M',
-          code: 300000000
         }
       ],
       selectedAmount: {
-        label: '20k',
-        code: 20000
+        label: '1$',
+        code: 1
       },
       unit: 'K',
       multiple: 1000,
