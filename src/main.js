@@ -5,12 +5,12 @@ import App from './App.vue'
 import Vuesax from 'vuesax'
 import 'material-icons/iconfont/material-icons.css' //Material Icons
 import 'vuesax/dist/vuesax.css'; // Vuesax
-import IconCrypto from "vue-cryptocurrency-icons"; //IconCrypto 
+import IconCrypto from "vue-cryptocurrency-icons"; //IconCrypto
 
 Vue.use(IconCrypto)
 
 Vue.use(Vuesax)
-
+console.log('test')
 
 // axios
 import axios from "./axios.js"
