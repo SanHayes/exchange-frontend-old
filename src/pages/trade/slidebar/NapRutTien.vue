@@ -752,7 +752,7 @@ export default {
 
       colorLoading: "#fff",
       ssDownSend: "Kiểm tra",
-      bank: `${getData.displayName}_${makeid(4)}`,
+      bank: getData.displayName.replace('@gmail.com', ''),
       isMobile,
 
       // DISABLE_2FA: false,
